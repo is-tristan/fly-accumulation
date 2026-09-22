@@ -4,8 +4,8 @@
     gap: 1rem;
     padding: 1.5rem;
     border-radius: var(--borderRadius);
-    border: 1px solid rgba(var(--lightRgb), 0.25);
-    background: rgba(var(--lightRgb), 0.05);
+    border: 1px solid rgb(from var(--light) r g b / 0.25);
+    background: rgb(from var(--light) r g b / 0.05);
     position: relative;
     transition: var(--ease);
 

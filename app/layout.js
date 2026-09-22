@@ -4,43 +4,41 @@ import localFont from "next/font/local"
 // SEO
 import { siteDescription, siteName, getSiteUrl } from "@/lib/seo"
 
-const acidGrotesk = localFont({
+const reworkDisplay = localFont({
   display: "swap",
-  variable: "--font-acid-grotesk",
+  variable: "--font-rework-display",
   src: [
     {
-      path: "../public/fonts/acid-grotesk-regular.woff2",
+      path: "../public/fonts/rework-display-light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/rework-display-regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/acid-grotesk-bold.woff2",
+      path: "../public/fonts/rework-display-semi-bold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/rework-display-bold.woff2",
       weight: "700",
       style: "normal",
     },
   ],
 })
 
-const futuraPtCondensed = localFont({
+const reworkTextHeading = localFont({
   display: "swap",
-  variable: "--font-futura-pt",
+  variable: "--font-rework-text-heading",
   src: [
     {
-      path: "../public/fonts/futura-pt-condensed-extra-bold.woff2",
-      weight: "800",
+      path: "../public/fonts/rework-text-heading-bold.woff2",
+      weight: "700",
       style: "normal",
-    },
-  ],
-})
-
-const corporateABq = localFont({
-  display: "swap",
-  variable: "--font-corporate-a",
-  src: [
-    {
-      path: "../public/fonts/corporate-a-bq-medium-italic.woff2",
-      weight: "500",
-      style: "italic",
     },
   ],
 })
@@ -70,7 +68,7 @@ export default function RootLayout({ children }) {
 
   return (
 
-    <html lang="en" className={`${acidGrotesk.variable} ${futuraPtCondensed.variable} ${corporateABq.variable}`} >
+    <html lang="en" className={`${reworkDisplay.variable} ${reworkTextHeading.variable}`} >
 
       <body>
 

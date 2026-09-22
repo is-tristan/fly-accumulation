@@ -28,7 +28,6 @@ export default function CareersPage() {
             <CareersGrid />
 
             <DisciplinesSection
-                eyebrowNumber="03"
                 eyebrowText="Why Fly Accumulation"
                 data={[
                     {
@@ -52,7 +51,7 @@ export default function CareersPage() {
                 ]}
             />
 
-            <CtaSection eyebrowNumber="04" />
+            <CtaSection />
 
         </>
 

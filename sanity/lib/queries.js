@@ -126,11 +126,10 @@ export const workBySlugQuery = defineQuery(`
   }
 `)
 
-export const teamGridQuery = defineQuery(`
+export const teamCarouselQuery = defineQuery(`
   *[_type == "team"] | order(orderRank) {
     _id,
     name,
-    "category": category->title,
     position,
     image {
       ${imageFields}

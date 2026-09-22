@@ -8,12 +8,13 @@
 
 .btn {
     @include btn();
-    box-shadow: 0 0 1.5rem 0 rgba(var(--darkRgb), 0.1);
+    box-shadow: 0 0 1.5rem 0 rgb(from var(--dark) r g b / 0.1);
 
     &.primary {
-        background: rgba(var(--primaryRgb), 0.75);
-        border-color: rgba(var(--primaryRgb), 0.875);
+        background: rgb(from var(--primary) r g b / 0.75);
+        border-color: rgb(from var(--primary) r g b / 0.875);
         color: var(--dark);
+        box-shadow: 0 0 1.5rem 0 rgb(from var(--primary) r g b / 0.5);
 
         .icon {
             background: var(--dark);
@@ -21,16 +22,17 @@
         }
 
         &:hover {
-            background: rgba(var(--primaryRgb), 0.875);
-            border-color: rgba(var(--primaryRgb), 1);
+            background: rgb(from var(--primary) r g b / 0.875);
+            border-color: rgb(from var(--primary) r g b / 1);
+            box-shadow: 0 0 1.5rem 0 rgb(from var(--primary) r g b / 0.75);
         }
     }
 
     &.transparent {
         background: transparent;
         color: var(--light);
-        border-color: rgba(var(--lightRgb), 0.15);
-        box-shadow: none;
+        border-color: rgb(from var(--light) r g b / 0.15);
+        box-shadow: 0 0 1.5rem 0 rgb(from var(--light) r g b / 0.125);
 
         .icon {
             background: var(--light);
@@ -38,7 +40,8 @@
         }
 
         &:hover {
-            background: rgba(var(--lightRgb), 0.125);
+            background: rgb(from var(--light) r g b / 0.125);
+            box-shadow: 0 0 1.5rem 0 rgb(from var(--light) r g b / 0.25);
         }
     }
 
@@ -50,7 +53,7 @@
 
     &.small {
         @media all {
-            padding: 0.5rem;
+            padding: 0.66rem;
             font-size: 0.75rem;
 
             .icon {

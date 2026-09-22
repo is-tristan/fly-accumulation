@@ -34,7 +34,6 @@ export default async function RelatedArticles({
             <div className={`container noPaddingBottom`}>
 
                 <Eyebrow
-                    number="02"
                     text="Related articles"
                     type="heading"
                 />

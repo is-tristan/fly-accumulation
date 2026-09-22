@@ -27,7 +27,7 @@ export default function WorkPage() {
                 hasPagination={true}
             />
 
-            <CtaSection eyebrowNumber="02" />
+            <CtaSection />
 
         </>
 

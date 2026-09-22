@@ -35,8 +35,7 @@
 // Container
 .container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     gap: 1rem;
     width: 100%;
@@ -44,7 +43,6 @@
     padding: 2.5rem 1.25rem;
 
     @media (width >=768px) {
-        align-items: center;
         gap: 2rem;
         padding: 10dvw;
         max-width: calc(100% - 1dvw);
@@ -53,8 +51,6 @@
     @media (width >=1024px) {
         padding: 7.5dvw;
         gap: 3rem;
-        justify-content: center;
-        align-items: flex-start;
         max-width: 100%;
     }
 
@@ -131,7 +127,7 @@
 
             h1,
             h2 {
-                max-width: 30ch;
+                max-width: 25ch;
             }
 
             p {
@@ -162,7 +158,7 @@
     // Dual Columns
     &.dualCols {
         @media (width >=768px) {
-            flex-direction: row;
+            flex-flow: row nowrap;
             justify-content: space-between;
             align-items: stretch;
             gap: 3rem;

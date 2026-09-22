@@ -22,7 +22,6 @@ export default function ServicesPage() {
             <Content
                 sectionClassName={`headerOffset`}
                 containerClassName="noPaddingBottom"
-                eyebrowNumber="01"
                 eyebrowText="Our Services"
                 title="Trade. Plan. Activate."
                 titleTag="h1"
@@ -33,7 +32,7 @@ export default function ServicesPage() {
 
             <FaqsSection />
 
-            <CtaSection eyebrowNumber="02" />
+            <CtaSection />
 
         </>
 

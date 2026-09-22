@@ -101,7 +101,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
             }
 
             option:disabled {
-                color: rgba(var(--darkRgb), 0.5);
+                color: rgb(from var(--dark) r g b / 0.5);
             }
         }
 
@@ -152,7 +152,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 
             &:hover::file-selector-button,
             &:hover::-webkit-file-upload-button {
-                background: rgba(var(--lightRgb), 0.9);
+                background: rgb(from var(--light) r g b / 0.9);
             }
 
             &:focus,
@@ -270,7 +270,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
         padding: 1.5rem 1rem;
         text-align: center;
         border: 1.5px dashed var(--primary);
-        background: rgba(var(--lightRgb), 0.05);
+        background: rgb(from var(--light) r g b / 0.05);
         border-radius: var(--borderRadius);
 
         @media (width >=768px) {

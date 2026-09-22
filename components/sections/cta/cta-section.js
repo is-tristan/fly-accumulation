@@ -10,10 +10,9 @@ import styles from "./styles/cta-section.module.scss";
 import { logo } from "@/utils/icons";
 
 export default function CtaSection({
-    eyebrowNumber = "04",
     eyebrowText = "Take Action Now",
-    title = "Bring us the problem <br> Trade. Plan. Activate.",
-    description = "<p>We work with ambitious brands and organisations that value clarity, pace and measurable commercial outcomes. We combine senior leadership, hands-on delivery and deep market knowledge to make media perform under real-world conditions. No bias. No lock-in. Just disciplined media, built to grow brands.</p>",
+    title = "Reach is common, influence is earned",
+    description = "<p>Fly Accumulation exists to make finding aligned creators easy and quick – by bringing creator strategy, audience insight, and campaign governance into one system.</p>",
     btnTextPrimary = "Get started",
     btnLinkPrimary = "/contact",
     hasSpinner = false,
@@ -30,7 +29,7 @@ export default function CtaSection({
                 <div className={`content ${styles.ctaSectionContent}`} data-alignment="centered">
 
                     <Text
-                        eyebrow={{ number: eyebrowNumber, text: eyebrowText, eyebrowTheme: "dark" }}
+                        eyebrow={{ text: eyebrowText, eyebrowTheme: "dark" }}
                         title={title}
                         titleClass={`sectionTitle`}
                         description={description}

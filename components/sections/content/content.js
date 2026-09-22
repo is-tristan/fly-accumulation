@@ -13,7 +13,6 @@ export default function ContentSection({
     sectionName = undefined,
     sectionClassName = undefined,
     containerClassName = undefined,
-    eyebrowNumber = "01",
     eyebrowText = "Lorem Ipsum",
     titleTag = "h2",
     title,
@@ -46,7 +45,7 @@ export default function ContentSection({
                     <div className="content" data-alignment={!image ? "centered" : null}>
 
                         <Text
-                            eyebrow={{ number: eyebrowNumber, text: eyebrowText ? eyebrowText : null }}
+                            eyebrow={{ text: eyebrowText ? eyebrowText : null }}
                             title={title}
                             titleClass={`sectionTitle`}
                             titleTag={titleTag}

@@ -54,7 +54,6 @@ export default async function WorkDetailsPage({ params }) {
         sectionClass="headerOffset1_5x"
         containerClass="centered noPaddingBottom noPaddingTop"
         eyebrow={work.categories.map((category) => category.title).join(", ")}
-        eyebrowNumber={work.year ? work.year : `2026`}
         title={work.title}
         description={work.description ? `<p>${work.description}</p>` : undefined}
       />
@@ -73,7 +72,7 @@ export default async function WorkDetailsPage({ params }) {
         testimonialContent={work.testimonialContent}
       />
 
-      <CtaSection eyebrowNumber="02" />
+      <CtaSection />
 
     </>
 

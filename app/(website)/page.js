@@ -29,7 +29,6 @@ export default function Home() {
 
       <ContentSection
         containerClassName={`noPaddingBottom`}
-        eyebrowNumber="02"
         eyebrowText="Why we stand out"
         title="Stand out Ideas"
         titleClass={`sectionTitle`}
@@ -41,7 +40,6 @@ export default function Home() {
 
       <ContentSection
         containerClassName={`noPaddingTop`}
-        eyebrowNumber={null}
         eyebrowText={null}
         title="Ready to be our next case study? <small class='colorPrimary'>Send us your brief.</small>"
         titleClass={`sectionTitle`}
@@ -50,7 +48,6 @@ export default function Home() {
       <DisciplinesSection headingType="largeHeading" />
 
       <CtaSection
-        eyebrowNumber="05"
         title="Rewarded for your loyalty"
         description="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
         btnTextPrimary="Calculate your Discount"

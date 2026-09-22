@@ -32,7 +32,7 @@
     &:hover,
     &:focus,
     &:active {
-        color: rgba(var(--lightRgb), 0.8);
+        color: rgb(from var(--light) r g b / 0.8);
     }
 
     .menuItemIcon {
@@ -61,7 +61,7 @@
     left: 0;
     min-width: 10rem;
     padding: 0.75rem;
-    background: rgba(var(--darkRgb), 0.875);
+    background: rgb(from var(--dark) r g b / 0.875);
     border: 1px solid var(--border);
     border-radius: var(--borderRadius);
     backdrop-filter: blur(0.25rem);

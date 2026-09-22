@@ -12,30 +12,9 @@
             justify-content: flex-start;
             align-items: center;
             gap: 0.75rem;
-            position: absolute;
-            z-index: 10;
-            right: 0;
-            bottom: 3dvh;
-            left: 0;
+            position: relative;
             width: 100%;
-            padding: 1rem;
-            margin: 0 auto;
-
-            @media (width >=768px) {
-                padding-left: 10dvw;
-            }
-
-            @media (width >=1024px) {
-                padding-left: 7.5dvw;
-            }
-
-            @media (width >=1280px) {
-                padding-left: 5dvw;
-            }
-
-            @media (width >=1440px) {
-                max-width: var(--layoutMaxWidth);
-            }
+            padding: 0;
 
             li {
                 width: max-content;
@@ -44,7 +23,7 @@
             .splide__pagination__page {
                 width: 3rem;
                 height: 0.33rem;
-                background: rgba(var(--lightRgb), 0.3);
+                background: rgb(from var(--light) r g b / 0.3);
                 border: none;
                 box-shadow: none;
                 opacity: 1;

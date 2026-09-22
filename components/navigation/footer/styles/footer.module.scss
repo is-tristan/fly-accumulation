@@ -79,8 +79,8 @@
         align-items: center;
         width: 2rem;
         height: 2rem;
-        background: rgba(var(--lightRgb), 0.1);
-        border: 1px solid rgba(var(--lightRgb), 0.2);
+        background: rgb(from var(--light) r g b / 0.1);
+        border: 1px solid rgb(from var(--light) r g b / 0.2);
         border-radius: var(--borderRadius);
         transition: var(--ease);
 
@@ -133,8 +133,8 @@
         height: 2rem;
         flex-shrink: 0;
         border-radius: var(--borderRadius);
-        background: rgba(var(--lightRgb), 0.1);
-        border: 1px solid rgba(var(--lightRgb), 0.2);
+        background: rgb(from var(--light) r g b / 0.1);
+        border: 1px solid rgb(from var(--light) r g b / 0.2);
         color: var(--light);
 
         @media (width >=768px) {

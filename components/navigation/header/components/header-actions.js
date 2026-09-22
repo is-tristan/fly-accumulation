@@ -33,16 +33,9 @@ export default function HeaderActions() {
 
                 <div className={`${styles.headerButtons}`}>
 
-                    <Link href="/contact">Sign In</Link>
+                    <Button text="For Brands" href="#" className={`primary small`} hasAnimation={false} />
 
-                    <Button text="Brief Us" href="/contact" className={`primary small ${styles.contactBtn}`} hasAnimation={false} />
-
-                    <Link
-                        href="#"
-                        className={`${styles.costCalculatorBtn}`}
-                        dangerouslySetInnerHTML={{ __html: costCalulatorIcon }}
-                        title="Cost Calculator"
-                    />
+                    <Button text="For Talents" href="#" className={`transparent small`} hasAnimation={false} />
 
                 </div>
 

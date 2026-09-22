@@ -9,14 +9,13 @@ import { Image } from "next-sanity/image";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
 // Styles
-import styles from "../styles/team-grid.module.scss";
+import styles from "../styles/team-carousel.module.scss";
 
 // Icons
 import { emailIcon, linkedInIcon } from "@/utils/icons";
 
 export default function TeamItem({
     name,
-    category,
     position,
     image,
     email,
@@ -45,9 +44,10 @@ export default function TeamItem({
                     <Image
                         src={imageUrl}
                         alt={name}
-                        fill
+                        width={576}
+                        height={768}
                         loading="lazy"
-                        sizes="(max-width: 768px) 100vw, 512px"
+                        sizes="(max-width: 768px) 384px, 576px"
                     />
 
                 </div>
@@ -57,8 +57,6 @@ export default function TeamItem({
             <div className={styles.teamItemContent}>
 
                 <div className={styles.teamItemLeft}>
-
-                    <span className={styles.teamItemCategory}>{category}</span>
 
                     <h3 className={styles.teamItemName}>{name}</h3>
 

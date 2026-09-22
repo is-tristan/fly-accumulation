@@ -61,7 +61,6 @@ export default async function WorkGrid({
 
                     <Text
                         eyebrow={{
-                            number: "01",
                             text: "Our Work",
                         }}
                         title={"Case studies from campaigns that moved the needle"}
@@ -73,7 +72,6 @@ export default async function WorkGrid({
                 ) : (
 
                     <Eyebrow
-                        number={"03"}
                         text={"Featured Work"}
                         type={"heading"}
                     />

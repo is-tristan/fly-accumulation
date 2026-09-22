@@ -26,7 +26,6 @@ export default async function NewsGrid() {
             <div className={`container noPaddingBottom`}>
 
                 <Eyebrow
-                    number="02"
                     text="Latest news"
                     type="heading"
                 />

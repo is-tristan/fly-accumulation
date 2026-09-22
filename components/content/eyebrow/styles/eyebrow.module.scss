@@ -6,6 +6,7 @@
     font-family: var(--eyebrow);
     font-size: 0.75rem;
     font-weight: 400;
+    text-transform: uppercase;
 
     @media (width >=768px) {
         gap: 0.75rem;
@@ -17,7 +18,7 @@
     }
 
     .separator {
-        letter-spacing: -0.15em;
+        letter-spacing: 0.1em;
     }
 
     &[data-type="heading"] {
@@ -34,7 +35,6 @@
 
     &[data-theme="light"] {
 
-        .number,
         .text {
             color: var(--textLight);
         }
@@ -46,13 +46,12 @@
 
     &[data-theme="dark"] {
 
-        .number,
         .text {
             color: var(--dark);
         }
 
         .separator {
-            color: var(--secondary);
+            color: var(--primary);
         }
     }
 }

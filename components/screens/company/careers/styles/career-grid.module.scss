@@ -17,8 +17,8 @@
     transition: var(--ease);
 
     &:hover {
-        background: rgba(var(--primaryRgb), 0.1);
-        border-color: rgba(var(--primaryRgb), 0.2);
+        background: rgb(from var(--primary) r g b / 0.1);
+        border-color: rgb(from var(--primary) r g b / 0.2);
         transform: translateY(-0.25rem);
     }
 

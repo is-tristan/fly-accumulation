@@ -23,7 +23,6 @@ export default function ContactPage() {
 
                     <Text
                         eyebrow={{
-                            number: "01",
                             text: "Contact us",
                         }}
                         titleTag="h1"

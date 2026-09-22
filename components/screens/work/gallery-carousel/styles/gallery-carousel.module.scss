@@ -44,7 +44,7 @@
             width: 1rem;
             height: 1rem;
             border-radius: 50%;
-            background: rgba(var(--lightRgb), 0.05);
+            background: rgb(from var(--light) r g b / 0.05);
             border: 2px solid var(--light);
             cursor: pointer;
             transition: all 0.3s ease;

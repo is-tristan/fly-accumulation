@@ -13,6 +13,7 @@ export default function Text({
     alignment = "default",
     eyebrow = null,
     title,
+    hasFullStop = true,
     titleTag = "h2",
     titleClass = undefined,
     description,
@@ -20,7 +21,6 @@ export default function Text({
 }) {
 
     const {
-        number = undefined,
         text = undefined,
         eyebrowTheme = "light"
     } = eyebrow ?? {};
@@ -38,12 +38,12 @@ export default function Text({
                     animate={hasAnimation ? (isInView ? { opacity: 1, y: 0, filter: "blur(0)" } : { opacity: 0, y: 16, filter: "blur(0.25rem)" }) : { opacity: 1, y: 0, filter: "blur(0)" }}
                     initial={hasAnimation ? { opacity: 0, y: 16, filter: "blur(0.25rem)" } : { opacity: 1, y: 0, filter: "blur(0)" }}
                     transition={hasAnimation ? { duration: 0.5, delay: 0.15 } : { duration: 0, delay: 0 }}
-                    className={`titleContainer`}
+                    className={`titleContainer ${hasFullStop ? "hasFullStop" : undefined}`}
                 >
 
                     {text && (
 
-                        <Eyebrow number={number} text={text} hasAnimation={hasAnimation} theme={eyebrowTheme} />
+                        <Eyebrow text={text} hasAnimation={hasAnimation} theme={eyebrowTheme} />
 
                     )}
 

@@ -4,8 +4,9 @@ import { buildPageMetadata } from "@/lib/seo"
 // Components
 import Banner from "@/components/sections/banner/banner";
 import Content from "@/components/sections/content/content";
-import OurModel from "@/components/screens/company/about/our-model/our-model-section";
 import CtaSection from "@/components/sections/cta/cta-section";
+import DisciplinesSection from "@/components/sections/disciplines/disciplines-section";
+import TeamCarouselSection from "@/components/screens/company/about/team/team-carousel-section";
 
 export const metadata = buildPageMetadata({
     title: "About",
@@ -18,42 +19,34 @@ export default function AboutPage() {
     return (
 
         <>
-        
+
             <Banner
-                eyebrow="About Us"
-                title="Built for the Real World"
-                description="<p>Fly Accumulation is a media trading, planning and activation agency built around how media actually works in the real world.</p>"
+                eyebrow={null}
+                title="About"
+                description={null}
             />
 
             <Content
-                eyebrowNumber="02"
-                eyebrowText="Leadership"
-                title="Matt Jones MBE"
-                description="<p>The business is led by Matt Jones MBE, an entrepreneur and agency leader with over twenty years' experience at senior level across the advertising and media industry.</p> <p>Matt has worked with all major global media owners, served as CMO for one of the UK's fastest-growing motor brands, founded and scaled successful B2C businesses, and built, scaled and exited the UK's fastest-growing independent media agency in 2019.</p> <p>That experience shapes how we operate today: commercially disciplined, outcome-led, and focused on performance rather than process.</p>"
+                eyebrowText="What We Do"
+                title="Setting Ourselves Apart from Other Agencies"
+                description="<p>Fly Accumulation Media & PR stands as a leading talent management agency dedicated to cultivating and directing careers within the digital marketing and communications industry.</p> <p>Operating seamlessly across social media, press, production, and commercial brand landscapes. Fly Accumulation is an agency without limitations, harnessing boundless opportunities for its talents and clients.</p> <p>While recognizing the significance of profitability, our foremost pride lies in delivering exceptional outcomes for a diverse clientele, spanning from everyday brands to the pinnacle of luxury.</p> <p>Fly represents the acronym ‘First Love Yourself’, encapsulating our unwavering commitment to infuse this self-affirming ethos  into mevery intricate facet of our operations.</p>"
                 imagePosition="left"
-                image="/images/company/about/about-matt-jones.jpg"
+                image="/images/company/about/setting-ourselves-apart-from-other-agencies.avif"
             />
 
             <Content
-                eyebrowNumber="03"
-                eyebrowText="Our Mission"
-                title="Removing Inefficiency"
-                description="<p>We exist to help brands grow by removing inefficiency from media investment.</p> <p>Too often, media underperforms not because of ambition or creativity, but because value is lost between buying, planning and activation. Trading decisions are disconnected from strategy. Campaigns go live without true accountability. Performance becomes assumed rather than engineered.</p> <p><strong>Fly Accumulation was built to change that.</strong></p>"
+                eyebrowText="Reaching new goals"
+                title="Elevating your reach and impact to new heights"
+                description="<p>At Fly Accumulation At Fly Accumulation Media & PR, we are dedicated to elevating our clients' reach to new heights and making a lasting impact. We understand the power of influencer partnerships in the digital age. We meticulously analyse each client’s target audience, goals, and brand identity to identify the perfect influencers who can authentically connect with their customer base.</p><p>Through strategic collaborations and engaging content creation, we amplify our clients’ messages, significantly expanding their reach and influence. We continually adapt to the evolving landscape of social media and digital marketing, staying ahead of trends to maximise our clients’ exposure. By harnessing our expertise and network of influencers, we work tirelessly to deliver results that not only meet but exceed our clients' expectations, ensuring their brand leaves a lasting impression in the minds of their audience.</p>"
                 btnTextPrimary={null}
+                hasBrandMark={true}
             />
 
-            <OurModel />
+            <TeamCarouselSection />
 
-            <Content
-                eyebrowNumber="05"
-                eyebrowText="Why it works"
-                title="Inseparable Disciplines"
-                description="<p><strong>Because these disciplines are inseparable.</strong></p> <p>Trading without planning creates waste. Planning without activation creates risk. Activation without commercial control creates leakage. When trade, plan and activate operate as a single system, media becomes a growth engine rather than a cost centre.</p> <p><strong>That is the difference at Fly Accumulation.</strong></p> <p>We work with ambitious brands and organisations that value clarity, pace and measurable commercial outcomes. We combine senior leadership, hands-on delivery and deep market knowledge to make media perform under real-world conditions. No bias. No lock-in. Just disciplined media, built to grow brands.</p>"
-                btnTextPrimary="Get started"
-                image="/images/company/about/about-inseparable-disciplines.png"
-            />
+            <DisciplinesSection />
 
-            <CtaSection eyebrowNumber="06" />
+            <CtaSection />
 
         </>
 

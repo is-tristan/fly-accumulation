@@ -26,7 +26,6 @@ export default async function CareersGrid() {
             <div className={`container noPaddingBottom`}>
 
                 <Eyebrow
-                    number="02"
                     text="Current openings"
                     type="heading"
                 />

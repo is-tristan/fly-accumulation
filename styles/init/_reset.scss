@@ -25,22 +25,6 @@ body {
     padding: 0;
     color: var(--textLight);
     background: var(--dark);
-    position: relative;
-    min-height: 100vh;
-
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        inset: 0;
-        margin: auto;
-        width: 100%;
-        height: 100%;
-        background-image: url("/textures/grunge-texture.avif");
-        background-repeat: repeat;
-        background-size: 100%;
-        opacity: 20%;
-    }
 }
 
 a,

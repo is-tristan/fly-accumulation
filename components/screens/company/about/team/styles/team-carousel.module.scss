@@ -3,6 +3,7 @@
     flex-flow: column nowrap;
     gap: 0.75rem;
     width: 100%;
+    height: 100%;
 
     * {
         text-align: left;
@@ -12,15 +13,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        aspect-ratio: 1 / 1;
         border-radius: var(--borderRadius);
         position: relative;
         overflow: hidden;
+        aspect-ratio: 3 / 4;
+        background: linear-gradient(to right, #f0f3f7, #e6eaed);
 
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 
@@ -36,12 +36,6 @@
         display: flex;
         flex-flow: column nowrap;
         gap: 0.5rem;
-
-        .teamItemCategory {
-            color: var(--primary);
-            text-transform: uppercase;
-            font-size: 0.875rem;
-        }
 
         .teamItemName,
         .teamItemPosition {
@@ -83,9 +77,9 @@
             height: 1.75rem;
             padding: 0.25rem;
             border-radius: var(--borderRadius);
-            background: rgba(var(--lightRgb), 0.125);
-            border: 1px solid rgba(var(--lightRgb), 0.25);
-            color: rgba(var(--lightRgb), 0.875);
+            background: rgb(from var(--light) r g b / 0.125);
+            border: 1px solid rgb(from var(--light) r g b / 0.25);
+            color: rgb(from var(--light) r g b / 0.875);
             transition: var(--ease);
 
             svg {
@@ -94,9 +88,9 @@
             }
 
             &:hover {
-                background: rgba(var(--primaryRgb), 0.25);
-                border-color: rgba(var(--primaryRgb), 0.33);
-                color: rgba(var(--primaryRgb), 0.875);
+                background: rgb(from var(--primary) r g b / 0.25);
+                border-color: rgb(from var(--primary) r g b / 0.33);
+                color: rgb(from var(--primary) r g b / 0.875);
             }
         }
     }

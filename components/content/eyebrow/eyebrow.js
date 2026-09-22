@@ -13,8 +13,6 @@ export default function Eyebrow({
     className = undefined,
     theme = "light",
     type = "default",
-    number = "01",
-    separator = "//",
     text = "Lorem Ipsum",
     hasAnimation = true,
 }) {
@@ -35,9 +33,7 @@ export default function Eyebrow({
             data-type={type}
         >
 
-            {number && (<span className={styles.number}>{number}</span>)}
-
-            {separator && (<span className={styles.separator}>{separator}</span>)}
+            <span className={styles.separator}>//</span>
 
             {text && (<span className={styles.text}>{text}</span>)}
 

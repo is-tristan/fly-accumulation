@@ -78,7 +78,7 @@
     border-radius: 50%;
     padding: 0.5rem;
     position: relative;
-    background: rgba(var(--primaryRgb), 0.1);
+    background: rgb(from var(--primary) r g b / 0.1);
     color: var(--primary);
     transition: var(--ease);
 
@@ -94,6 +94,6 @@
     }
 
     &:hover {
-        background: rgba(var(--primaryRgb), 0.2);
+        background: rgb(from var(--primary) r g b / 0.2);
     }
 }

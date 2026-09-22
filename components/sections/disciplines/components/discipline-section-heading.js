@@ -11,7 +11,6 @@ import Eyebrow from "@/components/content/eyebrow/eyebrow";
 import styles from "../styles/disciplines.module.scss";
 
 export default function DisciplineSectionHeading({
-    eyebrowNumber = "04",
     eyebrowText = "Our Disciplines",
 }) {
 
@@ -31,25 +30,10 @@ export default function DisciplineSectionHeading({
             <div className={styles.disciplinesSectionLeft}>
 
                 <Eyebrow
-                    number={eyebrowNumber}
                     text={eyebrowText}
                     type="heading"
                     hasAnimation={false}
                 />
-
-            </div>
-
-            <div className={styles.disciplinesSectionRight}>
-
-                <span>Trade</span>
-
-                <span className={styles.separator}>//</span>
-
-                <span>Plan</span>
-
-                <span className={styles.separator}>//</span>
-
-                <span>Activate</span>
 
             </div>
 

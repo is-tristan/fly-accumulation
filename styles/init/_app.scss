@@ -47,10 +47,10 @@
         position: relative;
         margin: 0;
         padding: 3.25rem 1rem 1rem;
-        background-color: rgba(var(--lightRgb), 0.1);
+        background-color: rgb(from var(--light) r g b / 0.1);
         line-height: 175%;
         border-radius: var(--borderRadius);
-        color: rgba(var(--lightRgb), 0.875);
+        color: rgb(from var(--light) r g b / 0.875);
         position: relative;
 
         &::before {

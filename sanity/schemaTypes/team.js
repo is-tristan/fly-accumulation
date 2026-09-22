@@ -17,15 +17,15 @@ export const team = (context) => defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "category",
-      title: "Category",
-      type: "reference",
-      to: [{ type: "teamCategory" }],
-    }),
-    defineField({
       name: "position",
       title: "Position",
       type: "string",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 4,
     }),
     defineField({
       name: "image",

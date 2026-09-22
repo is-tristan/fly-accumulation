@@ -120,19 +120,11 @@
             position: relative;
 
             @media (width >=1024px) {
-                width: 30rem;
-            }
-
-            @media (width >=1280px) {
-                width: 45rem;
-            }
-
-            @media (width >=1440px) {
-                width: 50rem;
+                width: 35rem;
             }
 
             span {
-                color: rgba(var(--primaryRgb), 0.75);
+                color: rgb(from var(--primary) r g b / 0.75);
                 position: absolute;
                 top: 0.5rem;
                 left: 0;
@@ -164,12 +156,8 @@
             }
 
             @media (width >=1024px) {
-                width: 15rem;
+                width: 35rem;
                 margin: auto;
-            }
-
-            @media (width >=1440px) {
-                width: 20rem;
             }
         }
     }

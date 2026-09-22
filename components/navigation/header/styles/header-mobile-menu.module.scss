@@ -52,7 +52,7 @@
     align-items: center;
     width: 100%;
     padding-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(var(--lightRgb), 0.1);
+    border-bottom: 1px solid rgb(from var(--light) r g b / 0.1);
 
     .mobileMenuLogo {
         display: flex;
@@ -156,7 +156,7 @@
     gap: 1rem;
     max-height: 0;
     padding-left: 1rem;
-    border-left: 1px solid rgba(var(--lightRgb), 0.15);
+    border-left: 1px solid rgb(from var(--light) r g b / 0.15);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
@@ -176,7 +176,7 @@
     width: 100%;
     font-size: 0.9375rem;
     font-weight: 400;
-    color: rgba(var(--lightRgb), 0.85);
+    color: rgb(from var(--light) r g b / 0.85);
     transition: var(--ease);
 
     &:hover,
@@ -210,7 +210,7 @@
     position: fixed;
     inset: 0;
     z-index: 998;
-    background: rgba(var(--darkRgb), 0.25);
+    background: rgb(from var(--dark) r g b / 0.25);
     backdrop-filter: blur(0.25rem);
     opacity: 0;
     visibility: hidden;
