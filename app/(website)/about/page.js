@@ -4,8 +4,8 @@ import { buildPageMetadata } from "@/lib/seo"
 // Components
 import Banner from "@/components/sections/banner/banner";
 import Content from "@/components/sections/content/content";
-import DisciplinesSection from "@/components/sections/disciplines/disciplines-section";
-import TeamCarouselSection from "@/components/screens/company/about/team/team-carousel-section";
+import PillarsSection from "@/components/sections/pillars/pillars-section";
+import TeamCarouselSection from "@/components/screens/about/team/team-carousel-section";
 import TestimonialCarouselSection from "@/components/sections/testimonial-carousel-section/testimonials";
 import CtaSection from "@/components/sections/cta/cta-section";
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
 
             <TeamCarouselSection />
 
-            <DisciplinesSection />
+            <PillarsSection />
 
             <Content
                 eyebrowText="Reaching new goals"

@@ -2,14 +2,14 @@
 import Image from "next/image";
 
 // Styles
-import styles from "./styles/disciplines.module.scss";
+import styles from "./styles/pillars.module.scss";
 
 // Components
-import DisciplineSectionHeading from "./components/discipline-section-heading";
-import DisciplineSectionContentItem from "./components/discipline-section-content-item";
+import PillarSectionHeading from "./components/pillar-section-heading";
+import PillarSectionContentItem from "./components/pillar-section-content-item";
 
-export default function Disciplines({
-    eyebrowText = "What We Do",
+export default function Pillars({
+    eyebrowText = "Our Pillars",
     image = null,
     headingType = "default",
     data = [
@@ -42,19 +42,19 @@ export default function Disciplines({
 
     return (
 
-        <section className={`row ${styles.disciplinesSection}`}>
+        <section className={`row ${styles.pillarsSection}`}>
 
-            <div className={`container ${styles.disciplinesSectionContainer}`}>
+            <div className={`container ${styles.pillarsSectionContainer}`}>
 
-                <DisciplineSectionHeading
+                <PillarSectionHeading
                     eyebrowText={eyebrowText}
                 />
 
-                <div className={styles.disciplinesSectionContent}>
+                <div className={styles.pillarsSectionContent}>
 
                     {data.map((item, index) => (
 
-                        <DisciplineSectionContentItem
+                        <PillarSectionContentItem
                             key={item.number}
                             item={item}
                             index={index}
@@ -69,7 +69,7 @@ export default function Disciplines({
 
             {image && (
 
-                <div className={styles.disciplinesSectionImage}>
+                <div className={styles.pillarsSectionImage}>
 
                     <Image
                         src={image}

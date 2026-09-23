@@ -1,3 +1,4 @@
+@use "@/styles/init/_mixins" as *;
 .footer {
     gap: 2rem;
 
@@ -5,20 +6,22 @@
         gap: 3rem;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        inset: 0;
-        margin: auto;
-        width: 100%;
-        height: 100%;
-        background-image: url("/textures/grunge-texture.avif");
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        opacity: 0.33;
-    }
+    @include backgroundDecorationFooter();
+
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     z-index: -1;
+    //     inset: 0;
+    //     margin: auto;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-image: url("/textures/grunge-texture.avif");
+    //     background-size: cover;
+    //     background-position: center top;
+    //     background-repeat: no-repeat;
+    //     opacity: 0.33;
+    // }
 }
 
 // Footer Top
@@ -54,23 +57,15 @@
     .footerLogo {
         color: var(--light);
         width: max-content;
-        height: 1.75rem;
-        transition: var(--ease);
+        height: 3.5rem;
+        transition: var(--cubic);
 
         @media (width >=768px) {
-            height: 2rem;
+            height: 5rem;
         }
 
         @media (width >=1024px) {
-            height: 3rem;
-        }
-
-        @media (width >=1280px) {
-            height: 4rem;
-        }
-
-        @media (width >=1440px) {
-            height: 5rem;
+            height: 7.5rem;
         }
 
         svg {
@@ -102,12 +97,17 @@
         background: rgb(from var(--light) r g b / 0.1);
         border: 1px solid rgb(from var(--light) r g b / 0.2);
         border-radius: var(--borderRadius);
-        transition: var(--ease);
+        transition: var(--cubic);
+
+        @media (width >=768px) {
+            width: 3rem;
+            height: 3rem;
+        }
 
         &:hover {
             background: var(--primary);
             border-color: var(--primary);
-            color: var(--dark);
+            color: var(--light);
         }
 
         svg {
@@ -120,7 +120,7 @@
 // Contact Items
 .contactItems {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1rem;
@@ -129,6 +129,7 @@
     @media (width > 45rem) {
         gap: 2rem;
         max-width: 45rem;
+        flex-flow: row wrap;
     }
 
     .contactItem {
@@ -137,11 +138,24 @@
         align-items: center;
         gap: 0.75rem;
         flex: 0 0 calc(50% - 0.5rem);
-        transition: var(--ease);
+        transition: var(--cubic);
 
         @media (width >=768px) {
             flex: 0 0 calc(50% - 1rem);
             gap: 1rem;
+        }
+
+        &.contactItemLink {
+            &:hover {
+                .contactItemIcon {
+                    border-color: var(--primary);
+                    color: var(--primary);
+                }
+
+                .contactItemLabel {
+                    color: var(--light);
+                }
+            }
         }
     }
 
@@ -156,10 +170,12 @@
         background: rgb(from var(--light) r g b / 0.1);
         border: 1px solid rgb(from var(--light) r g b / 0.2);
         color: var(--light);
+        transition: var(--cubic);
 
         @media (width >=768px) {
             width: 4rem;
             height: 4rem;
+            padding: 0.5rem;
         }
 
         svg {
@@ -181,6 +197,7 @@
 
         .contactItemLabel {
             line-height: 125%;
+            transition: var(--cubic);
         }
     }
 }
@@ -192,7 +209,7 @@ $copyrightOffset: 7.5rem;
 .footerDecoration {
     display: none;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     right: -$offset;
     bottom: $copyrightOffset;
     width: 50%;
@@ -253,7 +270,7 @@ $copyrightOffset: 7.5rem;
         gap: 1rem;
 
         a {
-            transition: var(--ease);
+            transition: var(--cubic);
 
             &:hover {
                 color: var(--primary);

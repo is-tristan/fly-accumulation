@@ -21,7 +21,7 @@ export default async function TeamCarouselSection() {
 
     return (
 
-        <section className={`row ${styles.teamCarouselSection}`}>
+        <section className={`row ${styles.teamCarouselSection}`} id="team">
 
             <div className={`container noPaddingBottom`}>
 

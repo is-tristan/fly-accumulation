@@ -130,7 +130,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
                 letter-spacing: 0.05em;
                 line-height: 1;
                 cursor: pointer;
-                transition: var(--ease);
+                transition: var(--cubic);
             }
 
             &::-webkit-file-upload-button {
@@ -147,7 +147,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
                 letter-spacing: 0.05em;
                 line-height: 1;
                 cursor: pointer;
-                transition: var(--ease);
+                transition: var(--cubic);
             }
 
             &:hover::file-selector-button,
@@ -183,7 +183,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
                 background-size: 0.75rem;
                 cursor: pointer;
                 position: relative;
-                transition: var(--ease);
+                transition: var(--cubic);
 
                 @media (width >=1024px) {
                     top: 0.125rem;

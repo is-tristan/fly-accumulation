@@ -6,7 +6,7 @@ import WorkCarouselSection from "@/components/screens/home/work-carousel/work-ca
 import CompanyCarouselSection from "@/components/sections/company-carousel/company-carousel";
 import ContentSection from "@/components/sections/content/content";
 import WorkGrid from "@/components/sections/work-grid/work-grid";
-import DisciplinesSection from "@/components/sections/disciplines/disciplines-section";
+import PillarsSection from "@/components/sections/pillars/pillars-section";
 import CtaSection from "@/components/sections/cta/cta-section";
 
 export const metadata = buildPageMetadata({
@@ -22,30 +22,6 @@ export default function Home() {
   return (
 
     <>
-
-      <WorkCarouselSection />
-
-      <CompanyCarouselSection />
-
-      <ContentSection
-        containerClassName={`noPaddingBottom`}
-        eyebrowText="Why we stand out"
-        title="Stand out Ideas"
-        titleClass={`sectionTitle`}
-        description="<p>Fly Accumulation exists to close the gap between ambition and outcome - by bringing trading discipline, audience understanding, and delivery governance into one system.</p><p><strong>That's how investment turns into results. Consistently. Deliberately.</strong></p>"
-        hasBrandMark={true}
-      />
-
-      <WorkGrid hasButton={true} />
-
-      <ContentSection
-        containerClassName={`noPaddingTop`}
-        eyebrowText={null}
-        title="Ready to be our next case study? <small class='colorPrimary'>Send us your brief.</small>"
-        titleClass={`sectionTitle`}
-      />
-
-      <DisciplinesSection headingType="largeHeading" />
 
       <CtaSection
         title="Rewarded for your loyalty"

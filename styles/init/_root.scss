@@ -4,7 +4,7 @@
     // Fonts
     --heading: var(--font-rework-text-heading), ui-sans-serif, sans-serif;
     --text: var(--font-rework-display), ui-sans, sans;
-    --eyebrow: var(--font-rework-text-heading), ui-sans, sans;
+    --eyebrow: var(--font-tablet-gothic), ui-sans, sans;
 
     // Colours
     --primary: #EDC148;
@@ -12,7 +12,7 @@
     --dark: #080808;
     --darkAlt: #262626;
     --light: #FFFFFF;
-    --textLight: #bebebe;
+    --textLight: #a8a49c;
 
     // Borders & Radius
     --btnRadius: 0.33rem;
@@ -20,7 +20,7 @@
     --border: #353535;
 
     // Animations
-    --ease: all 0.25s ease;
+    --cubic: all 0.44s cubic-bezier(0.22, 1, 0.36, 1);
 
     // Header
     --headerHeight: 6rem;

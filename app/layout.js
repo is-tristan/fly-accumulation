@@ -43,6 +43,18 @@ const reworkTextHeading = localFont({
   ],
 })
 
+const tabletGothic = localFont({
+  display: "swap",
+  variable: "--font-tablet-gothic",
+  src: [
+    {
+      path: "../public/fonts/tablet-gothic-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+})
+
 export const metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
@@ -68,7 +80,7 @@ export default function RootLayout({ children }) {
 
   return (
 
-    <html lang="en" className={`${reworkDisplay.variable} ${reworkTextHeading.variable}`} >
+    <html lang="en" className={`${reworkDisplay.variable} ${reworkTextHeading.variable} ${tabletGothic.variable}`} >
 
       <body>
 

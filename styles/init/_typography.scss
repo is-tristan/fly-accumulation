@@ -12,7 +12,8 @@ h5,
 h6 {
     font-family: var(--heading);
     font-weight: 700;
-    line-height: 115%;
+    line-height: 100%;
+    letter-spacing: -0.025em;
     margin: 0;
     padding: 0;
     text-wrap: pretty;
@@ -23,7 +24,8 @@ h6 {
 
 h1,
 .bigHeading h2 {
-    font-size: clamp(3.75rem, 7.5dvw, 7.5rem);
+    font-size: clamp(3.5rem, 10dvw, 7.5rem);
+    letter-spacing: -0.03em;
 
     &.sectionTitle {
         font-size: clamp(2.33rem, 6.5dvw, 6.5rem);
@@ -33,6 +35,11 @@ h1,
 h2,
 .smallTitle h1 {
     font-size: clamp(2.33rem, 3dvw, 3rem);
+
+    &.sectionTitle {
+        font-size: clamp(1.75rem, 6dvw, 6rem);
+
+    }
 
     small {
         display: block;
@@ -61,6 +68,7 @@ h6 {
 }
 
 .hasFullStop {
+
     h1,
     h2,
     h3,
@@ -84,10 +92,11 @@ small,
 p,
 ul,
 ol {
-    font-size: clamp(0.925rem, 1.1vw, 1.1rem);
+    font-size: clamp(0.925rem, 1.15vw, 1.15rem);
     line-height: 160%;
     text-wrap: pretty;
     font-weight: 400;
+    letter-spacing: -0.042em;
 }
 
 p {

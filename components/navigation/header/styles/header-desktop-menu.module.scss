@@ -27,7 +27,7 @@
     font-size: 1rem;
     line-height: 1;
     color: var(--light);
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover,
     &:focus,
@@ -67,7 +67,7 @@
     backdrop-filter: blur(0.25rem);
     opacity: 0;
     visibility: hidden;
-    transition: var(--ease);
+    transition: var(--cubic);
     z-index: 50;
 
     &::before {
@@ -101,7 +101,7 @@
     font-weight: 500;
     color: var(--light);
     white-space: nowrap;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover,
     &:focus,

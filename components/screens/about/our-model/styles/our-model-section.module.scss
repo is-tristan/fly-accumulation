@@ -7,7 +7,7 @@
     border: 1px solid rgb(from var(--light) r g b / 0.25);
     background: rgb(from var(--light) r g b / 0.05);
     position: relative;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     @media (width >=768px) {
         padding: 2rem;
@@ -23,7 +23,7 @@
 
     h3,
     p {
-        transition: var(--ease);
+        transition: var(--cubic);
     }
 
     .threePillarsIcon {
@@ -39,7 +39,7 @@
         padding: 0.5rem;
         color: var(--primary);
         background: var(--dark);
-        transition: var(--ease);
+        transition: var(--cubic);
         scale: 0;
     }
 

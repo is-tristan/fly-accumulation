@@ -42,7 +42,7 @@ export default function FooterContactItems({ className = undefined }) {
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={styles.contactItem}
+                            className={`${styles.contactItem} ${styles.contactItemLink}`}
                             title={item.title}
                         >
 

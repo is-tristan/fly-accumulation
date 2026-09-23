@@ -48,7 +48,7 @@ export default async function LegalPage({ params }) {
     <>
 
       <Banner
-        containerClass="condensed noPaddingBottom"
+        containerClass="condensed"
         eyebrow="Legal"
         title={legal.title}
         description={null}

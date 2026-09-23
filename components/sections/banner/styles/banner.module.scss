@@ -1,22 +1,10 @@
+@use "@/styles/init/_mixins" as *;
+
 .banner {
     position: relative;
     padding-top: var(--mobileHeaderHeight);
     overflow: unset;
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 100%;
-        height: 100dvh;
-        background: radial-gradient(ellipse 110% 140% at 100% 0%, #B09219 0%, #B08A05 18%, rgb(from #9D6D01 r g b / 0.55) 42%, rgb(from #4E2F01 r g b / 0.35) 68%, transparent 92%), var(--dark);
-    }
-
-    &::after {
-        background: linear-gradient(to top right, rgb(from var(--dark) r g b / 1) 15%, rgb(from var(--dark) r g b / 0.25) 100%);
-    }
+    @include backgroundDecoration();
 
     @media (width >=1024px) {
         padding-top: var(--headerHeight);
@@ -28,7 +16,7 @@
     }
 
     .bannerContent {
-        gap: 1rem;
+        gap: 3rem;
         position: relative;
         z-index: 1;
 

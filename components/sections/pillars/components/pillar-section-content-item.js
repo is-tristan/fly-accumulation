@@ -8,12 +8,12 @@ import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
 // Styles
-import styles from "../styles/disciplines.module.scss";
+import styles from "../styles/pillars.module.scss";
 
 // Icons
 import { arrowUpRight } from "@/utils/icons";
 
-export default function DisciplineSectionContentItem({
+export default function PillarSectionContentItem({
     item,
     headingType,
     index = 0,
@@ -26,16 +26,16 @@ export default function DisciplineSectionContentItem({
 
         <motion.div
             ref={ref}
-            className={styles.disciplinesContentItem}
+            className={styles.pillarsContentItem}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0)" } : { opacity: 0, y: 16, filter: "blur(0.25rem)" }}
             initial={{ opacity: 0, y: 16, filter: "blur(0.25rem)" }}
             transition={{ duration: 0.5, delay: 0.15 + (index * 0.075), ease: "easeOut" }}
             data-heading-type={headingType}
         >
 
-            <div className={styles.disciplinesContentItemLeft}>
+            <div className={styles.pillarsContentItemLeft}>
 
-                <div className={styles.disciplinesContentItemTitle}>
+                <div className={styles.pillarsContentItemTitle}>
 
                     <span>{item.number}</span>
 
@@ -47,9 +47,9 @@ export default function DisciplineSectionContentItem({
 
             </div>
 
-            <div className={styles.disciplinesContentItemRight}>
+            <div className={styles.pillarsContentItemRight}>
 
-                <Link href={item.href} className={styles.disciplinesContentItemLink} dangerouslySetInnerHTML={{ __html: arrowUpRight }} />
+                <Link href={item.href} className={styles.pillarsContentItemLink} dangerouslySetInnerHTML={{ __html: arrowUpRight }} />
 
             </div>
 

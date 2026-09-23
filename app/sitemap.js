@@ -5,7 +5,6 @@ import { getSiteUrl } from "@/lib/seo"
 const staticRoutes = [
   "/",
   "/work",
-  "/services",
   "/contact",
   "/company",
   "/company/about",

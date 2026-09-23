@@ -105,7 +105,7 @@
     overflow: hidden;
     position: relative;
     border: 1px solid var(--border);
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover {
         border-color: var(--primary);

@@ -4,7 +4,7 @@
     position: fixed;
     width: 100%;
     border-bottom: 1px solid rgb(from var(--light) r g b / 0.1);
-    transition: var(--ease);
+    transition: var(--cubic);
 
     .headerContainer {
         flex-flow: row nowrap;
@@ -28,6 +28,10 @@
         @media (width >=1024px) {
             background: rgb(from var(--dark) r g b / 0.9);
             backdrop-filter: blur(0.5rem);
+
+            .logo {
+                height: calc(var(--headerHeight) - 3rem);
+            }
         }
     }
 }
@@ -46,22 +50,18 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 1.75rem;
+    height: calc(var(--mobileHeaderHeight) - 1rem);
     position: relative;
     color: var(--primary);
-    transition: var(--ease);
-
-    @media (width >=768px) {
-        height: 2rem;
-    }
+    transition: var(--cubic);
 
     @media (width >=1024px) {
-        height: 2.5rem;
+        height: calc(var(--headerHeight) - 1.25rem);
     }
 
     .logoImage {
         display: flex;
-        width: max-content;
+        width: auto;
         height: 100%;
 
         svg {

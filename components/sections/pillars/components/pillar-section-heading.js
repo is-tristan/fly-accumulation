@@ -8,10 +8,10 @@ import { motion, useInView } from "motion/react";
 import Eyebrow from "@/components/content/eyebrow/eyebrow";
 
 // Styles
-import styles from "../styles/disciplines.module.scss";
+import styles from "../styles/pillars.module.scss";
 
-export default function DisciplineSectionHeading({
-    eyebrowText = "Our Disciplines",
+export default function PillarSectionHeading({
+    eyebrowText = "Our Pillars",
 }) {
 
     const ref = useRef(null);
@@ -21,13 +21,13 @@ export default function DisciplineSectionHeading({
 
         <motion.div
             ref={ref}
-            className={styles.disciplinesSectionHeading}
+            className={styles.pillarsSectionHeading}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0)" } : { opacity: 0, y: 16, filter: "blur(0.25rem)" }}
             initial={{ opacity: 0, y: 16, filter: "blur(0.25rem)" }}
             transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
         >
 
-            <div className={styles.disciplinesSectionLeft}>
+            <div className={styles.pillarsSectionLeft}>
 
                 <Eyebrow
                     text={eyebrowText}

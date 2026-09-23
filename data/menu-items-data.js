@@ -1,24 +1,22 @@
 export const menuItemsData = [
     {
-        label: "Company",
-        href: "#",
-        submenu: [
-            {
-                label: "About",
-                href: "/company/about",
-            },
-            {
-                label: "Team",
-                href: "/company/team",
-            },
-        ],
+        label: "About",
+        href: "/about",
     },
     {
-        label: "Services",
-        href: "/services",
+        label: "Talent",
+        href: "/talent",
     },
     {
         label: "Work",
         href: "/work",
+    },
+    {
+        label: "Team",
+        href: "/about#team",
+    },
+    {
+        label: "Contact",
+        href: "/contact",
     },
 ];

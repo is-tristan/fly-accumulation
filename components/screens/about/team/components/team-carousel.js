@@ -19,7 +19,7 @@ export default function TeamCarousel({ items = [] }) {
     return (
 
         <Splide
-            className={`${styles.teamCarousel} hasArrows hasPagination`}
+            className={`${styles.teamCarousel} overflows`}
             options={{
                 type: "slide",
                 perPage: 3,
@@ -41,6 +41,9 @@ export default function TeamCarousel({ items = [] }) {
                     },
                 },
             }}
+            data-splide-arrows="true"
+            data-splide-hover-arrows="true"
+            data-splide-pagination="true"
         >
 
             {items.map((item) => (

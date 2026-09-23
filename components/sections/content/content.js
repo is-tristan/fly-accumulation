@@ -15,6 +15,7 @@ export default function ContentSection({
     containerClassName = undefined,
     eyebrowText = "Lorem Ipsum",
     titleTag = "h2",
+    titleClass,
     title,
     description,
     image,
@@ -47,8 +48,8 @@ export default function ContentSection({
                         <Text
                             eyebrow={{ text: eyebrowText ? eyebrowText : null }}
                             title={title}
-                            titleClass={`sectionTitle`}
                             titleTag={titleTag}
+                            titleClass={titleClass}
                             description={description}
                             alignment={!image ? "centered" : "default"}
                         />

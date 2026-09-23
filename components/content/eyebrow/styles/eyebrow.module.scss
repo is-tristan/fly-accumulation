@@ -7,14 +7,11 @@
     font-size: 0.75rem;
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 
     @media (width >=768px) {
         gap: 0.75rem;
         font-size: 0.875rem;
-    }
-
-    @media (width >=1024px) {
-        font-size: 1rem;
     }
 
     .separator {
@@ -36,7 +33,7 @@
     &[data-theme="light"] {
 
         .text {
-            color: var(--textLight);
+            color: rgb(from var(--light) r g b / 0.66);
         }
 
         .separator {

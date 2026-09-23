@@ -27,7 +27,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    transition: var(--ease);
+    transition: var(--cubic);
     opacity: 0;
     visibility: hidden;
     transform: translateX(100%);
@@ -119,7 +119,7 @@
     padding: 0;
     text-align: left;
     cursor: pointer;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover,
     &:focus,
@@ -134,7 +134,7 @@
     align-items: center;
     width: 1rem;
     height: 1rem;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     svg {
         width: 100%;
@@ -160,7 +160,7 @@
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &[data-submenu-open="true"] {
         max-height: 40rem;
@@ -177,7 +177,7 @@
     font-size: 0.9375rem;
     font-weight: 400;
     color: rgb(from var(--light) r g b / 0.85);
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover,
     &:focus,
@@ -199,7 +199,7 @@
     font-size: 0.9375rem;
     font-weight: 400;
     text-align: center;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover {
         filter: brightness(1.05);
@@ -214,7 +214,7 @@
     backdrop-filter: blur(0.25rem);
     opacity: 0;
     visibility: hidden;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &[data-toggled="true"] {
         opacity: 1;

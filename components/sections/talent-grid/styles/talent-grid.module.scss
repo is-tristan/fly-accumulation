@@ -31,7 +31,7 @@
     flex-flow: column nowrap;
     width: 100%;
     gap: 1rem;
-    transition: var(--ease);
+    transition: var(--cubic);
 
     &:hover {
         .talentGridItemImage {
@@ -57,13 +57,13 @@
         overflow: hidden;
         position: relative;
         border: 1px solid var(--border);
-        transition: var(--ease);
+        transition: var(--cubic);
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--ease);
+            transition: var(--cubic);
         }
     }
 

@@ -28,6 +28,14 @@ export default function WebsiteLayout({ children }) {
 
         <Footer />
 
+        <div className="backgroundDecoration" aria-hidden="true" role="presentation" keyboard-focusable="false" tabindex="-1">
+
+          <div className="backgroundDecorationTop" />
+
+          <div className="backgroundDecorationBottom" />
+          
+        </div>
+
       </div>
 
       <LenisScrollToTop />
