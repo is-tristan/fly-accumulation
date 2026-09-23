@@ -6,19 +6,8 @@ const imageFields = /* groq */ `
   crop
 `
 
-const portableTextMediaExpansion = /* groq */ `
-  ...,
-  _type == "video" => {
-    ...,
-    "url": file.asset->url,
-    poster {
-      ${imageFields}
-    }
-  }
-`
-
 export const workCarouselQuery = defineQuery(`
-  *[_type == "work" && featured == true] | order(orderRank) {
+  *[_type == "work"] | order(orderRank) {
     _id,
     title,
     "slug": slug.current,
@@ -28,20 +17,14 @@ export const workCarouselQuery = defineQuery(`
       title,
       "slug": slug.current
     },
-    "video": video.asset->url,
-    videoPoster {
-      ${imageFields}
-    }
+    video
   }
 `)
 
 export const featuredVideoQuery = defineQuery(`
   *[_type == "work"] | order(orderRank)[0] {
     _id,
-    "video": video.asset->url,
-    videoPoster {
-      ${imageFields}
-    }
+    video
   }
 `)
 
@@ -50,7 +33,7 @@ const workGridFields = /* groq */ `
   title,
   "slug": slug.current,
   "category": categories[0]->title,
-  "image": coalesce(gallery[0], videoPoster) {
+  "image": gallery[0] {
     ${imageFields}
   },
   categories[]->{
@@ -93,35 +76,18 @@ export const workBySlugQuery = defineQuery(`
     title,
     "slug": slug.current,
     description,
-    year,
-    featured,
     categories[]->{
       _id,
       title,
       "slug": slug.current
     },
-    "video": video.asset->url,
-    videoPoster {
+    video,
+    "image": gallery[0] {
       ${imageFields}
     },
     gallery[]{
       _key,
       ${imageFields}
-    },
-    tradeContent[]{
-      ${portableTextMediaExpansion}
-    },
-    planContent[]{
-      ${portableTextMediaExpansion}
-    },
-    activateContent[]{
-      ${portableTextMediaExpansion}
-    },
-    resultContent[]{
-      ${portableTextMediaExpansion}
-    },
-    testimonialContent[]{
-      ${portableTextMediaExpansion}
     }
   }
 `)
@@ -139,50 +105,66 @@ export const teamCarouselQuery = defineQuery(`
   }
 `)
 
-export const careersGridQuery = defineQuery(`
-  *[_type == "career"] | order(orderRank) {
+export const testimonialCarouselQuery = defineQuery(`
+  *[_type == "testimonial"] | order(orderRank)[0...8] {
     _id,
     title,
-    "slug": slug.current,
-    image {
+    position,
+    companyLogo {
       ${imageFields}
     },
-    "category": category->title,
-    location,
-    "contractType": select(
-      contractType == "full-time" => "Full-time",
-      contractType == "part-time" => "Part-time",
-      contractType == "contract" => "Contract",
-      contractType == "internship" => "Internship",
-      contractType == "freelance" => "Freelance",
-      contractType
-    ),
-    salary,
-    "excerpt": array::join(string::split(pt::text(content), "")[0...120], "")
+    invertLogo,
+    content
   }
 `)
 
-export const careerBySlugQuery = defineQuery(`
-  *[_type == "career" && slug.current == $slug][0] {
+export const talentGridQuery = defineQuery(`
+  *[_type == "talent"] | order(orderRank) {
     _id,
     title,
     "slug": slug.current,
-    image {
+    location,
+    "image": gallery[0] {
       ${imageFields}
     },
-    "category": category->title,
+    contentFocus[0...3]->{
+      _id,
+      title,
+      "slug": slug.current
+    }
+  }
+`)
+
+export const talentBySlugQuery = defineQuery(`
+  *[_type == "talent" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    gallery[]{
+      _key,
+      ${imageFields}
+    },
+    video,
+    audienceSize,
     location,
-    "contractType": select(
-      contractType == "full-time" => "Full-time",
-      contractType == "part-time" => "Part-time",
-      contractType == "contract" => "Contract",
-      contractType == "internship" => "Internship",
-      contractType == "freelance" => "Freelance",
-      contractType
-    ),
-    salary,
-    content,
-    "description": array::join(string::split(pt::text(content), "")[0...160], "")
+    contentFocus[]->{
+      _id,
+      title,
+      "slug": slug.current
+    },
+    brandDeals[]->{
+      _id,
+      title,
+      image {
+        ${imageFields}
+      },
+      invertLogo
+    },
+    description,
+    tiktokUrl,
+    tiktokFollowerCount,
+    instagramUrl,
+    instagramFollowerCount
   }
 `)
 
@@ -196,70 +178,13 @@ export const legalBySlugQuery = defineQuery(`
   }
 `)
 
-export const newsGridQuery = defineQuery(`
-  *[_type == "news"] | order(orderRank) {
-    _id,
-    title,
-    "slug": slug.current,
-    image {
-      ${imageFields}
-    },
-    excerpt,
-    "category": category->title,
-    "author": author->name
-  }
-`)
-
-export const newsBySlugQuery = defineQuery(`
-  *[_type == "news" && slug.current == $slug][0] {
-    _id,
-    title,
-    "slug": slug.current,
-    image {
-      ${imageFields}
-    },
-    excerpt,
-    "category": category->title,
-    author->{
-      name,
-      image {
-        ${imageFields}
-      }
-    },
-    content[]{
-      ${portableTextMediaExpansion}
-    }
-  }
-`)
-
-export const relatedNewsQuery = defineQuery(`
-  *[_type == "news" && slug.current != $slug] | order(
-    select(category->title == $category => 0, 1) asc,
-    orderRank
-  )[0...3] {
-    _id,
-    title,
-    "slug": slug.current,
-    image {
-      ${imageFields}
-    },
-    excerpt,
-    "category": category->title,
-    "author": author->name
-  }
-`)
-
 export const sitemapQuery = defineQuery(`
   {
     "work": *[_type == "work" && defined(slug.current)] | order(orderRank) {
       "slug": slug.current,
       _updatedAt
     },
-    "news": *[_type == "news" && defined(slug.current)] | order(orderRank) {
-      "slug": slug.current,
-      _updatedAt
-    },
-    "careers": *[_type == "career" && defined(slug.current)] | order(orderRank) {
+    "talent": *[_type == "talent" && defined(slug.current)] | order(orderRank) {
       "slug": slug.current,
       _updatedAt
     },

@@ -43,7 +43,7 @@ export default function TeamCarousel({ items = [] }) {
             }}
         >
 
-            {items.map((item, index) => (
+            {items.map((item) => (
 
                 <SplideSlide key={item._id}>
 
@@ -53,7 +53,6 @@ export default function TeamCarousel({ items = [] }) {
                         image={item.image}
                         email={item.email}
                         linkedIn={item.linkedIn}
-                        index={index}
                     />
 
                 </SplideSlide>

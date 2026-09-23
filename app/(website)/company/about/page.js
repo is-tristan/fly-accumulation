@@ -4,9 +4,10 @@ import { buildPageMetadata } from "@/lib/seo"
 // Components
 import Banner from "@/components/sections/banner/banner";
 import Content from "@/components/sections/content/content";
-import CtaSection from "@/components/sections/cta/cta-section";
 import DisciplinesSection from "@/components/sections/disciplines/disciplines-section";
 import TeamCarouselSection from "@/components/screens/company/about/team/team-carousel-section";
+import TestimonialCarouselSection from "@/components/sections/testimonial-carousel-section/testimonials";
+import CtaSection from "@/components/sections/cta/cta-section";
 
 export const metadata = buildPageMetadata({
     title: "About",
@@ -34,6 +35,10 @@ export default function AboutPage() {
                 image="/images/company/about/setting-ourselves-apart-from-other-agencies.avif"
             />
 
+            <TeamCarouselSection />
+
+            <DisciplinesSection />
+
             <Content
                 eyebrowText="Reaching new goals"
                 title="Elevating your reach and impact to new heights"
@@ -42,9 +47,7 @@ export default function AboutPage() {
                 hasBrandMark={true}
             />
 
-            <TeamCarouselSection />
-
-            <DisciplinesSection />
+            <TestimonialCarouselSection />
 
             <CtaSection />
 

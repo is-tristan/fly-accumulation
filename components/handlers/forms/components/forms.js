@@ -3,6 +3,9 @@
 // React
 import { useState } from "react";
 
+// Next
+import Link from "next/link";
+
 // Icons
 import { arrowUpRight } from "@/utils/icons";
 
@@ -94,17 +97,6 @@ export default function ContactForm() {
 
             </fieldset>
 
-            <fieldset className="fieldset" data-name="website">
-
-                <legend className="legend">Website</legend>
-
-                <div className="field">
-
-                    <input type="url" name="website" autoComplete="url" placeholder="Enter your website URL" />
-
-                </div>
-
-            </fieldset>
 
             <fieldset className="fieldset" data-name="message">
 
@@ -128,13 +120,8 @@ export default function ContactForm() {
 
                     <label htmlFor="whatsapp-marketing">
 
-                        <div className="fieldConsetContent">
+                        By sending this message, you agree to our <Link href="/privacy-policy" target="_blank" className="colorPrimary">privacy policy</Link>.
 
-                            <p><strong>Yes, keep me updated on WhatsApp.</strong></p>
-
-                            <p>Send me occasional media insights, trading opportunities, rate movements and availability from Fly Accumulation. I can reply STOP at any time.</p>
-
-                        </div>
                     </label>
 
                 </div>

@@ -9,40 +9,24 @@ export function urlFor(source) {
 }
 
 export const sanityImagePresets = {
-  newsCard: {
-    width: 1536,
-    aspectRatio: 4 / 3,
-  },
-  newsBanner: {
-    width: 1920,
-    aspectRatio: 4 / 3,
-  },
-  authorAvatar: {
-    width: 160,
-    aspectRatio: 1,
-  },
   teamCard: {
     width: 576,
     aspectRatio: 3 / 4,
   },
-  careerCard: {
-    width: 1024,
-    aspectRatio: 16 / 9,
+  companyLogo: {
+    width: 512,
+    fit: "max",
   },
   workGrid: {
     width: 1536,
     aspectRatio: 1,
   },
+  talentGrid: {
+    width: 1152,
+    aspectRatio: 3 / 4,
+  },
   workGallery: {
     width: 1920,
-    aspectRatio: 16 / 9,
-  },
-  videoPoster: {
-    width: 1920,
-    aspectRatio: 16 / 9,
-  },
-  contentVideoPoster: {
-    width: 1280,
     aspectRatio: 16 / 9,
   },
   openGraph: {
@@ -70,12 +54,14 @@ export function getSanityImageUrl(source, preset) {
     return urlFor(source).auto("format").url()
   }
 
-  const height = Math.round(config.width / config.aspectRatio)
+  let image = urlFor(source).width(config.width).auto("format")
 
-  return urlFor(source)
-    .width(config.width)
-    .height(height)
-    .fit("crop")
-    .auto("format")
-    .url()
+  if (config.aspectRatio) {
+    const height = Math.round(config.width / config.aspectRatio)
+    image = image.height(height).fit(config.fit || "crop")
+  } else if (config.fit) {
+    image = image.fit(config.fit)
+  }
+
+  return image.url()
 }

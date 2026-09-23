@@ -11,7 +11,6 @@ import { buildPageMetadata } from "@/lib/seo"
 // Components
 import Banner from "@/components/sections/banner/banner"
 import GalleryCarouselSection from "@/components/screens/work/gallery-carousel/gallery-carousel-section"
-import ContentSection from "@/components/screens/work/content-section/content-section"
 import CtaSection from "@/components/sections/cta/cta-section"
 
 async function getWork(slug) {
@@ -31,7 +30,7 @@ export async function generateMetadata({ params }) {
   return buildPageMetadata({
     title: work.title,
     description: work.description,
-    image: work.videoPoster,
+    image: work.image,
     path: `/work/${work.slug}`,
   })
 }
@@ -60,16 +59,7 @@ export default async function WorkDetailsPage({ params }) {
 
       <GalleryCarouselSection
         video={work.video}
-        videoPoster={work.videoPoster}
         gallery={work.gallery}
-      />
-
-      <ContentSection
-        tradeContent={work.tradeContent}
-        planContent={work.planContent}
-        activateContent={work.activateContent}
-        resultContent={work.resultContent}
-        testimonialContent={work.testimonialContent}
       />
 
       <CtaSection />

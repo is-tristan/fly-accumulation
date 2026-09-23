@@ -22,12 +22,9 @@ export default function ContactPage() {
                 <div className={`content`} data-alignment="centered">
 
                     <Text
-                        eyebrow={{
-                            text: "Contact us",
-                        }}
                         titleTag="h1"
-                        title="Let's Talk"
-                        description="<p class='large ch50'>Have a campaign, a media budget or simply want to understand what your media could be doing differently?</p>"
+                        title="Work with us"
+                        description="<p class='large ch50'>Make your next project reach new heights in flight with us!</p>"
                     />
 
                     <FormClient />

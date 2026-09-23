@@ -1,26 +1,22 @@
+// Icons
+import { envelopeIcon, clockIcon, locationIcon } from "@/utils/icons";
+
 export const officeLocationsData = [
     {
-        title: "Cardiff",
-        address: "389 Newport Road, CF24 1TP",
-        phone: "+44 29 2233 7225",
-        href: "tel:+442922337225"
+        title: "Email Us",
+        label: "info@flyaccumulationpr.com",
+        href: "mailto:info@flyaccumulationpr.com",
+        icon: envelopeIcon
     },
     {
-        title: "London",
-        address: "The Engine Room, Battersea Power Station, SW11 8BZ",
-        phone: "+44 29 2233 7225",
-        href: "tel:+442922337225"
+        title: "Working Hours",
+        label: "Monday - Friday: 9:00 - 17:00",
+        icon: clockIcon
     },
     {
-        title: "Manchester",
-        address: "5 Piccadilly Place, M1 3BP",
-        phone: "+44 29 2233 7225",
-        href: "tel:+442922337225"
-    },
-    {
-        title: "New York",
-        address: "565 5th Avenue, Suite 3000, NY 10017",
-        phone: "+1 646 755 8350",
-        href: "tel:+16467558350"
+        title: "Location",
+        label: "Princess Caroline House, Floor 4, High Street, Essex, SS1 1JE, United Kingdom",
+        href: "https://maps.app.goo.gl/2oze6iHfrUTDPZSp6",
+        icon: locationIcon
     }
 ]

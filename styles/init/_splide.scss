@@ -8,7 +8,7 @@
     &.hasPagination {
         .splide__pagination {
             display: flex;
-            flex-flow: row nowrap;
+            flex-flow: row wrap;
             justify-content: flex-start;
             align-items: center;
             gap: 0.75rem;
@@ -21,7 +21,7 @@
             }
 
             .splide__pagination__page {
-                width: 3rem;
+                width: 1.875rem;
                 height: 0.33rem;
                 background: rgb(from var(--light) r g b / 0.3);
                 border: none;
@@ -31,6 +31,14 @@
                 margin: 0;
                 cursor: pointer;
                 transition: var(--ease);
+
+                @media (width >=768px) {
+                    width: 2.25rem;
+                }
+
+                @media (width >=1024px) {
+                    width: 3rem;
+                }
 
                 &:hover {
                     background: var(--primary);

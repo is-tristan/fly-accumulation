@@ -107,10 +107,6 @@ p {
     &.extraLarge {
         font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     }
-
-    &.ch50 {
-        max-width: 50ch;
-    }
 }
 
 strong {

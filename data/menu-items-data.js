@@ -8,10 +8,6 @@ export const menuItemsData = [
                 href: "/company/about",
             },
             {
-                label: "Careers",
-                href: "/company/careers",
-            },
-            {
                 label: "Team",
                 href: "/company/team",
             },
@@ -24,9 +20,5 @@ export const menuItemsData = [
     {
         label: "Work",
         href: "/work",
-    },
-    {
-        label: "News",
-        href: "/news",
     },
 ];

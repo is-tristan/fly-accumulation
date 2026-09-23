@@ -16,6 +16,7 @@ export default function Text({
     hasFullStop = true,
     titleTag = "h2",
     titleClass = undefined,
+    titleStyle = undefined,
     description,
     descriptionClass = undefined,
 }) {
@@ -39,6 +40,7 @@ export default function Text({
                     initial={hasAnimation ? { opacity: 0, y: 16, filter: "blur(0.25rem)" } : { opacity: 1, y: 0, filter: "blur(0)" }}
                     transition={hasAnimation ? { duration: 0.5, delay: 0.15 } : { duration: 0, delay: 0 }}
                     className={`titleContainer ${hasFullStop ? "hasFullStop" : undefined}`}
+                    style={titleStyle}
                 >
 
                     {text && (

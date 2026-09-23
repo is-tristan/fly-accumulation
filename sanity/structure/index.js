@@ -19,42 +19,33 @@ export const structure = (S, context) =>
               S.documentTypeListItem("workCategory").title("Work Categories"),
             ])
         ),
+      S.listItem()
+        .title("Talent")
+        .child(
+          S.list()
+            .title("Talent")
+            .items([
+              orderableDocumentListDeskItem({
+                type: "talent",
+                title: "Talent",
+                S,
+                context,
+              }),
+              S.documentTypeListItem("talentContentFocus").title("Content Focus"),
+              S.documentTypeListItem("talentBrandDeal").title("Brand Deals"),
+            ])
+        ),
       orderableDocumentListDeskItem({
         type: "team",
         title: "Team",
         S,
         context,
       }),
-      S.listItem()
-        .title("Careers")
-        .child(
-          S.list()
-            .title("Careers")
-            .items([
-              orderableDocumentListDeskItem({
-                type: "career",
-                title: "Roles",
-                S,
-                context,
-              }),
-              S.documentTypeListItem("careerCategory").title("Career Categories"),
-            ])
-        ),
-      S.listItem()
-        .title("News")
-        .child(
-          S.list()
-            .title("News")
-            .items([
-              orderableDocumentListDeskItem({
-                type: "news",
-                title: "Articles",
-                S,
-                context,
-              }),
-              S.documentTypeListItem("newsCategory").title("Categories"),
-              S.documentTypeListItem("newsAuthor").title("Authors"),
-            ])
-        ),
+      orderableDocumentListDeskItem({
+        type: "testimonial",
+        title: "Testimonials",
+        S,
+        context,
+      }),
       S.documentTypeListItem("legal").title("Legal"),
     ])

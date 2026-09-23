@@ -28,7 +28,7 @@ export default function FooterInfo() {
                     dangerouslySetInnerHTML={{ __html: logo }}
                 />
 
-                <p style={{ marginBottom: "0" }}>Media Trading, Planning & Activation</p>
+                <p className={`${styles.footerInfoText} extraLarge`}>Ready to find the <span className="colorPrimary">perfect creators</span> for your influencer campaigns <span className="colorPrimary">without hassle?</span></p>
 
                 <FooterSocialItems />
 

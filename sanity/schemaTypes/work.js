@@ -1,7 +1,6 @@
 import { orderRankField, orderRankOrdering } from "@sanity/orderable-document-list"
 import { defineArrayMember, defineField, defineType } from "sanity"
 import { PlayIcon } from "@sanity/icons/Play"
-import { portableTextField } from "./portableText"
 
 export const work = (context) => defineType({
   name: "work",
@@ -34,23 +33,6 @@ export const work = (context) => defineType({
       rows: 4,
     }),
     defineField({
-      name: "year",
-      title: "Year",
-      type: "number",
-      validation: (rule) =>
-        rule
-          .integer()
-          .min(1900)
-          .max(2100),
-    }),
-    defineField({
-      name: "featured",
-      title: "Featured",
-      type: "boolean",
-      description: "Show this work in the home carousel",
-      initialValue: false,
-    }),
-    defineField({
       name: "categories",
       title: "Categories",
       type: "array",
@@ -63,19 +45,21 @@ export const work = (context) => defineType({
     }),
     defineField({
       name: "video",
-      title: "Video",
-      type: "file",
-      options: {
-        accept: "video/*",
-      },
-    }),
-    defineField({
-      name: "videoPoster",
-      title: "Video Poster",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      title: "YouTube URL",
+      type: "url",
+      description: "Paste a YouTube watch, share, or embed link",
+      validation: (rule) =>
+        rule.uri({
+          scheme: ["http", "https"],
+        }).custom((value) => {
+          if (!value) {
+            return true
+          }
+
+          const isYoutube = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(value)
+
+          return isYoutube || "Must be a valid YouTube URL"
+        }),
     }),
     defineField({
       name: "gallery",
@@ -93,26 +77,12 @@ export const work = (context) => defineType({
         layout: "grid",
       },
     }),
-    portableTextField("tradeContent", "Trade Content"),
-    portableTextField("planContent", "Plan Content"),
-    portableTextField("activateContent", "Activate Content"),
-    portableTextField("resultContent", "Result Content"),
-    portableTextField("testimonialContent", "Testimonial Content"),
   ],
   preview: {
     select: {
       title: "title",
-      media: "videoPoster",
+      media: "gallery.0",
       subtitle: "description",
-      year: "year",
-      featured: "featured",
-    },
-    prepare({ title, media, subtitle, year, featured }) {
-      return {
-        title: featured ? `★ ${title}` : title,
-        subtitle: [year, subtitle].filter(Boolean).join(" — "),
-        media,
-      }
     },
   },
 })

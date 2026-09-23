@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
 // Next
@@ -14,61 +14,24 @@ import "@splidejs/react-splide/css/core";
 // Sanity
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
+// YouTube
+import { getYoutubeEmbedUrl } from "@/lib/youtube";
+
 // Styles
 import styles from "../styles/gallery-carousel.module.scss";
 
-function getSlideVideo(slide) {
-    return slide?.slide?.querySelector("video") || null;
-}
-
-function playSlideVideo(splide, slide) {
-    const video = getSlideVideo(slide);
-
-    if (!video) {
-        return;
-    }
-
-    video.play().catch(() => { });
-}
-
-function pauseSlideVideo(splide, slide) {
-    const video = getSlideVideo(slide);
-
-    if (!video) {
-        return;
-    }
-
-    video.pause();
-}
-
-function pauseAllVideos(root) {
-    root?.querySelectorAll("video").forEach((video) => {
-        video.pause();
-    });
-}
-
-function playActiveVideo(root) {
-    const activeVideo = root?.querySelector(".splide__slide.is-active video")
-        || root?.querySelector("video");
-
-    if (!activeVideo) {
-        return;
-    }
-
-    activeVideo.play().catch(() => { });
-}
-
 export default function GalleryCarousel({
     video,
-    videoPoster,
     gallery = [],
 }) {
 
     const ref = useRef(null);
-    const isVisibleRef = useRef(false);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
-    const isVisible = useInView(ref, { amount: 0.25 });
-    const posterUrl = getSanityImageUrl(videoPoster, "videoPoster");
+    const youtubeEmbedUrl = getYoutubeEmbedUrl(video, {
+        autoplay: false,
+        mute: false,
+        controls: true,
+    });
 
     const gallerySlides = (gallery ?? [])
         .map((image, index) => {
@@ -87,33 +50,15 @@ export default function GalleryCarousel({
         .filter(Boolean);
 
     const slides = [
-        ...(video
+        ...(youtubeEmbedUrl
             ? [{
                 key: "video",
                 type: "video",
-                video,
-                posterUrl,
+                youtubeEmbedUrl,
             }]
             : []),
         ...gallerySlides,
     ];
-
-    useEffect(() => {
-
-        isVisibleRef.current = isVisible;
-
-        if (!ref.current) {
-            return;
-        }
-
-        if (isVisible) {
-            playActiveVideo(ref.current);
-            return;
-        }
-
-        pauseAllVideos(ref.current);
-
-    }, [isVisible]);
 
     if (!slides.length) {
         return null;
@@ -148,17 +93,6 @@ export default function GalleryCarousel({
                         }
                     }
                 }}
-                onActive={(splide, slide) => {
-
-                    if (!isVisibleRef.current) {
-                        pauseSlideVideo(splide, slide);
-                        return;
-                    }
-
-                    playSlideVideo(splide, slide);
-
-                }}
-                onInactive={pauseSlideVideo}
             >
 
                 {slides.map((slide, index) => (
@@ -167,20 +101,12 @@ export default function GalleryCarousel({
 
                         {slide.type === "video" ? (
 
-                            <video
-                                src={slide.video}
-                                poster={slide.posterUrl || undefined}
-                                muted
-                                loop
-                                playsInline
-                                controls
-                                preload="metadata"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                    objectPosition: "center",
-                                }}
+                            <iframe
+                                src={slide.youtubeEmbedUrl}
+                                title="Work video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                className={styles.galleryCarouselEmbed}
                             />
 
                         ) : (

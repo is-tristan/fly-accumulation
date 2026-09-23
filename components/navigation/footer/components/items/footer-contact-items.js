@@ -7,42 +7,67 @@ import styles from "../../styles/footer.module.scss";
 // Data
 import { officeLocationsData as data } from "@/data/contact-info-data";
 
-// Icons
-import { locationIcon } from "@/utils/icons";
-
 export default function FooterContactItems({ className = undefined }) {
 
     return (
 
         <div className={`${styles.contactItems} ${className}`}>
 
-            {data.map((item, index) => (
+            {data.map((item, index) => {
 
-                <Link
-                    key={index}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.contactItem}
-                    title={`Click to call ${item.title} office`}
-                >
+                const content = (
 
-                    <div className={styles.contactItemIcon} dangerouslySetInnerHTML={{ __html: locationIcon }} />
+                    <>
 
-                    <div className={styles.contactItemContent}>
+                        <div className={styles.contactItemIcon} dangerouslySetInnerHTML={{ __html: item.icon }} />
 
-                        <span className={styles.contactItemTitle}>{item.title}</span>
+                        <div className={styles.contactItemContent}>
 
-                        <span className={styles.contactItemAddress} dangerouslySetInnerHTML={{ __html: item.address }} />
+                            <span className={styles.contactItemTitle}>{item.title}</span>
 
-                        <span className={styles.contactItemPhone}>{item.phone}</span>
+                            <span className={styles.contactItemLabel}>{item.label}</span>
+
+                        </div>
+
+                    </>
+
+                );
+
+                if (item.href) {
+
+                    return (
+
+                        <Link
+                            key={index}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.contactItem}
+                            title={item.title}
+                        >
+
+                            {content}
+
+                        </Link>
+
+                    );
+
+                }
+
+                return (
+
+                    <div
+                        key={index}
+                        className={styles.contactItem}
+                    >
+
+                        {content}
 
                     </div>
 
-                </Link>
+                );
 
-
-            ))}
+            })}
 
         </div>
 

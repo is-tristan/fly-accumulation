@@ -21,10 +21,7 @@ export default async function FeaturedVideo() {
 
             <div className={`container`}>
 
-                <FeaturedVideoItem
-                    video={work.video}
-                    videoPoster={work.videoPoster}
-                />
+                <FeaturedVideoItem video={work.video} />
 
             </div>
 

@@ -4,23 +4,26 @@ import Text from "@/components/content/text/text";
 import CategoryTags from "@/components/content/category-tags/category-tags";
 import Button from "@/components/handlers/button";
 
-// Sanity
-import { getSanityImageUrl } from "@/sanity/lib/image";
+// YouTube
+import { getYoutubeEmbedUrl } from "@/lib/youtube";
 
 // Styles
 import styles from "../styles/work-carousel-section.module.scss";
 
 export default function WorkCarouselItem({
-    index,
     title,
     description,
     categories = [],
     video,
-    videoPoster,
     workHref = "/work",
 }) {
 
-    const posterUrl = getSanityImageUrl(videoPoster, "videoPoster");
+    const youtubeEmbedUrl = getYoutubeEmbedUrl(video, {
+        autoplay: true,
+        mute: true,
+        loop: true,
+        controls: false,
+    });
 
     return (
 
@@ -63,17 +66,15 @@ export default function WorkCarouselItem({
 
             </div>
 
-            {video && (
+            {youtubeEmbedUrl && (
 
                 <div className={styles.workCarouselItemVideo}>
 
-                    <video
-                        src={video}
-                        poster={posterUrl || undefined}
-                        muted
-                        loop
-                        playsInline
-                        preload={index === 0 ? "metadata" : "none"}
+                    <iframe
+                        src={youtubeEmbedUrl}
+                        title={title || "Featured work video"}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
                     />
 
                 </div>

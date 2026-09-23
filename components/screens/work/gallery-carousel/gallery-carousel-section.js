@@ -6,7 +6,6 @@ import styles from "./styles/gallery-carousel.module.scss";
 
 export default function GalleryCarouselSection({
     video,
-    videoPoster,
     gallery = [],
 }) {
 
@@ -22,7 +21,6 @@ export default function GalleryCarouselSection({
 
                 <GalleryCarousel
                     video={video}
-                    videoPoster={videoPoster}
                     gallery={gallery}
                 />
 
