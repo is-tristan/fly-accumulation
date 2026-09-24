@@ -25,6 +25,14 @@ export const sanityImagePresets = {
     width: 1152,
     aspectRatio: 3 / 4,
   },
+  talentGallery: {
+    width: 1152,
+    aspectRatio: 3 / 4,
+  },
+  talentGalleryThumb: {
+    width: 256,
+    aspectRatio: 1,
+  },
   workGallery: {
     width: 1920,
     aspectRatio: 16 / 9,

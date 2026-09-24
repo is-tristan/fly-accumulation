@@ -59,7 +59,7 @@ export default async function WorkDetailsPage({ params }) {
 
       <GalleryCarouselSection
         video={work.video}
-        gallery={work.gallery}
+        featuredImage={work.featuredImage}
       />
 
       <CtaSection />

@@ -33,7 +33,7 @@ const workGridFields = /* groq */ `
   title,
   "slug": slug.current,
   "category": categories[0]->title,
-  "image": gallery[0] {
+  "image": featuredImage {
     ${imageFields}
   },
   categories[]->{
@@ -82,11 +82,10 @@ export const workBySlugQuery = defineQuery(`
       "slug": slug.current
     },
     video,
-    "image": gallery[0] {
+    "image": featuredImage {
       ${imageFields}
     },
-    gallery[]{
-      _key,
+    featuredImage {
       ${imageFields}
     }
   }
@@ -140,6 +139,9 @@ export const talentBySlugQuery = defineQuery(`
     _id,
     title,
     "slug": slug.current,
+    "image": gallery[0] {
+      ${imageFields}
+    },
     gallery[]{
       _key,
       ${imageFields}

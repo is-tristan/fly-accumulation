@@ -19,9 +19,11 @@ export default function TalentPage() {
         <>
 
             <Banner
-                eyebrow={null}
+                eyebrowText={null}
                 title="Talent"
                 description={null}
+                btnTextPrimary="Who we are"
+                btnLinkPrimary="/about"
             />
 
             <TalentGrid />

@@ -2,11 +2,6 @@
 import { buildPageMetadata, siteName } from "@/lib/seo"
 
 // Components
-import WorkCarouselSection from "@/components/screens/home/work-carousel/work-carousel-section";
-import CompanyCarouselSection from "@/components/sections/company-carousel/company-carousel";
-import ContentSection from "@/components/sections/content/content";
-import WorkGrid from "@/components/sections/work-grid/work-grid";
-import PillarsSection from "@/components/sections/pillars/pillars-section";
 import CtaSection from "@/components/sections/cta/cta-section";
 
 export const metadata = buildPageMetadata({

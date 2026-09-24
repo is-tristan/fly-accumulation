@@ -27,21 +27,12 @@ export const work = (context) => defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
-      rows: 4,
-    }),
-    defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "reference",
-          to: [{ type: "workCategory" }],
-        }),
-      ],
+      name: "featuredImage",
+      title: "Featured Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: "video",
@@ -62,26 +53,27 @@ export const work = (context) => defineType({
         }),
     }),
     defineField({
-      name: "gallery",
-      title: "Gallery",
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
+      name: "categories",
+      title: "Categories",
       type: "array",
       of: [
         defineArrayMember({
-          type: "image",
-          options: {
-            hotspot: true,
-          },
+          type: "reference",
+          to: [{ type: "workCategory" }],
         }),
       ],
-      options: {
-        layout: "grid",
-      },
     }),
   ],
   preview: {
     select: {
       title: "title",
-      media: "gallery.0",
+      media: "featuredImage",
       subtitle: "description",
     },
   },

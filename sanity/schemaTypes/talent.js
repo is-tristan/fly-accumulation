@@ -47,24 +47,24 @@ export const talent = (context) => defineType({
         layout: "grid",
       },
     }),
-    defineField({
-      name: "video",
-      title: "YouTube URL",
-      type: "url",
-      description: "Paste a YouTube watch, share, or embed link",
-      validation: (rule) =>
-        rule.uri({
-          scheme: ["http", "https"],
-        }).custom((value) => {
-          if (!value) {
-            return true
-          }
+    // defineField({
+    //   name: "video",
+    //   title: "YouTube URL",
+    //   type: "url",
+    //   description: "Paste a YouTube watch, share, or embed link",
+    //   validation: (rule) =>
+    //     rule.uri({
+    //       scheme: ["http", "https"],
+    //     }).custom((value) => {
+    //       if (!value) {
+    //         return true
+    //       }
 
-          const isYoutube = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(value)
+    //       const isYoutube = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(value)
 
-          return isYoutube || "Must be a valid YouTube URL"
-        }),
-    }),
+    //       return isYoutube || "Must be a valid YouTube URL"
+    //     }),
+    // }),
     defineField({
       name: "audienceSize",
       title: "Audience Size",

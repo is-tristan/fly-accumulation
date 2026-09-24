@@ -8,6 +8,9 @@ import { Image } from "next-sanity/image";
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
+// Components
+import CategoryTags from "@/components/content/category-tags/category-tags";
+
 // Sanity
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
@@ -26,10 +29,7 @@ export default function TalentGridItem({
     const isInView = useInView(ref, { once: true, amount: 0.15 });
     const imageUrl = getSanityImageUrl(item.image, "talentGrid");
     const href = item.slug ? `/talent/${item.slug}` : "/talent";
-    const contentFocus = (item.contentFocus ?? [])
-        .slice(0, 3)
-        .map((focus) => focus?.title)
-        .filter(Boolean);
+    const contentFocus = (item.contentFocus ?? []).slice(0, 3);
 
     return (
 
@@ -62,29 +62,10 @@ export default function TalentGridItem({
 
                 <div className={styles.talentGridItemContent}>
 
-                    {contentFocus.length > 0 && (
-
-                        <div className={styles.talentGridItemFocus}>
-
-                            {contentFocus.map((title, index) => (
-
-                                <span className={styles.talentGridItemFocusItem} key={`${title}-${index}`}>
-
-                                    {title}
-
-                                    {index < contentFocus.length - 1 && (
-
-                                        <span className={styles.talentGridItemFocusSeparator}></span>
-
-                                    )}
-
-                                </span>
-
-                            ))}
-
-                        </div>
-
-                    )}
+                    <CategoryTags
+                        hasAnimation={false}
+                        categories={contentFocus}
+                    />
 
                     <h3 className={styles.talentGridItemTitle}>{item.title}</h3>
 

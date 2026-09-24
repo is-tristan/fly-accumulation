@@ -22,7 +22,7 @@ import styles from "../styles/gallery-carousel.module.scss";
 
 export default function GalleryCarousel({
     video,
-    gallery = [],
+    featuredImage,
 }) {
 
     const ref = useRef(null);
@@ -33,21 +33,7 @@ export default function GalleryCarousel({
         controls: true,
     });
 
-    const gallerySlides = (gallery ?? [])
-        .map((image, index) => {
-            const imageUrl = getSanityImageUrl(image, "workGallery");
-
-            if (!imageUrl) {
-                return null;
-            }
-
-            return {
-                key: image?._key || `gallery-${index}`,
-                type: "image",
-                imageUrl,
-            };
-        })
-        .filter(Boolean);
+    const featuredImageUrl = getSanityImageUrl(featuredImage, "workGallery");
 
     const slides = [
         ...(youtubeEmbedUrl
@@ -57,7 +43,13 @@ export default function GalleryCarousel({
                 youtubeEmbedUrl,
             }]
             : []),
-        ...gallerySlides,
+        ...(featuredImageUrl
+            ? [{
+                key: "featured-image",
+                type: "image",
+                imageUrl: featuredImageUrl,
+            }]
+            : []),
     ];
 
     if (!slides.length) {
@@ -95,7 +87,7 @@ export default function GalleryCarousel({
                 }}
             >
 
-                {slides.map((slide, index) => (
+                {slides.map((slide) => (
 
                     <SplideSlide key={slide.key} className={styles.galleryCarouselSlide}>
 
@@ -113,7 +105,7 @@ export default function GalleryCarousel({
 
                             <Image
                                 src={slide.imageUrl}
-                                alt={`Gallery image ${index + 1}`}
+                                alt="Featured image"
                                 fill
                                 sizes="100%"
                                 loading="lazy"

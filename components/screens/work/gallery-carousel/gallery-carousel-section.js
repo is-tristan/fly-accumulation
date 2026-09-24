@@ -6,10 +6,10 @@ import styles from "./styles/gallery-carousel.module.scss";
 
 export default function GalleryCarouselSection({
     video,
-    gallery = [],
+    featuredImage,
 }) {
 
-    if (!video && !(gallery?.length > 0)) {
+    if (!video && !featuredImage) {
         return null;
     }
 
@@ -21,7 +21,7 @@ export default function GalleryCarouselSection({
 
                 <GalleryCarousel
                     video={video}
-                    gallery={gallery}
+                    featuredImage={featuredImage}
                 />
 
             </div>

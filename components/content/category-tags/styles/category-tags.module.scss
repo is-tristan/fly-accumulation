@@ -6,23 +6,30 @@
     height: max-content;
 
     .categoryTag {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         line-height: 1;
-        border-radius: 10rem;
-        padding: 0.25rem 0.5rem;
-        border: 1px solid transparent;
-    }
+        color: var(--primary);
 
-    &[data-theme="primary"] {
-        .categoryTag {
-            background: rgb(from var(--primary) r g b / 0.2);
-            color: var(--primary);
-            border-color: rgb(from var(--primary) r g b / 0.25);
+        &::after {
+            content: "";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 0.25rem;
+            height: 0.25rem;
+            border-radius: 50%;
+            background: var(--primary);
+        }
 
-            @media (width >=768px) {
-                backdrop-filter: blur(0.25rem);
+        &:last-child {
+            &::after {
+                content: unset;
             }
         }
     }

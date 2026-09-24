@@ -11,6 +11,10 @@ export default function Banner({
     eyebrow = "Lorem Ipsum",
     title = "Lorem Ipsum dolor sit amet",
     description = "Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    btnTextPrimary = "View Talent",
+    btnLinkPrimary = "/our-talent",
+    btnTextSecondary = "Get in Touch",
+    btnLinkSecondary = "/contact",
 }) {
 
     return (
@@ -31,14 +35,14 @@ export default function Banner({
                     <div className={`buttons`}>
 
                         <Button
-                            href="/our-talent"
-                            text="View Talent"
+                            href={btnLinkPrimary}
+                            text={btnTextPrimary}
                             className="primary"
                         />
 
                         <Button
-                            href="/contact"
-                            text="Get in Touch"
+                            href={btnLinkSecondary}
+                            text={btnTextSecondary}
                             className="transparent"
                         />
 

@@ -33,12 +33,14 @@ h1,
 }
 
 h2,
+.smallTitle,
 .smallTitle h1 {
-    font-size: clamp(2.33rem, 3dvw, 3rem);
+    font-size: clamp(2.33rem, 3.125dvw, 3.25rem);
+    line-height: 110%;
 
     &.sectionTitle {
         font-size: clamp(1.75rem, 6dvw, 6rem);
-
+        line-height: 100%;
     }
 
     small {
@@ -96,7 +98,7 @@ ol {
     line-height: 160%;
     text-wrap: pretty;
     font-weight: 400;
-    letter-spacing: -0.042em;
+    letter-spacing: -0.02125em;
 }
 
 p {
