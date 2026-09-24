@@ -69,6 +69,17 @@ export const work = (context) => defineType({
         }),
       ],
     }),
+    defineField({
+      name: "talent",
+      title: "Talent",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "reference",
+          to: [{ type: "talent" }],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {

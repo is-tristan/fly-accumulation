@@ -99,6 +99,8 @@
 }
 
 @mixin backgroundDecoration() {
+    overflow-y: unset;
+    overflow-x: hidden;
 
     &::before,
     &::after {

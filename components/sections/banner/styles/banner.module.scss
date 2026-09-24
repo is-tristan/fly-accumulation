@@ -3,7 +3,7 @@
 .banner {
     position: relative;
     padding-top: var(--mobileHeaderHeight);
-    overflow: unset;
+    overflow: unset !important;
     @include backgroundDecoration();
 
     @media (width >=1024px) {

@@ -27,7 +27,7 @@ export default function WorkGridItem({
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
-    const imageUrl = getSanityImageUrl(item.image, "workGrid");
+    const imageUrl = getSanityImageUrl(item.featuredImage, "workGrid");
     const href = item.slug ? `/work/${item.slug}` : "/work";
 
     return (
@@ -43,27 +43,6 @@ export default function WorkGridItem({
 
             <div className={styles.workGridItem}>
 
-                <div className={styles.workGridItemContent}>
-
-                    {item.category && (
-
-                        <CategoryTags
-                            hasAnimation={false}
-                            categories={[item.category]}
-                        />
-
-                    )}
-
-                    <h3 className={styles.workGridItemTitle}>{item.title}</h3>
-
-                    <Link
-                        href={href}
-                        className={styles.workGridItemLink}
-                        dangerouslySetInnerHTML={{ __html: arrowUpRight }}
-                    />
-
-                </div>
-
                 {imageUrl && (
 
                     <Image
@@ -76,6 +55,23 @@ export default function WorkGridItem({
                     />
 
                 )}
+
+                <div className={styles.workGridItemContent}>
+
+                    <CategoryTags
+                        hasAnimation={false}
+                        categories={item.categories}
+                    />
+
+                    <h3 className={styles.workGridItemTitle}>{item.title}</h3>
+
+                    <Link
+                        href={href}
+                        className={styles.workGridItemLink}
+                        dangerouslySetInnerHTML={{ __html: arrowUpRight }}
+                    />
+
+                </div>
 
                 <Link
                     href={href}

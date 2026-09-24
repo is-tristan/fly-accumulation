@@ -1,0 +1,104 @@
+@use "@/styles/init/_mixins" as *;
+
+.workContentSection {
+    @include backgroundDecoration();
+}
+
+.workContentInner {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+
+    @media (width >=768px) {
+        flex-flow: row nowrap;
+        gap: 2rem;
+
+        .videoCol {
+            flex: 0 0 calc(50% - 1rem);
+        }
+
+        .contentCol {
+            flex: 0 0 calc(50% - 1rem);
+        }
+    }
+
+    @media (width >=1024px) {
+        gap: 3rem;
+
+        .videoCol {
+            flex: 0 0 calc(50% - 1.5rem);
+        }
+
+        .contentCol {
+            flex: 0 0 calc(50% - 1.5rem);
+        }
+    }
+
+    .contentCol {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+.workVideo {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+    }
+}
+
+.workTalent {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgb(from var(--primary) r g b / 0.075);
+    border: 1px solid rgb(from var(--primary) r g b / 0.15);
+    border-radius: var(--borderRadius);
+    transition: var(--cubic);
+
+    .workTalentIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.5rem;
+        color: var(--light);
+        background: rgb(from var(--primary) r g b / 0.1);
+        border: 1px solid rgb(from var(--primary) r g b / 0.15);
+        border-radius: var(--borderRadius);
+        transition: var(--cubic);
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .workTalentContent {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+    }
+
+    &:hover {
+        border-color: rgb(from var(--primary) r g b / 0.25);
+        box-shadow: 0 0 1rem 0 rgb(from var(--primary) r g b / 0.1);
+
+        .workTalentIcon {
+            color: var(--primary);
+        }
+    }
+}

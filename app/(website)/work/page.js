@@ -2,7 +2,7 @@
 import { buildPageMetadata } from "@/lib/seo"
 
 // Components
-import FeaturedVideo from "@/components/screens/work/featured-video/featured-video";
+import Banner from "@/components/sections/banner/banner";
 import WorkGrid from "@/components/sections/work-grid/work-grid";
 import CtaSection from "@/components/sections/cta/cta-section";
 
@@ -17,13 +17,14 @@ export default function WorkPage() {
 
         <>
 
-            <FeaturedVideo />
+            <Banner
+                eyebrow={null}
+                title="Work"
+                description={null}
+            />
 
             <WorkGrid
-                titleContainerClass="noPaddingTop"
                 hasNav={true}
-                hasTitle={true}
-                hasButton={false}
                 hasPagination={true}
             />
 

@@ -9,63 +9,65 @@ import { workBySlugQuery } from "@/sanity/lib/queries"
 import { buildPageMetadata } from "@/lib/seo"
 
 // Components
-import Banner from "@/components/sections/banner/banner"
-import GalleryCarouselSection from "@/components/screens/work/gallery-carousel/gallery-carousel-section"
+import WorkContent from "@/components/screens/work/work-content/work-content"
 import CtaSection from "@/components/sections/cta/cta-section"
 
 async function getWork(slug) {
-  return client.fetch(workBySlugQuery, { slug }, {
-    next: { revalidate: 30 },
-  })
+    return client.fetch(workBySlugQuery, { slug }, {
+        next: { revalidate: 30 },
+    })
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params
-  const work = await getWork(slug)
+    const { slug } = await params
+    const work = await getWork(slug)
 
-  if (!work) {
-    return {}
-  }
+    if (!work) {
+        return {}
+    }
 
-  return buildPageMetadata({
-    title: work.title,
-    description: work.description,
-    image: work.image,
-    path: `/work/${work.slug}`,
-  })
+    return buildPageMetadata({
+        title: work.title,
+        description: work.description,
+        image: work.image,
+        path: `/work/${work.slug}`,
+    })
 }
 
 export default async function WorkDetailsPage({ params }) {
 
-  const { slug } = await params
+    const { slug } = await params
 
-  const work = await getWork(slug)
+    const work = await getWork(slug)
 
-  if (!work) {
-    notFound()
-  }
+    if (!work) {
+        notFound()
+    }
 
-  return (
+    const {
+        title,
+        video,
+        categories,
+        description,
+        talent,
+    } = work
 
-    <>
+    return (
 
-      <Banner
-        sectionClass="headerOffset1_5x"
-        containerClass="centered noPaddingBottom noPaddingTop"
-        eyebrow={work.categories.map((category) => category.title).join(", ")}
-        title={work.title}
-        description={work.description ? `<p>${work.description}</p>` : undefined}
-      />
+        <>
 
-      <GalleryCarouselSection
-        video={work.video}
-        featuredImage={work.featuredImage}
-      />
+            <WorkContent
+                title={title}
+                video={video}
+                categories={categories}
+                description={description}
+                talent={talent}
+            />
 
-      <CtaSection />
+            <CtaSection />
 
-    </>
+        </>
 
-  )
+    )
 
 }

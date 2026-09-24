@@ -7,9 +7,6 @@ import {
 } from "@/sanity/lib/queries";
 
 // Components
-import Text from "@/components/content/text/text";
-import Eyebrow from "@/components/content/eyebrow/eyebrow";
-import Button from "@/components/handlers/button";
 import WorkGridItem from "./components/work-grid-item";
 import WorkGridList from "./components/work-grid-list";
 
@@ -17,11 +14,8 @@ import WorkGridList from "./components/work-grid-list";
 import styles from "./styles/work-grid.module.scss";
 
 export default async function WorkGrid({
-    titleContainerClass = undefined,
     workGridContainerClass = undefined,
     hasNav = false,
-    hasTitle = false,
-    hasButton = false,
     hasPagination = false,
 }) {
 
@@ -55,31 +49,6 @@ export default async function WorkGrid({
             style={{ gap: "0" }}
         >
 
-            <div className={`container noPaddingBottom ${styles.workGridTitleContainer} ${titleContainerClass}`}>
-
-                {hasTitle ? (
-
-                    <Text
-                        eyebrow={{
-                            text: "Our Work",
-                        }}
-                        title={"Case studies from campaigns that moved the needle"}
-                        titleTag="h1"
-                        titleClass={"sectionTitle"}
-                        description={"<p class='large'>A selection of work across sectors — each with its own brief, challenge, and outcome.</p>"}
-                    />
-
-                ) : (
-
-                    <Eyebrow
-                        text={"Featured Work"}
-                        type={"heading"}
-                    />
-
-                )}
-
-            </div>
-
             {isInteractive ? (
 
                 <WorkGridList
@@ -93,33 +62,19 @@ export default async function WorkGrid({
 
             ) : (
 
-                <>
+                <div className={`container gapMd ${styles.workGridContainer} ${workGridContainerClass}`}>
 
-                    <div className={`container noPaddingTop ${hasButton ? "noPaddingBottom" : undefined} gapMd ${styles.workGridContainer} ${workGridContainerClass}`}>
+                    <div className={styles.workGridItems}>
 
-                        <div className={styles.workGridItems}>
+                        {items.map((item, index) => (
 
-                            {items.map((item, index) => (
+                            <WorkGridItem key={item._id} item={item} index={index} />
 
-                                <WorkGridItem key={item._id} item={item} index={index} />
-
-                            ))}
-
-                        </div>
+                        ))}
 
                     </div>
 
-                    {hasButton && (
-
-                        <div className={`container centered noPaddingTop ${styles.workGridButtonContainer}`}>
-
-                            <Button href="/work" text="View All Work" />
-
-                        </div>
-
-                    )}
-
-                </>
+                </div>
 
             )}
 

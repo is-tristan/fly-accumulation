@@ -70,7 +70,6 @@
         flex-flow: row wrap;
         justify-content: space-between;
         gap: 2rem;
-        min-height: 75dvh;
 
         >article {
             flex: 0 0 calc(50% - 1rem);
@@ -79,7 +78,6 @@
 
     @media (width >=1024px) {
         gap: 3rem;
-        min-height: 100vh;
 
         >article {
             flex: 0 0 calc(50% - 1.5rem);
@@ -145,10 +143,6 @@
     .workGridItemTitle {
         font-size: clamp(1.75rem, 2vw, 2.25rem);
         max-width: calc(100% - 3rem);
-
-        @media (width >=768px) {
-            max-width: calc(100% - 3.5rem);
-        }
     }
 
     .workGridItemLink {
