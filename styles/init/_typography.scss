@@ -98,7 +98,7 @@ ol {
     line-height: 160%;
     text-wrap: pretty;
     font-weight: 400;
-    letter-spacing: -0.02125em;
+    letter-spacing: -0.02em;
 }
 
 p {
@@ -117,7 +117,8 @@ p {
 
     &.extraLarge {
         font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-        line-height: 125%;
+        line-height: 150%;
+        letter-spacing: -0.03em;
     }
 }
 

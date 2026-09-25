@@ -6,7 +6,7 @@ import Banner from "@/components/sections/banner/banner";
 import Content from "@/components/sections/content/content";
 import PillarsSection from "@/components/sections/pillars/pillars-section";
 import TeamCarouselSection from "@/components/screens/about/team/team-carousel-section";
-import TestimonialCarouselSection from "@/components/sections/testimonial-carousel-section/testimonials";
+import TestimonialsSection from "@/components/sections/testimonials/testimonials";
 import CtaSection from "@/components/sections/cta/cta-section";
 
 export const metadata = buildPageMetadata({
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 hasBrandMark={true}
             />
 
-            <TestimonialCarouselSection />
+            <TestimonialsSection />
 
             <CtaSection />
 

@@ -17,9 +17,22 @@
     gap: 1rem;
 
     .testimonialItemContent {
-        font-size: clamp(1rem, 2vw, 1.75rem);
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
         font-weight: 600;
         line-height: 175%;
+        max-height: 10rem;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(from var(--primary) r g b / 0.75) transparent;
+        padding-right: 1rem;
+
+        @media (width >=768px) {
+            max-height: 12rem;
+        }
+
+        @media (width >=1024px) {
+            max-height: 15rem;
+        }
     }
 
     .testimonialItemFooter {

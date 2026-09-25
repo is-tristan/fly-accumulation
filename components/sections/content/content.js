@@ -2,6 +2,7 @@
 import Text from "@/components/content/text/text";
 import Button from "@/components/handlers/button";
 import ImageCol from "./components/image-col";
+import Checklist from "./components/checklist";
 
 // Styles
 import styles from "./styles/content.module.scss";
@@ -27,6 +28,8 @@ export default function ContentSection({
     btnTargetPrimary,
     btnTargetSecondary,
     hasBrandMark = false,
+    hasChecklist = false,
+    checkListItems = [],
 }) {
 
     return (
@@ -53,6 +56,12 @@ export default function ContentSection({
                             description={description}
                             alignment={!image ? "centered" : "default"}
                         />
+
+                        {hasChecklist && (
+
+                            <Checklist checkListItems={checkListItems} />
+
+                        )}
 
                         <div className="buttons">
 

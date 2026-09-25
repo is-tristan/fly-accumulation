@@ -16,9 +16,18 @@
     }
 
     .bannerContent {
-        gap: 3rem;
+        width: 100%;
+        gap: 1.5rem;
         position: relative;
         z-index: 1;
+
+        @media (width >=768px) {
+            gap: 2rem;
+        }
+
+        @media (width >=1024px) {
+            gap: 3rem;
+        }
 
         h1 {
             @media (width >=1024px) {

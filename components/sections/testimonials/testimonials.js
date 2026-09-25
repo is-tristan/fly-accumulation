@@ -9,7 +9,7 @@ import TestimonialCarousel from "./components/testimonial-carousel"
 // Styles
 import styles from "./styles/testimonials.module.scss"
 
-export default async function TestimonialCarouselSection() {
+export default async function TestimonialsSection() {
 
     const items = await client.fetch(testimonialCarouselQuery, {}, {
         next: { revalidate: 30 },

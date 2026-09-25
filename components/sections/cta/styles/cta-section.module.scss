@@ -18,18 +18,22 @@
         position: relative;
         z-index: 1;
 
-        h2,
-        p {
-            color: var(--dark);
+        :global(.titleContainer) {
+            max-width: 115ch;
+        }
+
+        :global(.description) {
+            max-width: 90ch;
         }
 
         h2 {
             max-width: 100%;
+            color: var(--dark);
         }
-        
+
         p {
-            max-width: 90ch;
             margin: 0 auto;
+            color: rgba(from var(--dark) r g b / 0.75);
         }
     }
 

@@ -1,88 +1,85 @@
 "use client";
 
-import { Fragment, useEffect, useRef, useState } from "react";
+// React
+import { useRef } from "react";
+
+// Next
+import Image from "next/image";
+
+// Motion
 import { useInView } from "motion/react";
 
 // Styles
 import styles from "./styles/company-carousel.module.scss";
 
 // Data
-import { companyData } from "@/data/company-carousel-data";
+import { companyLogosData } from "@/data/company-logos-data";
 
-// Icons
-import { brandMark } from "@/utils/icons";
+const logoMidpoint = Math.ceil(companyLogosData.length / 2);
+
+const logoRows = [
+    {
+        direction: "left",
+        className: styles.companyCarouselTrackLeft,
+        logos: companyLogosData.slice(0, logoMidpoint),
+    },
+    {
+        direction: "right",
+        className: styles.companyCarouselTrackRight,
+        logos: companyLogosData.slice(logoMidpoint),
+    },
+];
 
 export default function CompanyCarousel() {
 
     const sectionRef = useRef(null);
-    const trackRef = useRef(null);
     const isInView = useInView(sectionRef, { amount: 0.2 });
-
-    const [trackWidth, setTrackWidth] = useState(0);
-
-    useEffect(() => {
-
-        const track = trackRef.current;
-
-        if (!track) return;
-
-        const updateTrackWidth = () => {
-
-            setTrackWidth(Math.max(0, track.scrollWidth - window.innerWidth));
-
-        };
-
-        updateTrackWidth();
-
-        const resizeObserver = new ResizeObserver(updateTrackWidth);
-
-        resizeObserver.observe(track);
-
-        window.addEventListener("resize", updateTrackWidth);
-
-        return () => {
-
-            resizeObserver.disconnect();
-
-            window.removeEventListener("resize", updateTrackWidth);
-
-        };
-
-    }, []);
 
     return (
 
-        <section ref={sectionRef} className={`${styles.companyCarousel}`}>
+        <section ref={sectionRef} className={styles.companyCarousel}>
 
-            <div
-                ref={trackRef}
-                className={`${styles.companyCarouselTrack}`}
-                data-paused={!isInView}
-                style={{
-                    minWidth: trackWidth ? `${trackWidth}px` : undefined,
-                    "--companyCarouselTrackWidth": trackWidth ? `${trackWidth}px` : undefined
-                }}
-            >
+            <h2 className={styles.companyCarouselTitle}>Elevating <span className="colorPrimary">500+ brands</span> around the globe.</h2>
 
-                {companyData.map((company, index) => (
+            <div className={styles.companyCarouselContainer}>
 
-                    <Fragment key={index}>
+                {
+                    logoRows.map((row) => (
 
-                        <div className={`${styles.companyCarouselBrandMark}`} dangerouslySetInnerHTML={{ __html: brandMark }} />
+                        <div
+                            key={row.direction}
+                            className={`${styles.companyCarouselTrack} ${row.className}`}
+                            data-paused={!isInView}
+                        >
 
-                        <div className={`${styles.companyCarouselItem}`}>
+                            {[...row.logos, ...row.logos, ...row.logos].map((company, index) => (
 
-                            <span>{company.name}</span>
+                                <div
+                                    className={styles.companyCarouselItem}
+                                    key={`${row.direction}-${company.name}-${index}`}
+                                    aria-hidden={index >= row.logos.length ? "true" : undefined}
+                                >
+
+                                    <Image
+                                        src={company.src}
+                                        alt={company.name}
+                                        fill
+                                        sizes="100%"
+                                        loading="lazy"
+                                    />
+
+                                </div>
+
+                            ))}
 
                         </div>
 
-                    </Fragment>
-
-                ))}
+                    ))
+                }
 
             </div>
 
-        </section>
+        </section >
 
     );
 

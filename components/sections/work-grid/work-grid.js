@@ -7,6 +7,8 @@ import {
 } from "@/sanity/lib/queries";
 
 // Components
+import Eyebrow from "@/components/content/eyebrow/eyebrow";
+import Button from "@/components/handlers/button";
 import WorkGridItem from "./components/work-grid-item";
 import WorkGridList from "./components/work-grid-list";
 
@@ -17,6 +19,8 @@ export default async function WorkGrid({
     workGridContainerClass = undefined,
     hasNav = false,
     hasPagination = false,
+    hasMoreButton = false,
+    eyebrowText = undefined,
 }) {
 
     const isInteractive = hasNav || hasPagination;
@@ -62,19 +66,45 @@ export default async function WorkGrid({
 
             ) : (
 
-                <div className={`container gapMd ${styles.workGridContainer} ${workGridContainerClass}`}>
+                <>
 
-                    <div className={styles.workGridItems}>
+                    <div className={`
+                        container 
+                        gapMd 
+                        ${styles.workGridContainer} 
+                        ${workGridContainerClass}
+                        ${hasMoreButton ? "noPaddingBottom" : undefined}
+                    `}>
 
-                        {items.map((item, index) => (
+                        {eyebrowText && (
 
-                            <WorkGridItem key={item._id} item={item} index={index} />
+                            <Eyebrow text={eyebrowText} type="heading" />
 
-                        ))}
+                        )}
+
+                        <div className={styles.workGridItems}>
+
+                            {items.map((item, index) => (
+
+                                <WorkGridItem key={item._id} item={item} index={index} />
+
+                            ))}
+
+                        </div>
 
                     </div>
 
-                </div>
+                    {hasMoreButton && (
+
+                        <div className={`container  centered`}>
+
+                            <Button text="View all work" href="/work" className="primary" />
+
+                        </div>
+
+                    )}
+
+                </>
 
             )}
 

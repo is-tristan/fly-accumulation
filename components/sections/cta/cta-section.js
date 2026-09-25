@@ -1,7 +1,6 @@
 // Components
 import Text from "@/components/content/text/text";
 import Button from "@/components/handlers/button";
-import Spinner from "@/components/decoration/spinner/spinner";
 
 // Styles
 import styles from "./styles/cta-section.module.scss";
@@ -16,14 +15,11 @@ export default function CtaSection({
     description = "<p class='extraLarge'>Fly Accumulation exists to make finding aligned creators easy and quick - by bringing creator strategy, audience insight, and campaign governance into one system.</p>",
     btnTextPrimary = "Get started",
     btnLinkPrimary = "/contact",
-    hasSpinner = false,
-    spinnerBackground = "/decoration/cta-spinner/cta-spinner-background.svg",
-    spinnerText = "/decoration/cta-spinner/cta-spinner-text.svg"
 }) {
 
     return (
 
-        <section className={`row ${styles.ctaSection}`} style={{ overflow: hasSpinner ? "visible" : "hidden" }}>
+        <section className={`row ${styles.ctaSection}`}>
 
             <div className="container">
 
@@ -52,8 +48,6 @@ export default function CtaSection({
                 <div className={styles.ctaSectionBackground} aria-hidden="true" dangerouslySetInnerHTML={{ __html: logo }} />
 
             </div>
-
-            {hasSpinner && (<Spinner type="cta" background={spinnerBackground} text={spinnerText} />)}
 
         </section>
 

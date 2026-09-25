@@ -28,9 +28,14 @@ export default function TestimonialCarousel({ items = [] }) {
                 pagination: true,
                 arrows: true,
                 rewind: true,
+                breakpoints: {
+                    1023: {
+                        arrows: false,
+                    },
+                },
             }}
             data-splide-arrows="true"
-            data-splide-hover-arrows="false"
+            data-splide-hover-arrows="true"
             data-splide-arrows-theme="light"
             data-splide-pagination="true"
         >
