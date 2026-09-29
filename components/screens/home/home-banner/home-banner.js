@@ -1,7 +1,10 @@
 "use client";
 
 // React
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+// Lenis
+import { useLenis } from "lenis/react";
 
 // Next
 import Image from "next/image";
@@ -12,53 +15,139 @@ import Button from "@/components/handlers/button";
 // Styles
 import styles from "./styles/home-banner.module.scss";
 
-const slides = [
+const bannerImages = [
+    { src: "/screens/home/banner/images/banner-image-1.avif", alt: "Banner image 1" },
+    { src: "/screens/home/banner/images/banner-image-2.avif", alt: "Banner image 2" },
+    { src: "/screens/home/banner/images/banner-image-3.avif", alt: "Banner image 3" },
+    { src: "/screens/home/banner/images/banner-image-4.avif", alt: "Banner image 4" },
+    { src: "/screens/home/banner/images/banner-image-5.avif", alt: "Banner image 5" },
+    { src: "/screens/home/banner/images/banner-image-6.avif", alt: "Banner image 6" },
+    { src: "/screens/home/banner/images/banner-image-7.avif", alt: "Banner image 7" },
+    { src: "/screens/home/banner/images/banner-image-8.avif", alt: "Banner image 8" },
+    { src: "/screens/home/banner/images/banner-image-9.avif", alt: "Banner image 9" },
+];
+
+const bannerVideos = [
     {
-        id: 1,
-        type: "stills",
-        items: [
-            { src: "https://picsum.photos/seed/fly-still-1/640/960", alt: "Placeholder still 1" },
-            { src: "https://picsum.photos/seed/fly-still-2/640/960", alt: "Placeholder still 2" },
-            { src: "https://picsum.photos/seed/fly-still-3/640/960", alt: "Placeholder still 3" },
-        ]
+        src: "/screens/home/banner/videos/joseph-x-coca-cola.webm",
+        poster: "/screens/home/banner/videos/posters/joseph-x-coca-cola-poster.avif",
+        alt: "Joseph x Coca-Cola",
     },
     {
-        id: 2,
-        type: "videos",
-        items: [
-            { src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4", alt: "Placeholder video 1" },
-            { src: "https://media.w3.org/2010/05/bunny/trailer.mp4", alt: "Placeholder video 2" },
-            { src: "https://media.w3.org/2010/05/sintel/trailer.mp4", alt: "Placeholder video 3" },
-        ]
+        src: "/screens/home/banner/videos/kayode-x-jd-sports.webm",
+        poster: "/screens/home/banner/videos/posters/kayode-x-jd-sports-poster.avif",
+        alt: "Kayode x JD Sports",
     },
     {
-        id: 3,
-        type: "stills",
-        items: [
-            { src: "https://picsum.photos/seed/fly-still-4/640/960", alt: "Placeholder still 4" },
-            { src: "https://picsum.photos/seed/fly-still-5/640/960", alt: "Placeholder still 5" },
-            { src: "https://picsum.photos/seed/fly-still-6/640/960", alt: "Placeholder still 6" },
-        ]
+        src: "/screens/home/banner/videos/malak-x-oakley-meta.webm",
+        poster: "/screens/home/banner/videos/posters/malak-x-oakley-meta-poster.avif",
+        alt: "Malak x Oakley Meta",
     },
-    {
-        id: 4,
-        type: "videos",
-        items: [
-            { src: "https://media.w3.org/2010/05/video/movie_300.mp4", alt: "Placeholder video 4" },
-            { src: "https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4", alt: "Placeholder video 5" },
-            { src: "https://filesamples.com/samples/video/mp4/sample_640x360.mp4", alt: "Placeholder video 6" },
-        ]
-    },
-    {
-        id: 5,
-        type: "stills",
-        items: [
-            { src: "https://picsum.photos/seed/fly-still-7/640/960", alt: "Placeholder still 7" },
-            { src: "https://picsum.photos/seed/fly-still-8/640/960", alt: "Placeholder still 8" },
-            { src: "https://picsum.photos/seed/fly-still-9/640/960", alt: "Placeholder still 9" },
-        ]
-    },
-]
+];
+
+function shuffleItems(items) {
+
+    const nextItems = [...items];
+
+    for (let index = nextItems.length - 1; index > 0; index -= 1) {
+
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        const currentItem = nextItems[index];
+
+        nextItems[index] = nextItems[swapIndex];
+        nextItems[swapIndex] = currentItem;
+
+    }
+
+    return nextItems;
+
+}
+
+function shiftItems(items) {
+
+    const offset = Math.random() < 0.5 ? 1 : items.length - 1;
+
+    return items.map((_, index) => items[(index + offset) % items.length]);
+
+}
+
+function clearPlaybackTimers(playback) {
+
+    playback.timers.forEach((timer) => {
+
+        window.clearTimeout(timer);
+
+    });
+
+    playback.timers = [];
+
+}
+
+function syncBannerPlayback(banner, playback) {
+
+    if (playback.isScrolling) {
+
+        clearPlaybackTimers(playback);
+
+        return;
+
+    }
+
+    const videos = [...banner.querySelectorAll("video")];
+
+    if (!playback.bannerIsNear) {
+
+        clearPlaybackTimers(playback);
+
+        videos.forEach((video) => {
+
+            if (!video.paused) {
+
+                video.pause();
+
+            }
+
+        });
+
+        return;
+
+    }
+
+    if (playback.timers.length > 0) {
+
+        return;
+
+    }
+
+    videos.forEach((video, index) => {
+
+        video.preload = "auto";
+
+        if (!video.paused) {
+
+            return;
+
+        }
+
+        const timer = window.setTimeout(() => {
+
+            playback.timers = playback.timers.filter((item) => item !== timer);
+
+            if (!playback.bannerIsNear || playback.isScrolling) {
+
+                return;
+
+            }
+
+            video.play().catch(() => undefined);
+
+        }, index * 40);
+
+        playback.timers.push(timer);
+
+    });
+
+}
 
 function BannerTrackItem({ type, item, priority }) {
 
@@ -85,11 +174,12 @@ function BannerTrackItem({ type, item, priority }) {
 
                 <video
                     src={item.src}
-                    autoPlay
+                    poster={item.poster}
+                    aria-label={item.alt}
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
 
@@ -106,6 +196,70 @@ export default function HomeBanner() {
     "use no memo";
 
     const bannerRef = useRef(null);
+    const playbackRef = useRef({
+        bannerIsNear: true,
+        isScrolling: false,
+        timers: [],
+    });
+    const [firstColumnVideos, setFirstColumnVideos] = useState(bannerVideos);
+    const [secondColumnVideos, setSecondColumnVideos] = useState(
+        bannerVideos.map((_, index) => bannerVideos[(index + 1) % bannerVideos.length]),
+    );
+
+    const slides = [
+        {
+            id: 1,
+            type: "stills",
+            items: bannerImages.slice(0, 3),
+        },
+        {
+            id: 2,
+            type: "videos",
+            items: firstColumnVideos,
+        },
+        {
+            id: 3,
+            type: "stills",
+            items: bannerImages.slice(3, 6),
+        },
+        {
+            id: 4,
+            type: "videos",
+            items: secondColumnVideos,
+        },
+        {
+            id: 5,
+            type: "stills",
+            items: bannerImages.slice(6, 9),
+        },
+    ];
+
+    useEffect(() => {
+
+        const firstColumn = shuffleItems(bannerVideos);
+
+        setFirstColumnVideos(firstColumn);
+        setSecondColumnVideos(shiftItems(firstColumn));
+
+    }, []);
+
+    useLenis((lenis) => {
+
+        const playback = playbackRef.current;
+
+        playback.isScrolling = Boolean(lenis.isScrolling);
+
+        const banner = bannerRef.current;
+
+        if (!banner) {
+
+            return;
+
+        }
+
+        syncBannerPlayback(banner, playback);
+
+    }, []);
 
     useEffect(() => {
 
@@ -117,39 +271,28 @@ export default function HomeBanner() {
 
         }
 
-        const setVideoPlayback = (isInView) => {
-
-            banner.querySelectorAll("video").forEach((video) => {
-
-                if (isInView) {
-
-                    video.play().catch(() => undefined);
-
-                } else {
-
-                    video.pause();
-
-                }
-
-            });
-
-        };
+        const playback = playbackRef.current;
 
         const observer = new IntersectionObserver(([entry]) => {
 
-            setVideoPlayback(entry.isIntersecting);
+            playback.bannerIsNear = entry.isIntersecting;
 
+            syncBannerPlayback(banner, playback);
+
+        }, {
+            rootMargin: "100% 0px 100% 0px",
         });
 
         observer.observe(banner);
 
         return () => {
 
+            clearPlaybackTimers(playback);
             observer.disconnect();
 
         };
 
-    }, []);
+    }, [firstColumnVideos, secondColumnVideos]);
 
     return (
 
@@ -174,7 +317,7 @@ export default function HomeBanner() {
                             {[...slide.items, ...slide.items].map((item, index) => (
 
                                 <BannerTrackItem
-                                    key={`${slide.id}-${index}`}
+                                    key={`${slide.id}-${item.src}-${index}`}
                                     type={slide.type}
                                     item={item}
                                     priority={index === 0}

@@ -110,6 +110,7 @@
     width: 100%;
     height: var(--slideHeight);
     overflow: hidden;
+    contain: paint;
 }
 
 // Mapped Items

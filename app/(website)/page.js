@@ -29,8 +29,6 @@ export default function Home() {
 
       <HomeBanner />
 
-      <CompanyCarousel />
-
       <Content
         sectionClassName={styles.contentSection}
         eyebrowText={null}
@@ -65,6 +63,8 @@ export default function Home() {
       <TalentGrid hasCarousel />
 
       <TestimonialsSection />
+
+      <CompanyCarousel />
 
       <CtaSection />
 
