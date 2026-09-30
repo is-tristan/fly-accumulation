@@ -3,16 +3,24 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
-import TalentGalleryCarousel from "@/components/screens/talent/talent-gallery-carousel/talent-gallery-carousel";
+import Image from "next/image";
+
+import { getSanityImageUrl } from "@/sanity/lib/image";
 
 import styles from "../../styles/talent-singular.module.scss";
 
 export default function GalleryCol({
     gallery,
+    title,
 }) {
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
+    const imageUrl = getSanityImageUrl(gallery?.[0], "talentGallery");
+
+    if (!imageUrl) {
+        return null;
+    }
 
     return (
 
@@ -24,7 +32,17 @@ export default function GalleryCol({
             transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
         >
 
-            <TalentGalleryCarousel gallery={gallery} />
+            <div className={styles.galleryImage}>
+
+                <Image
+                    src={imageUrl}
+                    alt={title || ""}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                />
+
+            </div>
 
         </motion.div>
 

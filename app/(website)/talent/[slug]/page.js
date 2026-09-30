@@ -10,6 +10,7 @@ import { buildPageMetadata } from "@/lib/seo"
 
 // Components
 import TalentContent from "@/components/screens/talent/talent-content/talent-content";
+import TalentCarousel from "@/components/screens/talent/talent-carousel/talent-carousel";
 import TalentBrandDealsGrid from "@/components/screens/talent/talent-brand-deals-grid/talent-brand-deals-grid"
 import Cta from "@/components/sections/cta/cta-section";
 
@@ -78,8 +79,12 @@ export default async function TalentPage({ params }) {
                 instagramFollowerCount={instagramFollowerCount}
             />
 
+            <TalentCarousel
+                items={gallery}
+                title={title}
+            />
+
             <TalentBrandDealsGrid
-                firstName={firstName}
                 brandDeals={brandDeals}
             />
 
@@ -87,7 +92,7 @@ export default async function TalentPage({ params }) {
                 hasFullStop={false}
                 eyebrowText={null}
                 title={`Ready to work with <span class='colorPrimary'>${firstName}</span>?`}
-                description="<p class='extraLarge'>Contact us to learn more about how we can help you find the perfect talent for your brand.</p>"
+                description="<p>Contact us to learn more about how we can help you find the perfect talent for your brand.</p>"
                 btnTextPrimary="Contact us"
                 btnLinkPrimary="/contact"
             />

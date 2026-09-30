@@ -21,4 +21,20 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  document: {
+    newDocumentOptions: (prev, { creationContext }) => {
+      if (creationContext.type === "global") {
+        return prev.filter((templateItem) => templateItem.templateId !== "instagramCarousel")
+      }
+
+      return prev
+    },
+    actions: (prev, { schemaType }) => {
+      if (schemaType === "instagramCarousel") {
+        return prev.filter(({ action }) => action !== "duplicate" && action !== "delete")
+      }
+
+      return prev
+    },
+  },
 })

@@ -1,5 +1,4 @@
 // Components
-import Eyebrow from "@/components/content/eyebrow/eyebrow";
 import TalentBrandDealsGridItem from "./components/talent-brand-deals-grid-item";
 
 // Sanity
@@ -9,7 +8,6 @@ import { getSanityImageUrl } from "@/sanity/lib/image";
 import styles from "../styles/talent-singular.module.scss";
 
 export default function TalentBrandDealsGrid({
-    firstName,
     brandDeals = [],
 }) {
 
@@ -39,11 +37,6 @@ export default function TalentBrandDealsGrid({
         <section className={`row ${styles.talentBrandDealsGrid}`}>
 
             <div className={`container ${styles.talentBrandDealsGridContainer}`}>
-
-                <Eyebrow
-                    text={`Who ${firstName} has worked with`}
-                    type="heading"
-                />
 
                 <div className={styles.talentBrandDealsGridItems}>
 

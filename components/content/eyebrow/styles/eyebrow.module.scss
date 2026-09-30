@@ -3,7 +3,7 @@
     flex-flow: row wrap;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--text);
+    font-family: var(--eyebrow);
     font-size: 0.75rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -24,7 +24,7 @@
     &[data-theme="light"] {
 
         .text {
-            color: rgb(from var(--light) r g b / 0.66);
+            color: rgb(from var(--light) r g b / 0.875);
         }
 
         .separator {
@@ -40,6 +40,18 @@
 
         .separator {
             color: var(--primary);
+        }
+    }
+
+    &[data-type="heading"] {
+        font-size: 0.875rem;
+
+        @media (width >=768px) {
+            font-size: 1rem;
+        }
+
+        .text {
+            color: var(--light);
         }
     }
 }

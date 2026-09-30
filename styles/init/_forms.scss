@@ -12,7 +12,6 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 
     * {
         font-family: var(--text);
-        font-weight: 700;
         text-align: left;
     }
 }
@@ -33,7 +32,8 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
     }
 
     .legend {
-        font-weight: 400;
+        display: none;
+        font-weight: 500;
         font-size: 0.875rem;
         margin-bottom: 0.5rem;
 
@@ -57,7 +57,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
             padding: 1rem;
             border-radius: var(--borderRadius);
             border: 1.5px solid var(--border);
-            background: var(--dark);
+            background: rgb(from var(--light) r g b / 0.1);
             color: var(--primary);
             transition: all 0.1s ease;
 
@@ -164,11 +164,11 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
     }
 
     &.consent {
+
         .field {
             flex-flow: row nowrap;
-            align-items: flex-start;
+            justify-content: center;
             gap: 0.5rem;
-            margin-top: 1rem;
 
             input[type="checkbox"] {
                 appearance: none;
@@ -185,10 +185,6 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
                 position: relative;
                 transition: var(--cubic);
 
-                @media (width >=1024px) {
-                    top: 0.125rem;
-                }
-
                 &:hover {
                     border-color: var(--primary);
                 }
@@ -202,7 +198,7 @@ $formCheckboxCheck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 
             label {
                 font-size: 0.875rem;
-                font-weight: 400;
+                font-weight: 500;
                 line-height: 150%;
 
                 * {

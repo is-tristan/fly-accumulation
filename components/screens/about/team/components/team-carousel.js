@@ -26,7 +26,7 @@ export default function TeamCarousel({ items = [] }) {
                 perMove: 1,
                 gap: "2rem",
                 pagination: true,
-                arrows: true,
+                arrows: false,
                 rewind: true,
                 breakpoints: {
                     1023: {
@@ -56,6 +56,7 @@ export default function TeamCarousel({ items = [] }) {
                         image={item.image}
                         email={item.email}
                         linkedIn={item.linkedIn}
+                        description={item.description}
                     />
 
                 </SplideSlide>

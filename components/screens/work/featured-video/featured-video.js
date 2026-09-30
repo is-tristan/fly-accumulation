@@ -11,7 +11,7 @@ export default async function FeaturedVideo() {
         next: { revalidate: 1 },
     });
 
-    if (!work?.video) {
+    if (!work?.video?.url) {
         return null;
     }
 

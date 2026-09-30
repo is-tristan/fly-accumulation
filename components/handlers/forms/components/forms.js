@@ -49,7 +49,7 @@ export default function ContactForm() {
 
             </fieldset>
 
-            <fieldset className="fieldset half" data-name="email">
+            <fieldset className="fieldset" data-name="email">
 
                 <legend className="legend">Email Address <span className="required">*</span></legend>
 
@@ -85,19 +85,6 @@ export default function ContactForm() {
 
             </fieldset>
 
-            <fieldset className="fieldset half" data-name="company">
-
-                <legend className="legend">Company</legend>
-
-                <div className="field">
-
-                    <input type="text" name="company" autoComplete="organization" placeholder="Enter your company name" />
-
-                </div>
-
-            </fieldset>
-
-
             <fieldset className="fieldset" data-name="message">
 
                 <legend className="legend">Message <span className="required">*</span></legend>
@@ -116,9 +103,9 @@ export default function ContactForm() {
 
                 <div className="field">
 
-                    <input type="checkbox" name="whatsappMarketing" id="whatsapp-marketing" />
+                    <input type="checkbox" name="submissionConsent" id="submission-consent" />
 
-                    <label htmlFor="whatsapp-marketing">
+                    <label htmlFor="submission-consent">
 
                         By sending this message, you agree to our <Link href="/privacy-policy" target="_blank" className="colorPrimary">privacy policy</Link>.
 
@@ -132,7 +119,7 @@ export default function ContactForm() {
 
                 <button className="btn primary" type="submit">
 
-                    <span>Start the Conversation</span>
+                    <span>Submit Message</span>
 
                     <div className="icon" dangerouslySetInnerHTML={{ __html: arrowUpRight }} />
 

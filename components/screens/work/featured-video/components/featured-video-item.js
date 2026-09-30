@@ -4,21 +4,16 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
-// YouTube
-import { getYoutubeEmbedUrl } from "@/lib/youtube";
+// Sanity
+import { getSanityImageUrl } from "@/sanity/lib/image";
 
 export default function FeaturedVideoItem({ video }) {
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
-    const youtubeEmbedUrl = getYoutubeEmbedUrl(video, {
-        autoplay: true,
-        mute: true,
-        loop: true,
-        controls: true,
-    });
+    const posterUrl = getSanityImageUrl(video?.poster, "workGallery");
 
-    if (!youtubeEmbedUrl) {
+    if (!video?.url) {
         return null;
     }
 
@@ -32,12 +27,16 @@ export default function FeaturedVideoItem({ video }) {
             style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: "1rem", overflow: "hidden" }}
         >
 
-            <iframe
-                src={youtubeEmbedUrl}
-                title="Featured work video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                style={{ width: "100%", height: "100%", border: 0, display: "block" }}
+            <video
+                src={video.url}
+                poster={posterUrl || undefined}
+                autoPlay
+                muted
+                loop
+                controls
+                playsInline
+                preload="metadata"
+                style={{ width: "100%", height: "100%", border: 0, display: "block", objectFit: "cover" }}
             />
 
         </motion.div>

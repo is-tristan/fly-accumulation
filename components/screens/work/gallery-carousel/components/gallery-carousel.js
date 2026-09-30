@@ -14,9 +14,6 @@ import "@splidejs/react-splide/css/core";
 // Sanity
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
-// YouTube
-import { getYoutubeEmbedUrl } from "@/lib/youtube";
-
 // Styles
 import styles from "../styles/gallery-carousel.module.scss";
 
@@ -27,20 +24,16 @@ export default function GalleryCarousel({
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
-    const youtubeEmbedUrl = getYoutubeEmbedUrl(video, {
-        autoplay: false,
-        mute: false,
-        controls: true,
-    });
-
+    const posterUrl = getSanityImageUrl(video?.poster, "workGallery");
     const featuredImageUrl = getSanityImageUrl(featuredImage, "workGallery");
 
     const slides = [
-        ...(youtubeEmbedUrl
+        ...(video?.url
             ? [{
                 key: "video",
                 type: "video",
-                youtubeEmbedUrl,
+                videoUrl: video.url,
+                posterUrl,
             }]
             : []),
         ...(featuredImageUrl
@@ -93,11 +86,12 @@ export default function GalleryCarousel({
 
                         {slide.type === "video" ? (
 
-                            <iframe
-                                src={slide.youtubeEmbedUrl}
-                                title="Work video"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
+                            <video
+                                src={slide.videoUrl}
+                                poster={slide.posterUrl || undefined}
+                                controls
+                                playsInline
+                                preload="metadata"
                                 className={styles.galleryCarouselEmbed}
                             />
 

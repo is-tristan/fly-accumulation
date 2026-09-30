@@ -337,20 +337,20 @@ export default function HomeBanner() {
 
                 <div className={`content`}>
 
-                    <h1 className={styles.title}> Backing Talent<span className="colorPrimary">.</span> <br /> Building Reach<span className="colorPrimary">.</span> <br /> More Growth<span className="colorPrimary">.</span> </h1>
+                    <h1 className={styles.title}> Representing Talent<span className="colorPrimary">.</span> <br /> Creating Influence<span className="colorPrimary">.</span> <br /> Driving Growth<span className="colorPrimary">.</span> </h1>
 
                     <div className="buttons">
 
                         <Button
-                            text="View all work"
-                            href="/work"
+                            text="View talent"
+                            href="/talent"
                             className="primary"
                             hasAnimation={false}
                         />
 
                         <Button
-                            text="View all talent"
-                            href="/talent"
+                            text="Start a brief"
+                            href="/contact"
                             className="transparent"
                             hasAnimation={false}
                         />

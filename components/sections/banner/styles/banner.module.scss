@@ -2,22 +2,18 @@
 
 .banner {
     position: relative;
-    padding-top: var(--mobileHeaderHeight);
+    padding-top: calc(var(--mobileHeaderHeight) + 15vh);
+    padding-bottom: 5dvh;
     overflow: unset !important;
     @include backgroundDecoration();
 
     @media (width >=1024px) {
-        padding-top: var(--headerHeight);
-        min-height: calc(50dvh - var(--headerHeight));
-    }
-
-    .bannerContainer {
-        align-items: flex-start;
+        padding-top: calc(var(--headerHeight) + 15vh);
     }
 
     .bannerContent {
         width: 100%;
-        gap: 1.5rem;
+        gap: 3rem;
         position: relative;
         z-index: 1;
 
@@ -30,6 +26,8 @@
         }
 
         h1 {
+            font-size: clamp(3rem, 6.5dvw, 6.5rem);
+
             @media (width >=1024px) {
                 max-width: 15ch;
             }

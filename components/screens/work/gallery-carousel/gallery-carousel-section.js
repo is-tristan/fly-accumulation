@@ -9,7 +9,7 @@ export default function GalleryCarouselSection({
     featuredImage,
 }) {
 
-    if (!video && !featuredImage) {
+    if (!video?.url && !featuredImage) {
         return null;
     }
 

@@ -22,7 +22,7 @@ export default function FooterCopyright() {
 
                 <span className={`hidden-s hidden-m`}>|</span>
 
-                {/* <Link href="/legal/terms-and-conditions">Terms and Conditions</Link> */}
+                <Link href="/legal/terms-and-conditions">Terms and Conditions</Link>
 
                 <span className={`hidden-s hidden-m`}>|</span>
 

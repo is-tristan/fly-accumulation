@@ -9,7 +9,7 @@ import PillarSectionHeading from "./components/pillar-section-heading";
 import PillarSectionContentItem from "./components/pillar-section-content-item";
 
 export default function Pillars({
-    eyebrowText = "Our Pillars",
+    eyebrowText = "What we can help with",
     image = null,
     headingType = "default",
     data = [
@@ -33,7 +33,7 @@ export default function Pillars({
         },
         {
             number: "04",
-            title: "Connection",
+            title: "Success",
             description: "Our success is measured by the growth and success of the creators we work with. We are committed to helping them achieve their full potential and to see them succeed in their careers. ",
             href: "/contact"
         }

@@ -18,16 +18,21 @@ export default function TalentGridCarousel({ items = [] }) {
     return (
 
         <Splide
-            className="overflows"
             options={{
-                type: "slide",
-                perPage: 3,
+                type: "loop",
+                perPage: 5,
                 perMove: 1,
                 gap: "2rem",
                 pagination: true,
                 arrows: false,
-                rewind: true,
+                padding: "5dvw",
                 breakpoints: {
+                    1920: {
+                        perPage: 4,
+                    },
+                    1399: {
+                        perPage: 3,
+                    },
                     1023: {
                         perPage: 2,
                         gap: "2rem",
@@ -40,6 +45,7 @@ export default function TalentGridCarousel({ items = [] }) {
                 },
             }}
             data-splide-pagination="true"
+            data-splide-pagination-alignment="centered"
         >
 
             {items.map((item, index) => (

@@ -9,6 +9,7 @@ import WorkGrid from "@/components/sections/work-grid/work-grid";
 import CtaSection from "@/components/sections/cta/cta-section";
 import TestimonialsSection from "@/components/sections/testimonials/testimonials";
 import TalentGrid from "@/components/sections/talent-grid/talent-grid";
+import IGCarouselSection from "@/components/sections/ig-carousel/ig-carousel-section";
 
 // Styles
 import styles from "@/styles/screens/home.module.scss";
@@ -32,24 +33,23 @@ export default function Home() {
       <Content
         sectionClassName={styles.contentSection}
         eyebrowText={null}
-        title="Elevating brands"
-        titleClass="sectionTitle"
+        title="Elevating brands through Influencer marketing"
         description="<p>Fly Accumulation Media & PR connects brands with the right talent and manages every stage of the influencer marketing process — from talent sourcing and campaign strategy to creative, negotiation, production and reporting.</p> <p>We combine strong talent relationships with strategic thinking and hands-on campaign management to create influencer partnerships that feel authentic, reach the right audiences and deliver against brand objectives.</p>"
         imagePosition="left"
         image="/images/home/elevating-brands-through-influencer-marketing.avif"
         hasChecklist={true}
         checkListItems={[
           {
-            title: "Right talent",
+            title: "RIGHT TALENT, SOURCED WITH PURPOSE",
           },
           {
-            title: "Clear results",
+            title: "STRATEGY TO RESULTS",
           },
           {
-            title: "Deals handled",
+            title: "NEGOTIATION & MANAGEMENT, HANDLED",
           },
           {
-            title: "Native creative",
+            title: "CREATIVE THAT FEELS NATIVE",
           },
         ]}
 
@@ -60,13 +60,17 @@ export default function Home() {
         eyebrowText="Our featured work"
       />
 
-      <TalentGrid hasCarousel />
+      <TalentGrid
+        hasCarousel={true}
+      />
 
       <TestimonialsSection />
 
       <CompanyCarousel />
 
-      <CtaSection />
+      <IGCarouselSection />
+
+      <CtaSection hasWaterMark={true} />
 
     </>
 

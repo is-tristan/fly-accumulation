@@ -21,7 +21,7 @@ export default async function TestimonialsSection() {
 
     return (
 
-        <section className={`row ${styles.testimonialCarouselSection}`}>
+        <section className={`row sectionPadding ${styles.testimonialCarouselSection}`}>
 
             <div className={`container noPaddingBottom`}>
 

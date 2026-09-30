@@ -24,24 +24,19 @@ h6 {
 
 h1,
 .bigHeading h2 {
-    font-size: clamp(3.5rem, 10dvw, 7.5rem);
+    font-size: clamp(1.5rem, 4dvw, 4rem);
     letter-spacing: -0.03em;
 
     &.sectionTitle {
-        font-size: clamp(2.33rem, 6.5dvw, 6.5rem);
+        font-size: clamp(2.33rem, 5dvw, 5rem);
     }
 }
 
 h2,
 .smallTitle,
 .smallTitle h1 {
-    font-size: clamp(2.33rem, 3.125dvw, 3.25rem);
+    font-size: clamp(2.33rem, 3.5dvw, 3.5rem);
     line-height: 110%;
-
-    &.sectionTitle {
-        font-size: clamp(1.75rem, 6dvw, 6rem);
-        line-height: 100%;
-    }
 
     small {
         display: block;
@@ -94,10 +89,10 @@ small,
 p,
 ul,
 ol {
-    font-size: clamp(0.925rem, 1.15vw, 1.15rem);
-    line-height: 160%;
+    font-size: clamp(0.925rem, 1.05vw, 1.05rem);
+    line-height: 175%;
     text-wrap: pretty;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.02em;
 }
 

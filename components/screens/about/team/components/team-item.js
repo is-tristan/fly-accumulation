@@ -16,6 +16,7 @@ export default function TeamItem({
     image,
     email,
     linkedIn,
+    description
 }) {
 
     const imageUrl = getSanityImageUrl(image, "teamCard");
@@ -26,18 +27,28 @@ export default function TeamItem({
 
             {imageUrl && (
 
-                <div className={styles.teamItemImage}>
+                <>
 
-                    <Image
-                        src={imageUrl}
-                        alt={name}
-                        width={576}
-                        height={768}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 384px, 576px"
-                    />
+                    <div className={styles.teamItemImage}>
 
-                </div>
+                        <Image
+                            src={imageUrl}
+                            alt={name}
+                            width={576}
+                            height={768}
+                            loading="lazy"
+                            sizes="(max-width: 768px) 384px, 576px"
+                        />
+
+                        {description && (
+
+                            <div className={styles.teamItemDescription} dangerouslySetInnerHTML={{ __html: description }} />
+                        )}
+
+
+                    </div>
+
+                </>
 
             )}
 
@@ -45,9 +56,9 @@ export default function TeamItem({
 
                 <div className={styles.teamItemLeft}>
 
-                    <h3 className={styles.teamItemName}>{name}</h3>
+                    <span className={styles.teamItemPosition}>{position}</span>
 
-                    <h4 className={styles.teamItemPosition}>{position}</h4>
+                    <h3 className={styles.teamItemName}>{name}</h3>
 
                 </div>
 

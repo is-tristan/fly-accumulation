@@ -24,8 +24,9 @@ export default function WorkPage() {
             />
 
             <WorkGrid
-                hasNav={true}
+                hasNav={false}
                 hasPagination={true}
+                hasOffset={false}
             />
 
             <CtaSection />

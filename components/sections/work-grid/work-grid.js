@@ -16,6 +16,7 @@ import WorkGridList from "./components/work-grid-list";
 import styles from "./styles/work-grid.module.scss";
 
 export default async function WorkGrid({
+    hasOffset = true,
     workGridContainerClass = undefined,
     hasNav = false,
     hasPagination = false,
@@ -68,13 +69,7 @@ export default async function WorkGrid({
 
                 <>
 
-                    <div className={`
-                        container 
-                        gapMd 
-                        ${styles.workGridContainer} 
-                        ${workGridContainerClass}
-                        ${hasMoreButton ? "noPaddingBottom" : undefined}
-                    `}>
+                    <div className={` container gapMd ${styles.workGridContainer} ${workGridContainerClass} ${hasMoreButton ? "noPaddingBottom" : undefined} `}>
 
                         {eyebrowText && (
 
@@ -82,7 +77,7 @@ export default async function WorkGrid({
 
                         )}
 
-                        <div className={styles.workGridItems}>
+                        <div className={styles.workGridItems} data-has-offset={hasOffset}>
 
                             {items.map((item, index) => (
 

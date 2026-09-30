@@ -37,6 +37,10 @@ export const sanityImagePresets = {
     width: 1920,
     aspectRatio: 16 / 9,
   },
+  instagramCarousel: {
+    width: 512,
+    aspectRatio: 1,
+  },
   openGraph: {
     width: 1200,
     aspectRatio: 1200 / 630,

@@ -37,32 +37,21 @@
     z-index: 2;
 
     .title {
-        font-size: 2.25rem;
         line-height: 120%;
 
         @media (width >=768px) {
-            font-size: 3.5rem;
-            line-height: 115%;
+            line-height: 112.5%;
             bottom: 10dvh;
             left: 10dvw;
             max-width: calc(100% - 1dvw);
         }
 
         @media (width >=1024px) {
-            font-size: 4rem;
-            line-height: 110%;
             bottom: 7.5dvh;
             left: 7.5dvw;
         }
 
-        @media (width >=1280px) {
-            font-size: 5rem;
-            line-height: 105%;
-        }
-
         @media (width >=1440px) {
-            font-size: 7rem;
-            line-height: 100%;
             bottom: 5dvh;
             left: 5dvw;
             max-width: var(--layoutMaxWidth);

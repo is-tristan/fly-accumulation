@@ -43,8 +43,8 @@ export default function AboutPage() {
                 eyebrowText="Reaching new goals"
                 title="Elevating your reach and impact to new heights"
                 description="<p>At Fly Accumulation At Fly Accumulation Media & PR, we are dedicated to elevating our clients' reach to new heights and making a lasting impact. We understand the power of influencer partnerships in the digital age. We meticulously analyse each client’s target audience, goals, and brand identity to identify the perfect influencers who can authentically connect with their customer base.</p><p>Through strategic collaborations and engaging content creation, we amplify our clients’ messages, significantly expanding their reach and influence. We continually adapt to the evolving landscape of social media and digital marketing, staying ahead of trends to maximise our clients’ exposure. By harnessing our expertise and network of influencers, we work tirelessly to deliver results that not only meet but exceed our clients' expectations, ensuring their brand leaves a lasting impression in the minds of their audience.</p>"
-                btnTextPrimary={null}
                 hasBrandMark={true}
+                btnTextSecondary="Meet our talent"
             />
 
             <TestimonialsSection />

@@ -30,6 +30,24 @@
             padding-top: calc(var(--headerHeight) * 1.5);
         }
     }
+
+    &.sectionPadding {
+        @media (width >= 1024px) {
+            padding: 5dvh 0;
+        }
+    }
+
+    &.sectionPaddingTop {
+        @media (width >= 1024px) {
+            padding-top: 5dvh;
+        }
+    }
+
+    &.sectionPaddingBottom {
+        @media (width >= 1024px) {
+            padding-bottom: 5dvh;
+        }
+    }
 }
 
 // Container
@@ -55,14 +73,10 @@
     }
 
     @media (width >=1280px) {
-        padding: 7.5dvh 7.5dvw;
+        padding: 5dvh 3.5dvw;
     }
 
-    @media (width >=1366px) {
-        max-width: 97.5%;
-    }
-
-    @media (width >=1440px) {
+    @media (width >=1512px) {
         max-width: var(--layoutMaxWidth);
         padding: 5dvh 5dvw;
     }

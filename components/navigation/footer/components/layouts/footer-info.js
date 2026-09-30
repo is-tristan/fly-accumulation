@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 // Components
-import FooterSocialItems from "../items/footer-social-items";
 import FooterContactItems from "../items/footer-contact-items";
 
 // Styles
@@ -28,9 +27,7 @@ export default function FooterInfo() {
                     dangerouslySetInnerHTML={{ __html: logo }}
                 />
 
-                <p className={`${styles.footerInfoText} extraLarge`}>Ready to find the <span className="colorPrimary">perfect creators</span> for your influencer campaigns <span className="colorPrimary">without hassle?</span></p>
-
-                <FooterSocialItems />
+                <p className={`${styles.footerInfoText}`}>Ready to find the <span className="colorPrimary">perfect creators</span> for your influencer campaigns <span className="colorPrimary">without hassle?</span></p>
 
             </div>
 

@@ -8,7 +8,7 @@ import Checklist from "./components/checklist";
 import styles from "./styles/content.module.scss";
 
 // Icons
-import { logo } from "@/utils/icons";
+import { brandMark } from "@/utils/icons";
 
 export default function ContentSection({
     sectionName = undefined,
@@ -21,10 +21,10 @@ export default function ContentSection({
     description,
     image,
     imagePosition = "right",
-    btnTextPrimary = "Start your brief",
+    btnTextPrimary = "Start a brief",
     btnLinkPrimary = "/contact",
-    btnTextSecondary,
-    btnLinkSecondary,
+    btnTextSecondary = "View our talent",
+    btnLinkSecondary = "/talent",
     btnTargetPrimary,
     btnTargetSecondary,
     hasBrandMark = false,
@@ -88,7 +88,7 @@ export default function ContentSection({
                     <div
                         aria-hidden="true"
                         className={styles.brandMark}
-                        dangerouslySetInnerHTML={{ __html: logo }}
+                        dangerouslySetInnerHTML={{ __html: brandMark }}
                     />
 
                 )}

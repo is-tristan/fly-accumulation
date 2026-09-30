@@ -19,11 +19,11 @@
         z-index: 1;
 
         :global(.titleContainer) {
-            max-width: 115ch;
+            max-width: 50rem;
         }
 
         :global(.description) {
-            max-width: 90ch;
+            max-width: 55ch;
         }
 
         h2 {
@@ -45,11 +45,10 @@
         z-index: -1;
         inset: 0;
         margin: auto;
-        width: 75%;
-        height: 75%;
-        z-index: 0;
+        width: 100%;
+        height: 100%;
         color: var(--dark);
-        opacity: 0.04;
+        opacity: 5%;
 
         svg {
             width: 100%;

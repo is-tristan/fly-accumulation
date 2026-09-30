@@ -13,7 +13,7 @@ export default function Banner({
     description = "Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     btnTextPrimary = "View Talent",
     btnLinkPrimary = "/our-talent",
-    btnTextSecondary = "Get in Touch",
+    btnTextSecondary = "Start a brief",
     btnLinkSecondary = "/contact",
 }) {
 

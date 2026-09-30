@@ -31,9 +31,12 @@ export default function TalentContent({
 
             </div>
 
-            <div className={`container noPaddingTop noPaddingBottom ${styles.talentContentInner}`}>
+            <div className={`container noPaddingTop ${styles.talentContentInner}`}>
 
-                <GalleryCol gallery={gallery} />
+                <GalleryCol
+                    gallery={gallery}
+                    title={title}
+                />
 
                 <ContentCol
                     title={title}

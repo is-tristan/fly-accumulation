@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
-import { getYoutubeEmbedUrl } from "@/lib/youtube";
+import { getSanityImageUrl } from "@/sanity/lib/image";
 
 import styles from "../../styles/work-singular.module.scss";
 
@@ -13,13 +13,9 @@ export default function VideoCol({
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
-    const youtubeEmbedUrl = getYoutubeEmbedUrl(video, {
-        autoplay: false,
-        mute: false,
-        controls: true,
-    });
+    const posterUrl = getSanityImageUrl(video?.poster, "workGallery");
 
-    if (!youtubeEmbedUrl) {
+    if (!video?.url) {
         return null;
     }
 
@@ -35,11 +31,12 @@ export default function VideoCol({
 
             <div className={styles.workVideo}>
 
-                <iframe
-                    src={youtubeEmbedUrl}
-                    title="Work video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
+                <video
+                    src={video.url}
+                    poster={posterUrl || undefined}
+                    controls
+                    playsInline
+                    preload="metadata"
                 />
 
             </div>

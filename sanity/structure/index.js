@@ -47,5 +47,14 @@ export const structure = (S, context) =>
         S,
         context,
       }),
+      S.listItem()
+        .title("Instagram Carousel")
+        .id("instagramCarousel")
+        .child(
+          S.document()
+            .schemaType("instagramCarousel")
+            .documentId("instagramCarousel")
+            .title("Instagram Carousel")
+        ),
       S.documentTypeListItem("legal").title("Legal"),
     ])

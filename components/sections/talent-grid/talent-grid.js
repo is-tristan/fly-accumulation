@@ -11,8 +11,6 @@ import TalentGridCarousel from "./components/talent-grid-carousel";
 import styles from "./styles/talent-grid.module.scss";
 
 export default async function TalentGrid({
-    talentGridContainerClass = undefined,
-    hasButton = false,
     hasCarousel = false,
 }) {
 
@@ -29,14 +27,13 @@ export default async function TalentGrid({
         <section
             id="talentGrid"
             className={`row ${styles.talentGridSection}`}
-            style={{ gap: "0" }}
         >
 
-            <div className={`container ${!hasCarousel ? "noPaddingTop" : undefined} ${hasButton ? "noPaddingBottom" : undefined} gapMd ${styles.talentGridContainer} ${talentGridContainerClass}`}>
+            {hasCarousel && (
 
-                {hasCarousel && (
+                <>
 
-                    <>
+                    <div className={`container noPaddingBottom`}>
 
                         <Text
                             eyebrow={{
@@ -44,16 +41,24 @@ export default async function TalentGrid({
                             }}
                             title="Our talent"
                             titleClass="sectionTitle"
-              
+                            alignment="centered"
                         />
+
+                    </div>
+
+                    <div className={`container overflowContainer noPaddingTop`}>
 
                         <TalentGridCarousel items={items} />
 
-                    </>
+                    </div>
 
-                )}
+                </>
 
-                {!hasCarousel && (
+            )}
+
+            {!hasCarousel && (
+
+                <div className={`container noPaddingBottom gapMd ${styles.talentGridContainer}`}>
 
                     <div className={styles.talentGridItems}>
 
@@ -69,11 +74,11 @@ export default async function TalentGrid({
 
                     </div>
 
-                )}
+                </div>
 
-            </div>
+            )}
 
-        </section>
+        </section >
 
     )
 

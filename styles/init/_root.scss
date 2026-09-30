@@ -3,8 +3,9 @@
 
     // Fonts
     --heading: var(--font-rework-text-heading), ui-sans-serif, sans-serif;
-    --text: var(--font-rework-display), ui-sans, sans;
+    --text: var(--font-sharp-sans), ui-sans, sans;
     --eyebrow: var(--font-tablet-gothic), ui-sans, sans;
+    --btnText: var(--font-dm-sans), ui-sans, sans;
 
     // Colours
     --primary: #EDC148;
@@ -15,7 +16,7 @@
     --textLight: #a8a49c;
 
     // Borders & Radius
-    --btnRadius: 0.33rem;
+    --btnRadius: 0;
     --borderRadius: 0.25rem;
     --border: #353535;
 

@@ -6,6 +6,13 @@ const imageFields = /* groq */ `
   crop
 `
 
+const videoFields = /* groq */ `
+  "url": asset->url,
+  poster {
+    ${imageFields}
+  }
+`
+
 export const workCarouselQuery = defineQuery(`
   *[_type == "work"] | order(orderRank) {
     _id,
@@ -17,14 +24,18 @@ export const workCarouselQuery = defineQuery(`
       title,
       "slug": slug.current
     },
-    video
+    "video": select(defined(video.asset) => video {
+      ${videoFields}
+    })
   }
 `)
 
 export const featuredVideoQuery = defineQuery(`
   *[_type == "work"] | order(orderRank)[0] {
     _id,
-    video
+    "video": select(defined(video.asset) => video {
+      ${videoFields}
+    })
   }
 `)
 
@@ -88,11 +99,25 @@ export const workBySlugQuery = defineQuery(`
         ${imageFields}
       }
     },
-    video,
+    "video": select(defined(video.asset) => video {
+      ${videoFields}
+    }),
     "image": featuredImage {
       ${imageFields}
     },
     featuredImage {
+      ${imageFields}
+    }
+  }
+`)
+
+export const instagramCarouselQuery = defineQuery(`
+  *[_id == "instagramCarousel"][0] {
+    _id,
+    title,
+    images[defined(asset)] {
+      _key,
+      alt,
       ${imageFields}
     }
   }
@@ -107,7 +132,8 @@ export const teamCarouselQuery = defineQuery(`
       ${imageFields}
     },
     email,
-    "linkedIn": linkedin
+    "linkedIn": linkedin,
+    description
   }
 `)
 

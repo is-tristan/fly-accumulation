@@ -75,7 +75,7 @@ export default function ContentCol({
 
                 {talentTags.length > 0 && (
 
-                    <Link href={talentHref} className={styles.workTalent}>
+                    <Link href={talentHref} className={`${styles.workTalent} hidden`}>
 
                         <div className={styles.workTalentIcon} dangerouslySetInnerHTML={{ __html: announcementIcon }} />
 
