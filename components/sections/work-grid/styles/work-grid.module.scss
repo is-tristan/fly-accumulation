@@ -127,6 +127,10 @@
         z-index: 1;
     }
 
+    img {
+        object-position: top;
+    }
+
     .workGridItemContent {
         display: flex;
         flex-flow: column nowrap;

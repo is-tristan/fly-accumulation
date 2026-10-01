@@ -1,3 +1,29 @@
+.testimonialCarousel {
+    :global(.splide__arrows .splide__arrow) {
+        @media (width >=1024px) {
+            background: transparent;
+            padding: 0;
+            opacity: 0.5 !important;
+
+            &:hover {
+                opacity: 1 !important;
+            }
+        }
+    }
+
+    :global(.splide__arrows .splide__arrow--next) {
+        @media (width >=1024px) {
+            right: -4.5dvw;
+        }
+    }
+
+    :global(.splide__arrows .splide__arrow--prev) {
+        @media (width >=1024px) {
+            left: -4.5dvw;
+        }
+    }
+}
+
 // Title
 .testimonialCarouselTitle {
     padding-bottom: 1.5rem;
@@ -28,10 +54,6 @@
 
         @media (width >=768px) {
             max-height: 12rem;
-        }
-
-        @media (width >=1024px) {
-            max-height: 15rem;
         }
     }
 

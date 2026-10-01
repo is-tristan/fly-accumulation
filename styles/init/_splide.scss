@@ -77,9 +77,6 @@
         width: 100%;
         height: max-content;
         margin: auto;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-100%);
         transition: var(--cubic);
     }
 
@@ -89,7 +86,7 @@
         align-items: center;
         width: 2.5rem;
         height: 2.5rem;
-        background: var(--secondaryLight);
+        background: transparent;
         border: none;
         border-radius: unset;
         opacity: 1 !important;
@@ -151,11 +148,17 @@
 
     &[data-splide-arrows-theme="light"] {
         .splide__arrow::after {
-            filter: brightness(0) invert(1);
+            filter: brightness(100%) invert(1);
         }
     }
 
     &[data-splide-hover-arrows="true"] {
+        .splide__arrows {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-100%);
+        }
+
         &:hover {
             .splide__arrows {
                 opacity: 1;
@@ -166,7 +169,7 @@
     }
 }
 
-.sliderHasGradients {
+[data-splide-gradients="true"] {
     position: relative;
     overflow: hidden;
 
@@ -178,7 +181,7 @@
         top: 0;
         left: 0;
         bottom: 0;
-        background: linear-gradient(to right, var(--lightAlt), transparent);
+        background: linear-gradient(to right, var(--dark), transparent);
         width: 1.5rem;
         height: 100%;
 
@@ -190,6 +193,6 @@
     &::after {
         left: unset;
         right: 0;
-        background: linear-gradient(to left, var(--lightAlt), transparent);
+        background: linear-gradient(to left, var(--dark), transparent);
     }
 }

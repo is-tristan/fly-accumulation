@@ -26,6 +26,8 @@
             margin-left: -10rem;
             position: relative;
             z-index: 1;
+            width: calc(100% + 10rem);
+            max-width: none;
         }
     }
 }

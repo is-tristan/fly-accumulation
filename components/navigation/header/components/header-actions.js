@@ -3,9 +3,6 @@
 // React
 import { useState } from "react"
 
-// Next
-import Link from "next/link"
-
 // Components
 import Button from "@/components/handlers/button"
 import HeaderMobileMenu from "./header-mobile-menu"
@@ -13,9 +10,6 @@ import HeaderMobileMenu from "./header-mobile-menu"
 // Styles
 import styles from "../styles/header.module.scss"
 import stylesMobileMenu from "../styles/header-mobile-menu.module.scss"
-
-// Icon
-import { costCalulatorIcon } from "@/utils/icons"
 
 export default function HeaderActions() {
 
@@ -39,7 +33,15 @@ export default function HeaderActions() {
 
                 </div>
 
-                <div className={`hidden-xxl ${stylesMobileMenu.mobileMenuToggle}`} onClick={toggleMobileMenu} data-name="mobileMenuToggle">
+                <button
+                    type="button"
+                    className={`hidden-xxl ${stylesMobileMenu.mobileMenuToggle}`}
+                    onClick={toggleMobileMenu}
+                    data-name="mobileMenuToggle"
+                    aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isMobileMenuOpen}
+                    aria-controls="mobileMenu"
+                >
 
                     <span className={stylesMobileMenu.mobileMenuToggleItem} />
 
@@ -47,7 +49,7 @@ export default function HeaderActions() {
 
                     <span className={stylesMobileMenu.mobileMenuToggleItem} />
 
-                </div>
+                </button>
 
             </div>
 

@@ -6,7 +6,6 @@ import { motion, useInView } from "motion/react";
 import Text from "@/components/content/text/text";
 import CategoryTags from "@/components/content/category-tags/category-tags";
 import Button from "@/components/handlers/button";
-import BackButton from "@/components/handlers/back-button";
 
 import styles from "../../styles/talent-singular.module.scss";
 

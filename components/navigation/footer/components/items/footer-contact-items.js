@@ -13,7 +13,7 @@ export default function FooterContactItems({ className = undefined }) {
 
         <div className={`${styles.contactItems} ${className}`}>
 
-            {data.map((item, index) => {
+            {data.map((item) => {
 
                 const content = (
 
@@ -38,7 +38,7 @@ export default function FooterContactItems({ className = undefined }) {
                     return (
 
                         <Link
-                            key={index}
+                            key={item.title}
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -57,7 +57,7 @@ export default function FooterContactItems({ className = undefined }) {
                 return (
 
                     <div
-                        key={index}
+                        key={item.title}
                         className={styles.contactItem}
                     >
 

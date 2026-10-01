@@ -19,7 +19,7 @@ export default function TestimonialCarousel({ items = [] }) {
     return (
 
         <Splide
-            className={`${styles.testimonialCarousel} stackedArrows`}
+            className={`${styles.testimonialCarousel}`}
             options={{
                 type: "slide",
                 perPage: 1,
@@ -35,7 +35,7 @@ export default function TestimonialCarousel({ items = [] }) {
                 },
             }}
             data-splide-arrows="true"
-            data-splide-hover-arrows="true"
+            data-splide-hover-arrows="false"
             data-splide-arrows-theme="light"
             data-splide-pagination="true"
         >

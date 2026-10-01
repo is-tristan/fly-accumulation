@@ -120,27 +120,27 @@
         background: linear-gradient(to top right, rgb(from var(--dark) r g b / 1) 33.33%, rgb(from var(--dark) r g b / 0.25) 100%);
     }
 
-    &::before {
-        transform-origin: top right;
-        animation: backgroundDecorationGlow 5s ease-in-out infinite alternate;
-    }
+    // &::before {
+    //     transform-origin: top right;
+    //     animation: backgroundDecorationGlow 15s ease-in-out infinite alternate;
+    // }
 
-    @media (prefers-reduced-motion: reduce) {
-        &::before {
-            animation: none;
-        }
-    }
+    // @media (prefers-reduced-motion: reduce) {
+    //     &::before {
+    //         animation: none;
+    //     }
+    // }
 
-    @keyframes backgroundDecorationGlow {
-        0% {
-            opacity: 0.7;
-            transform: scale(1) translate3d(0, 0, 0);
-        }
+    // @keyframes backgroundDecorationGlow {
+    //     0% {
+    //         opacity: 0.7;
+    //         transform: scale(1) translate3d(0, 0, 0);
+    //     }
 
-        100% {
-            opacity: 1;
-            transform: scale(1.18) translate3d(8%, -10%, 0);
-        }
-    }
+    //     100% {
+    //         opacity: 1;
+    //         transform: scale(1.18) translate3d(8%, -10%, 0);
+    //     }
+    // }
 
 }

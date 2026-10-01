@@ -58,7 +58,7 @@ export default async function TalentGrid({
 
             {!hasCarousel && (
 
-                <div className={`container noPaddingBottom gapMd ${styles.talentGridContainer}`}>
+                <div className={`container gapMd ${styles.talentGridContainer}`}>
 
                     <div className={styles.talentGridItems}>
 

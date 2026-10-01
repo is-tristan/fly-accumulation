@@ -48,7 +48,7 @@ export default function ContactItems({
                 {contactItems.map((item, index) => (
 
                     <ContactItem
-                        key={index}
+                        key={item.href}
                         {...item}
                         index={index}
                         isInView={isInView}

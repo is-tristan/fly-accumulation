@@ -45,7 +45,7 @@ export default function FaqsSectionContentItem({
             window.removeEventListener("resize", updateHeight);
         };
 
-    }, [item.description]);
+    }, []);
 
     return (
 
@@ -85,7 +85,12 @@ export default function FaqsSectionContentItem({
 
             <div className={styles.faqItemRight}>
 
-                <button className={styles.faqItemButton} />
+                <button
+                    type="button"
+                    className={styles.faqItemButton}
+                    aria-expanded={isOpen}
+                    aria-label={isOpen ? "Collapse answer" : "Expand answer"}
+                />
 
             </div>
 

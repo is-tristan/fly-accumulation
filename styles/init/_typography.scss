@@ -16,9 +16,13 @@ h6 {
     letter-spacing: -0.025em;
     margin: 0;
     padding: 0;
-    text-wrap: pretty;
+    text-wrap: balance;
     text-transform: uppercase;
     color: var(--light);
+
+    @media (width >=768px) {
+        text-wrap: pretty;
+    }
 }
 
 
@@ -35,7 +39,7 @@ h1,
 h2,
 .smallTitle,
 .smallTitle h1 {
-    font-size: clamp(2.33rem, 3.5dvw, 3.5rem);
+    font-size: clamp(2rem, 3.5dvw, 3.5rem);
     line-height: 110%;
 
     small {

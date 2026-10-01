@@ -14,9 +14,9 @@ export default function Checklist({ checkListItems = [] }) {
 
                 <div className={styles.checklist}>
 
-                    {checkListItems.map((item, index) => (
+                    {checkListItems.map((item) => (
 
-                        <div key={index} className={styles.checklistItem}>
+                        <div key={item.title} className={styles.checklistItem}>
 
                             <div className={styles.checklistItemIcon} dangerouslySetInnerHTML={{ __html: checkMarkFilledIcon }} />
 

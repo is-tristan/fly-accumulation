@@ -33,6 +33,7 @@ export default async function IGCarouselSection() {
                     }}
                     title="Follow us on Instagram <br> <span class='colorPrimary'>@flyaccumulation</span>"
                     alignment="centered"
+                    hasFullStop={false}
                 />
 
             </div>

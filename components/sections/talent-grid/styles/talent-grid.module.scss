@@ -1,5 +1,11 @@
 @use "@/styles/init/mixins" as *;
 
+.talentGridSection {
+    ul {
+        padding-bottom: 1rem !important;
+    }
+}
+
 .talentGridItems {
     display: flex;
     flex-flow: column nowrap;
@@ -33,7 +39,7 @@
     transition: var(--cubic);
 
     &:hover {
-        .talentGridItemImage {
+        .talentGridItemHeader {
             border-color: var(--primary);
 
             img {
@@ -42,13 +48,12 @@
         }
 
         .talentGridItemLink {
-            scale: 1.1;
             background: var(--primary);
             color: var(--dark);
         }
     }
 
-    .talentGridItemImage {
+    .talentGridItemHeader {
         display: flex;
         width: 100%;
         aspect-ratio: 3 / 4;
@@ -58,11 +63,91 @@
         border: 1px solid var(--border);
         transition: var(--cubic);
 
-        img {
+        img,
+        video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--cubic);
+        }
+
+        .talentGridItemVideo,
+        .talentGridItemVideoContent {
+            position: absolute;
+            z-index: 100;
+            inset: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+
+            &.talentGridItemVideoContent {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(100%);
+                transition: var(--cubic);
+            }
+
+            &[data-video-active="true"] {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+
+                .talentGridItemVideoContent {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .talentGridItemVideoCloseButton {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        .talentGridItemVideoButton,
+        .talentGridItemVideoCloseButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            color: var(--primary);
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+
+            @media (width >=768px) {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .talentGridItemVideoCloseButton {
+            top: 0.5rem;
+            right: 0.5rem;
+            bottom: auto;
+            left: auto;
+            z-index: 101;
+            width: 1.5rem;
+            height: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--cubic);
+
+            @media (width >=768px) {
+                width: 2rem;
+                height: 2rem;
+            }
         }
     }
 

@@ -57,17 +57,41 @@ export default function HeaderMobileMenu({ isOpen = false, onClose }) {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        if (!isOpen) {
+            return;
+        }
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                onClose();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isOpen, onClose]);
+
     return (
 
         <>
 
-            <div className={`hidden-xxl ${styles.mobileMenu}`} data-toggled={isOpen} role="navigation" data-name="mobileMenu">
+            <div id="mobileMenu" className={`hidden-xxl ${styles.mobileMenu}`} data-toggled={isOpen} role="navigation" data-name="mobileMenu">
 
                 <div className={styles.mobileMenuHeader}>
 
                     <Link href="/" className={styles.mobileMenuLogo} aria-label="Home" onClick={handleLinkClick} dangerouslySetInnerHTML={{ __html: logo }} />
 
-                    <span className={`${styles.mobileMenuToggle} ${styles.mobileMenuClose}`} onClick={onClose} dangerouslySetInnerHTML={{ __html: xClose }} />
+                    <button
+                        type="button"
+                        className={`${styles.mobileMenuToggle} ${styles.mobileMenuClose}`}
+                        onClick={onClose}
+                        aria-label="Close menu"
+                        dangerouslySetInnerHTML={{ __html: xClose }}
+                    />
 
                 </div>
 
@@ -134,13 +158,20 @@ export default function HeaderMobileMenu({ isOpen = false, onClose }) {
 
                         <span>Contact Us</span>
 
-                    </Link>D
+                    </Link>
 
                 </div>
 
             </div>
 
-            <div className={`hidden-xxl ${styles.mobileMenuBackdrop}`} onClick={onClose} data-toggled={isOpen} />
+            <button
+                type="button"
+                className={`hidden-xxl ${styles.mobileMenuBackdrop}`}
+                onClick={onClose}
+                data-toggled={isOpen}
+                aria-label="Close menu"
+                tabIndex={isOpen ? 0 : -1}
+            />
 
         </>
 

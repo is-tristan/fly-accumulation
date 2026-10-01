@@ -138,7 +138,7 @@ export const teamCarouselQuery = defineQuery(`
 `)
 
 export const testimonialCarouselQuery = defineQuery(`
-  *[_type == "testimonial"] | order(orderRank)[0...8] {
+  *[_type == "testimonial"] | order(orderRank) {
     _id,
     title,
     position,
@@ -163,7 +163,9 @@ export const talentGridQuery = defineQuery(`
       _id,
       title,
       "slug": slug.current
-    }
+    },
+    "video": select(defined(video.asset) => video.asset->url),
+    "videoPoster": select(defined(video.poster.asset) => video.poster.asset->url)
   }
 `)
 
@@ -179,7 +181,9 @@ export const talentBySlugQuery = defineQuery(`
       _key,
       ${imageFields}
     },
-    video,
+    "video": select(defined(video.asset) => video {
+      ${videoFields}
+    }),
     audienceSize,
     location,
     contentFocus[]->{

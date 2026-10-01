@@ -24,20 +24,17 @@ export default function TeamCarousel({ items = [] }) {
                 type: "slide",
                 perPage: 3,
                 perMove: 1,
-                gap: "2rem",
+                gap: "1.5rem",
                 pagination: true,
-                arrows: false,
+                arrows: true,
                 rewind: true,
                 breakpoints: {
                     1023: {
                         perPage: 2,
-                        gap: "1.5rem",
                         arrows: false,
                     },
                     767: {
                         perPage: 1,
-                        gap: "1rem",
-                        arrows: false,
                     },
                 },
             }}

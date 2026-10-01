@@ -47,24 +47,26 @@ export const talent = (context) => defineType({
         layout: "grid",
       },
     }),
-    // defineField({
-    //   name: "video",
-    //   title: "YouTube URL",
-    //   type: "url",
-    //   description: "Paste a YouTube watch, share, or embed link",
-    //   validation: (rule) =>
-    //     rule.uri({
-    //       scheme: ["http", "https"],
-    //     }).custom((value) => {
-    //       if (!value) {
-    //         return true
-    //       }
-
-    //       const isYoutube = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(value)
-
-    //       return isYoutube || "Must be a valid YouTube URL"
-    //     }),
-    // }),
+    defineField({
+      name: "video",
+      title: "Video",
+      type: "file",
+      description: "Upload a video file",
+      options: {
+        accept: "video/*",
+      },
+      fields: [
+        defineField({
+          name: "poster",
+          title: "Poster",
+          type: "image",
+          description: "Image shown before the video plays",
+          options: {
+            hotspot: true,
+          },
+        }),
+      ],
+    }),
     defineField({
       name: "audienceSize",
       title: "Audience Size",

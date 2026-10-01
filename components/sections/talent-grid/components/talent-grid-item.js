@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Image } from "next-sanity/image";
 
 // Imports
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 
 // Components
@@ -18,7 +18,7 @@ import { getSanityImageUrl } from "@/sanity/lib/image";
 import styles from "../styles/talent-grid.module.scss";
 
 // Icons
-import { arrowUpRight } from "@/utils/icons";
+import { arrowUpRight, playIcon, xClose } from "@/utils/icons";
 
 export default function TalentGridItem({
     item,
@@ -26,10 +26,28 @@ export default function TalentGridItem({
 }) {
 
     const ref = useRef(null);
+    const videoRef = useRef(null);
+    const [videoActive, setVideoActive] = useState(false);
     const isInView = useInView(ref, { once: true, amount: 0.15 });
     const imageUrl = getSanityImageUrl(item.image, "talentGrid");
     const href = item.slug ? `/talent/${item.slug}` : "/talent";
     const contentFocus = (item.contentFocus ?? []).slice(0, 3);
+
+    function playVideo(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        setVideoActive(true);
+        videoRef.current?.play().catch(() => undefined);
+    }
+
+    function closeVideo(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        setVideoActive(false);
+        videoRef.current?.pause();
+    }
 
     return (
 
@@ -46,7 +64,7 @@ export default function TalentGridItem({
 
                 {imageUrl && (
 
-                    <div className={styles.talentGridItemImage}>
+                    <div className={styles.talentGridItemHeader}>
 
                         <Image
                             src={imageUrl}
@@ -55,6 +73,42 @@ export default function TalentGridItem({
                             sizes="(max-width: 768px) 384px, (max-width: 1200px) 576px, 768px"
                             loading="lazy"
                         />
+
+                        {item.video && (
+
+                            <div className={styles.talentGridItemVideo} data-video-active={videoActive ? "true" : "false"}>
+
+                                <button
+                                    type="button"
+                                    className={styles.talentGridItemVideoButton}
+                                    dangerouslySetInnerHTML={{ __html: playIcon }}
+                                    aria-label="Play video"
+                                    onClick={playVideo}
+                                />
+
+                                <button
+                                    type="button"
+                                    className={styles.talentGridItemVideoCloseButton}
+                                    dangerouslySetInnerHTML={{ __html: xClose }}
+                                    aria-label="Close video"
+                                    onClick={closeVideo}
+                                />
+
+                                <div className={styles.talentGridItemVideoContent}>
+
+                                    <video
+                                        ref={videoRef}
+                                        src={item.video}
+                                        poster={item.videoPoster}
+                                        controls
+                                        playsInline
+                                        preload="none"
+                                    />
+
+                                </div>
+
+                            </div>
+                        )}
 
                     </div>
 

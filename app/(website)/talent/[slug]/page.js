@@ -49,7 +49,6 @@ export default async function TalentPage({ params }) {
     const {
         title,
         firstName = `${title.split(" ")[0]}`,
-        slug: talentSlug,
         gallery,
         audienceSize,
         location,
