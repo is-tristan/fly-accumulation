@@ -149,6 +149,21 @@
                 height: 2rem;
             }
         }
+
+        @media (hover: hover) {
+            .talentGridItemVideo {
+                pointer-events: none;
+
+                &[data-video-active="true"] {
+                    pointer-events: auto;
+                }
+            }
+
+            .talentGridItemVideoButton,
+            .talentGridItemVideoCloseButton {
+                display: none;
+            }
+        }
     }
 
     .talentGridItemContent {

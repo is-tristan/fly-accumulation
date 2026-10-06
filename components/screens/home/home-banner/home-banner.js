@@ -33,11 +33,11 @@ const bannerVideos = [
         poster: "/screens/home/banner/videos/posters/joseph-x-coca-cola-poster.avif",
         alt: "Joseph x Coca-Cola",
     },
-    {
-        src: "/screens/home/banner/videos/kayode-x-jd-sports.webm",
-        poster: "/screens/home/banner/videos/posters/kayode-x-jd-sports-poster.avif",
-        alt: "Kayode x JD Sports",
-    },
+    // {
+    //     src: "/screens/home/banner/videos/kayode-x-jd-sports.webm",
+    //     poster: "/screens/home/banner/videos/posters/kayode-x-jd-sports-poster.avif",
+    //     alt: "Kayode x JD Sports",
+    // },
     {
         src: "/screens/home/banner/videos/malak-x-oakley-meta.webm",
         poster: "/screens/home/banner/videos/posters/malak-x-oakley-meta-poster.avif",

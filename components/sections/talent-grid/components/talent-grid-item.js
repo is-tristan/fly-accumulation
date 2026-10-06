@@ -33,20 +33,63 @@ export default function TalentGridItem({
     const href = item.slug ? `/talent/${item.slug}` : "/talent";
     const contentFocus = (item.contentFocus ?? []).slice(0, 3);
 
+    function supportsHover() {
+        return window.matchMedia("(hover: hover)").matches;
+    }
+
     function playVideo(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event?.preventDefault();
+        event?.stopPropagation();
 
         setVideoActive(true);
-        videoRef.current?.play().catch(() => undefined);
+
+        const video = videoRef.current;
+
+        if (!video) {
+            return;
+        }
+
+        if (supportsHover()) {
+            video.muted = true;
+            video.loop = true;
+        }
+
+        video.play().catch(() => undefined);
     }
 
     function closeVideo(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event?.preventDefault();
+        event?.stopPropagation();
 
         setVideoActive(false);
-        videoRef.current?.pause();
+
+        const video = videoRef.current;
+
+        if (!video) {
+            return;
+        }
+
+        video.pause();
+
+        if (supportsHover()) {
+            video.currentTime = 0;
+        }
+    }
+
+    function handleMouseEnter() {
+        if (!item.video || !supportsHover()) {
+            return;
+        }
+
+        playVideo();
+    }
+
+    function handleMouseLeave() {
+        if (!item.video || !supportsHover()) {
+            return;
+        }
+
+        closeVideo();
     }
 
     return (
@@ -60,7 +103,11 @@ export default function TalentGridItem({
             style={{ width: "100%", height: "100%" }}
         >
 
-            <div className={styles.talentGridItem}>
+            <div
+                className={styles.talentGridItem}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
 
                 {imageUrl && (
 

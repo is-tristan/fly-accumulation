@@ -24,7 +24,7 @@ export default function TestimonialCarousel({ items = [] }) {
                 type: "slide",
                 perPage: 1,
                 perMove: 1,
-                gap: "0",
+                gap: "1.5rem",
                 pagination: true,
                 arrows: true,
                 rewind: true,

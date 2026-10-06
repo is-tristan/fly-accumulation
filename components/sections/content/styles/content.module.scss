@@ -32,11 +32,9 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        justify-content: center;
-        text-align: center;
         gap: 0.5rem;
         padding: 0.5rem;
-        font-weight: 500;
+        line-height: 133.33%;
         border: 1px solid var(--border);
         border-radius: var(--borderRadius);
         background: rgba(from var(--light) r g b / 0.1);
@@ -45,11 +43,7 @@
         @media (width >=576px) {
             flex-flow: row nowrap;
             font-size: 0.875rem;
-            padding: 1rem;
-        }
-
-        @media (width >=768px) {
-            font-size: 0.875rem;
+            padding: 0.875rem;
         }
     }
 
