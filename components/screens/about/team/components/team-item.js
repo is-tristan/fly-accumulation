@@ -2,6 +2,7 @@
 import { Image } from "next-sanity/image";
 
 // Sanity
+import { PortableText } from "@portabletext/react";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
 // Styles
@@ -40,9 +41,23 @@ export default function TeamItem({
                             sizes="(max-width: 768px) 384px, 576px"
                         />
 
-                        {description && (
+                        {typeof description === "string" && description && (
 
-                            <div className={styles.teamItemDescription} dangerouslySetInnerHTML={{ __html: description }} />
+                            <div
+                                className={styles.teamItemDescription}
+                                dangerouslySetInnerHTML={{ __html: description }}
+                            />
+
+                        )}
+
+                        {Array.isArray(description) && description.length > 0 && (
+
+                            <div className={styles.teamItemDescription}>
+
+                                <PortableText value={description} />
+
+                            </div>
+
                         )}
 
 

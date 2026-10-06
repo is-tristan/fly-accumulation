@@ -1,5 +1,5 @@
 import { orderRankField, orderRankOrdering } from "@sanity/orderable-document-list"
-import { defineField, defineType } from "sanity"
+import { defineArrayMember, defineField, defineType } from "sanity"
 import { UserIcon } from "@sanity/icons/User"
 
 export const team = (context) => defineType({
@@ -24,8 +24,18 @@ export const team = (context) => defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "text",
-      rows: 4,
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
+          lists: [{ title: "Bullet", value: "bullet" }],
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+        }),
+      ],
     }),
     defineField({
       name: "image",
