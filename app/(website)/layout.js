@@ -9,6 +9,7 @@ import "lenis/dist/lenis.css"
 import Header from "@/components/navigation/header/header"
 import Footer from "@/components/navigation/footer/footer"
 import LenisScrollToTop from "@/components/handlers/lenis-scroll-to-top"
+import Preloader from "@/components/decoration/preloader/preloader"
 
 export default function WebsiteLayout({ children }) {
 
@@ -17,6 +18,8 @@ export default function WebsiteLayout({ children }) {
     <ReactLenis root options={{ stopInertiaOnNavigate: true }}>
 
       <div id="app" className="app">
+
+        <Preloader />
 
         <Header />
 
