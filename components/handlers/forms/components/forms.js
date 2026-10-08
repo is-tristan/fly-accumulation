@@ -9,21 +9,57 @@ import Link from "next/link";
 // Icons
 import { arrowUpRight } from "@/utils/icons";
 
+// Site
+import { siteName } from "@/lib/seo";
+
+const web3FormsAccessKey = "43a999f2-ecbe-4116-b748-6416a2e176e5";
+
 export default function ContactForm() {
 
     const [result, setResult] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const onSubmit = async (event) => {
         event.preventDefault();
+        setIsSubmitting(true);
+        setResult("Sending....");
+
         const formData = new FormData(event.target);
-        console.log(Object.fromEntries(formData.entries()));
-        setResult("Your message has been sent successfully! We will get back to you as soon as possible.");
-        event.target.reset();
+
+        try {
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("Your message has been sent successfully! We will get back to you as soon as possible.");
+                event.target.reset();
+            } else {
+                setResult(data.message || "Something went wrong!");
+            }
+
+        } catch {
+            setResult("Something went wrong!");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
 
-        <form className="form" onSubmit={onSubmit}>
+        <form className="form" action="https://api.web3forms.com/submit" method="POST" onSubmit={onSubmit}>
+
+            <input type="hidden" name="access_key" value={web3FormsAccessKey} />
+
+            <input type="hidden" name="subject" value={`New Contact Form Submission from ${siteName}`} />
+
+            <input type="hidden" name="from_name" value={siteName} />
+
+            <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
 
             <fieldset className="fieldset half" data-name="firstName">
 
@@ -99,15 +135,15 @@ export default function ContactForm() {
 
             <fieldset className="fieldset consent" data-name="consent">
 
-                <legend className="legend">Consent</legend>
+                <legend className="legend">Consent <span className="required">*</span></legend>
 
                 <div className="field">
 
-                    <input type="checkbox" name="submissionConsent" id="submission-consent" />
+                    <input type="checkbox" name="submissionConsent" id="submission-consent" required aria-required="true" />
 
                     <label htmlFor="submission-consent">
 
-                        By sending this message, you agree to our <Link href="/privacy-policy" target="_blank" className="colorPrimary">privacy policy</Link>.
+                        By sending this message, you agree to our <Link href="/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="colorPrimary">privacy policy</Link>.
 
                     </label>
 
@@ -117,15 +153,15 @@ export default function ContactForm() {
 
             <div className="formFooter">
 
-                <button className="btn primary" type="submit">
+                <button className="btn primary" type="submit" disabled={isSubmitting}>
 
-                    <span>Submit Message</span>
+                    <span>{isSubmitting ? "Sending...." : "Submit Message"}</span>
 
                     <div className="icon" dangerouslySetInnerHTML={{ __html: arrowUpRight }} />
 
                 </button>
 
-                <div className="resultContainer" style={{ display: result ? "flex" : "none" }}>
+                <div className="resultContainer" role="status" aria-live="polite" style={{ display: result ? "flex" : "none" }}>
 
                     <span>{result}</span>
 

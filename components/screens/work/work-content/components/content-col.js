@@ -68,7 +68,7 @@ export default function ContentCol({
 
                     <Text
                         hasAnimation={false}
-                        description={`<p>${description}</p>`}
+                        description={`<p>${description.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")}</p>`}
                     />
 
                 )}

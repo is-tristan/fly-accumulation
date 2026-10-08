@@ -4,7 +4,7 @@ Next.js + Sanity site for Fly Accumulation, based on the R4 Advertising layout.
 
 ## Getting Started
 
-1. Copy `.env.example` to `.env.local` and fill in Sanity project values.
+1. Copy `.env.example` to `.env.local` and fill in the Sanity project values and the public site URL.
 2. Install dependencies and run the app:
 
 ```bash

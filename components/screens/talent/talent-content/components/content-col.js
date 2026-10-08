@@ -82,28 +82,40 @@ export default function ContentCol({
 
                 </div>
 
-                <Text
-                    hasAnimation={false}
-                    description={`<p>${description}</p>`}
-                />
+                {description && (
+
+                    <Text
+                        hasAnimation={false}
+                        description={`<p>${description.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")}</p>`}
+                    />
+
+                )}
 
                 <div className={`buttons ${styles.talentButtons}`}>
 
-                    <Button
-                        text={`${tiktokFollowerCount}`}
-                        icon={tikTokIcon}
-                        href={tiktokUrl}
-                        target="_blank"
-                        className="primary iconReversed"
-                    />
+                    {tiktokUrl && (
 
-                    <Button
-                        text={`${instagramFollowerCount}`}
-                        icon={instagramIcon}
-                        href={instagramUrl}
-                        target="_blank"
-                        className="transparent iconReversed"
-                    />
+                        <Button
+                            text={`${tiktokFollowerCount}`}
+                            icon={tikTokIcon}
+                            href={tiktokUrl}
+                            target="_blank"
+                            className="primary iconReversed"
+                        />
+
+                    )}
+
+                    {instagramUrl && (
+
+                        <Button
+                            text={`${instagramFollowerCount}`}
+                            icon={instagramIcon}
+                            href={instagramUrl}
+                            target="_blank"
+                            className="transparent iconReversed"
+                        />
+
+                    )}
 
                 </div>
 

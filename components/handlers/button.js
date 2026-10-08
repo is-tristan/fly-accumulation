@@ -32,7 +32,12 @@ export default function Button({
             className="btnAnimContainer"
         >
 
-            <Link href={href || "#"} target={target} className={`btn ${className}`}>
+            <Link
+                href={href || "#"}
+                target={target}
+                rel={target === "_blank" ? "noopener noreferrer" : undefined}
+                className={`btn ${className}`}
+            >
 
                 <span>{text}</span>
 

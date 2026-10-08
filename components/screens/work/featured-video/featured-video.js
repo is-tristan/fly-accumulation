@@ -8,7 +8,7 @@ import FeaturedVideoItem from "./components/featured-video-item";
 export default async function FeaturedVideo() {
 
     const work = await client.fetch(featuredVideoQuery, {}, {
-        next: { revalidate: 1 },
+        next: { revalidate: 30 },
     });
 
     if (!work?.video?.url) {

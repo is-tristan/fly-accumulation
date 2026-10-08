@@ -8,7 +8,7 @@ import CtaSection from "@/components/sections/cta/cta-section";
 
 export const metadata = buildPageMetadata({
     title: "Talent",
-    description: "Fly Accumulation is a media trading, planning and activation agency built around how media actually works in the real world.",
+    description: "Meet the Fly Accumulation roster and find talent for your next campaign.",
     path: "/talent",
 })
 
