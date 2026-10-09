@@ -43,11 +43,11 @@ const bannerVideos = [
         poster: "/screens/home/banner/videos/posters/audible-poster-2.avif",
         alt: "Malak x Oakley Meta",
     },
-    {
-        src: "/screens/home/banner/videos/malak-x-oakley-meta.webm",
-        poster: "/screens/home/banner/videos/posters/malak-x-oakley-meta-poster.avif",
-        alt: "Malak x Oakley Meta",
-    },
+    //{
+    //     src: "/screens/home/banner/videos/audible.webm",
+    //     poster: "/screens/home/banner/videos/posters/audible-poster.avif",
+    //     alt: "Audible",
+    // },
 ];
 
 function shuffleItems(items) {
