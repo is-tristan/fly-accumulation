@@ -27,9 +27,9 @@ export default function HeaderActions() {
 
                 <div className={`${styles.headerButtons}`}>
 
-                    <Button text="For Brands" href="/talent" className={`primary small`} hasAnimation={false} />
+                    <Button text="For Brands" href="/contact" className={`primary small`} hasAnimation={false} />
 
-                    <Button text="For Talents" href="/work" className={`transparent small`} hasAnimation={false} />
+                    <Button text="For Talents" href="/contact" className={`transparent small`} hasAnimation={false} />
 
                 </div>
 

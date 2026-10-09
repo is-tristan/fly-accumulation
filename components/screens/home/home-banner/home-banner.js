@@ -29,8 +29,8 @@ const bannerImages = [
 
 const bannerVideos = [
     {
-        src: "/screens/home/banner/videos/joseph-x-coca-cola.webm",
-        poster: "/screens/home/banner/videos/posters/joseph-x-coca-cola-poster.avif",
+        src: "/screens/home/banner/videos/joseph-x-coca-cola-2.webm",
+        poster: "/screens/home/banner/videos/posters/joseph-x-coca-cola-poster-2.avif",
         alt: "Joseph x Coca-Cola",
     },
     // {

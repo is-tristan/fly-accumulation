@@ -15,6 +15,9 @@ import { motion } from "motion/react";
 // Styles
 import styles from "./styles/preloader.module.scss";
 
+// Components
+import Text from "@/components/content/text/text";
+
 // Logo
 import { logo } from "@/utils/icons";
 
@@ -117,6 +120,14 @@ export default function Preloader() {
                 >
 
                 <span dangerouslySetInnerHTML={{ __html: logo }} />
+
+                <Text
+                    className={styles.preloaderText}
+                    titleTag="h2"
+                    title="Where Creators And Brands Take Flight"
+                    alignment = "centered"
+                />
+
 
                 </motion.div>
 
