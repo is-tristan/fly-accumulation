@@ -12,7 +12,7 @@ export default function FooterCopyright() {
             
             <div className={styles.footerCopyrightText}>
 
-                <p>Copyright &copy; Fly Accumulation 2026 | All Rights Reserved</p>
+                <p>Copyright &copy; Fly Accumulation Media & PR 2026 | All Rights Reserved</p>
 
             </div>
             

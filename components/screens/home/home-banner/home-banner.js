@@ -22,7 +22,7 @@ const bannerImages = [
     { src: "/screens/home/banner/images/banner-image-4.avif", alt: "Banner image 4" },
     { src: "/screens/home/banner/images/banner-image-5.avif", alt: "Banner image 5" },
     { src: "/screens/home/banner/images/banner-image-6.avif", alt: "Banner image 6" },
-    { src: "/screens/home/banner/images/banner-image-7.avif", alt: "Banner image 7" },
+    { src: "/screens/home/banner/images/banner-image-7-new.avif", alt: "Banner image 7" },
     { src: "/screens/home/banner/images/banner-image-8.avif", alt: "Banner image 8" },
     { src: "/screens/home/banner/images/banner-image-9.avif", alt: "Banner image 9" },
 ];
