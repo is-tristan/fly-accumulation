@@ -4,16 +4,8 @@ export const companyLogosData = [
         src: "/logos/adidas.png",
     },
     {
-        name: "Adobe",
-        src: "/logos/logo-adobe.svg",
-    },
-    {
         name: "Arsenal",
         src: "/logos/arsenal.png",
-    },
-    {
-        name: "Asics",
-        src: "/logos/logo-asics.svg",
     },
     {
         name: "B&M",
@@ -44,10 +36,6 @@ export const companyLogosData = [
         src: "/logos/coppafeel.png",
     },
     {
-        name: "Depop",
-        src: "/logos/logo-depop.svg",
-    },
-    {
         name: "Dove",
         src: "/logos/dove.png",
     },
@@ -68,10 +56,6 @@ export const companyLogosData = [
         src: "/logos/end.png",
     },
     {
-        name: "Evri",
-        src: "/logos/logo-evri.svg",
-    },
-    {
         name: "Five Guys",
         src: "/logos/fiveguys.png",
     },
@@ -82,10 +66,6 @@ export const companyLogosData = [
     {
         name: "Foot Locker",
         src: "/logos/footlocker.png",
-    },
-    {
-        name: "Gemini",
-        src: "/logos/logo-gemini.svg",
     },
     {
         name: "Gillette",
@@ -124,16 +104,8 @@ export const companyLogosData = [
         src: "/logos/loreal.png",
     },
     {
-        name: "Monzo",
-        src: "/logos/logo-monzo.svg",
-    },
-    {
         name: "Nike",
         src: "/logos/nike.png",
-    },
-    {
-        name: "Nvidia",
-        src: "/logos/logo-nvidia.svg",
     },
     {
         name: "NYX",
@@ -144,24 +116,12 @@ export const companyLogosData = [
         src: "/logos/odeon.png",
     },
     {
-        name: "OpenAI",
-        src: "/logos/logo-open-ai.svg",
-    },
-    {
         name: "Primark",
         src: "/logos/primark.png",
     },
     {
-        name: "Puma",
-        src: "/logos/logo-puma.svg",
-    },
-    {
         name: "Rightmove",
         src: "/logos/rightmove.png",
-    },
-    {
-        name: "Ring",
-        src: "/logos/logo-ring.svg",
     },
     {
         name: "Salomon",
@@ -180,20 +140,12 @@ export const companyLogosData = [
         src: "/logos/snapchat.png",
     },
     {
-        name: "Sole",
-        src: "/logos/logo-sole.svg",
-    },
-    {
         name: "StockX",
         src: "/logos/stockx.png",
     },
     {
         name: "Stone Island",
         src: "/logos/stoneisland.png",
-    },
-    {
-        name: "Superdrug",
-        src: "/logos/logo-super-drug.svg",
     },
     {
         name: "The North Face",
@@ -226,5 +178,53 @@ export const companyLogosData = [
     {
         name: "Which?",
         src: "/logos/which.png",
+    },
+    {
+        name: "Adobe",
+        src: "/logos/logo-adobe.svg",
+    },
+    {
+        name: "Asics",
+        src: "/logos/logo-asics.svg",
+    },
+    {
+        name: "Depop",
+        src: "/logos/logo-depop.svg",
+    },
+    {
+        name: "Evri",
+        src: "/logos/logo-evri.svg",
+    },
+    {
+        name: "Gemini",
+        src: "/logos/logo-gemini.svg",
+    },
+    {
+        name: "Monzo",
+        src: "/logos/logo-monzo.svg",
+    },
+    {
+        name: "Nvidia",
+        src: "/logos/logo-nvidia.svg",
+    },
+    {
+        name: "OpenAI",
+        src: "/logos/logo-open-ai.svg",
+    },
+    {
+        name: "Puma",
+        src: "/logos/logo-puma.svg",
+    },
+    {
+        name: "Ring",
+        src: "/logos/logo-ring.svg",
+    },
+    {
+        name: "Sole",
+        src: "/logos/logo-sole.svg",
+    },
+    {
+        name: "Superdrug",
+        src: "/logos/logo-super-drug.svg",
     },
 ];
