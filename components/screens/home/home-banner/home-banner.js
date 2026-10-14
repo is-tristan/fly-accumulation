@@ -29,25 +29,25 @@ const bannerImages = [
 
 const bannerVideos = [
     {
-        src: "/screens/home/banner/videos/joseph-x-coca-cola-2.webm",
-        poster: "/screens/home/banner/videos/posters/joseph-x-coca-cola-poster-2.avif",
-        alt: "Joseph x Coca-Cola",
+        src: "/screens/home/banner/videos/boost-video-1.webm",
+        poster: "/screens/home/banner/videos/posters/boost-video-1-poster.avif",
+        alt: "Boost Video #1",
     },
-    // {
-    //     src: "/screens/home/banner/videos/kayode-x-jd-sports.webm",
-    //     poster: "/screens/home/banner/videos/posters/kayode-x-jd-sports-poster.avif",
-    //     alt: "Kayode x JD Sports",
-    // },
+    {
+        src: "/screens/home/banner/videos/kayode-x-jd-sports.webm",
+        poster: "/screens/home/banner/videos/posters/kayode-x-jd-sports-poster.avif",
+        alt: "Kayode x JD Sports",
+    },
     {
         src: "/screens/home/banner/videos/audible-2.webm",
         poster: "/screens/home/banner/videos/posters/audible-poster-2.avif",
         alt: "Malak x Oakley Meta",
     },
-    //{
-    //     src: "/screens/home/banner/videos/audible.webm",
-    //     poster: "/screens/home/banner/videos/posters/audible-poster.avif",
-    //     alt: "Audible",
-    // },
+    {
+        src: "/screens/home/banner/videos/boost-video-2.webm",
+        poster: "/screens/home/banner/videos/posters/boost-video-2-poster.avif",
+        alt: "Boost Video #2",
+    },
 ];
 
 function shuffleItems(items) {
