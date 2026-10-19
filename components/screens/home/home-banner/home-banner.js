@@ -34,9 +34,9 @@ const bannerVideos = [
         alt: "Boost Video #1",
     },
     {
-        src: "/screens/home/banner/videos/kayode-x-jd-sports.webm",
-        poster: "/screens/home/banner/videos/posters/kayode-x-jd-sports-poster.avif",
-        alt: "Kayode x JD Sports",
+        src: "/screens/home/banner/videos/new-banner-video.webm",
+        poster: "/screens/home/banner/videos/posters/new-banner-video-poster.avif",
+        alt: "Banner Video",
     },
     {
         src: "/screens/home/banner/videos/audible-2.webm",
