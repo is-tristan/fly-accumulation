@@ -19,6 +19,7 @@ export const metadata = buildPageMetadata({
     absolute: siteName,
   },
   description: "Fly Accumulation exists to close the gap between ambition and outcome — by bringing trading discipline, audience understanding, and delivery governance into one system.",
+  image: "/seo/site-share.webp",
   path: "/",
 })
 
