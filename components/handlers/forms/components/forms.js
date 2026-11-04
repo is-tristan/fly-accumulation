@@ -12,7 +12,7 @@ import { arrowUpRight } from "@/utils/icons";
 // Site
 import { siteName } from "@/lib/seo";
 
-const web3FormsAccessKey = "5c73eee0-1b64-4301-901d-3baba184d291";
+const web3FormsAccessKey = "b7c1cc45-8104-488a-9717-860fe1d7adba";
 
 export default function ContactForm() {
 
