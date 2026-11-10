@@ -20,6 +20,10 @@ export const companyLogosData = [
         src: "/logos/bicestervillage.png",
     },
     {
+        name: "Cartier",
+        src: "/logos/cartier.png",
+    },
+    {
         name: "Cheetos",
         src: "/logos/cheetos.png",
     },
@@ -125,7 +129,7 @@ export const companyLogosData = [
     },
     {
         name: "Salomon",
-        src: "/logos/salomon.png",
+        src: "/logos/salomon-wordmark.png",
     },
     {
         name: "Shark Beauty",
