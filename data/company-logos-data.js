@@ -16,16 +16,8 @@ export const companyLogosData = [
         src: "/logos/bbc.png",
     },
     {
-        name: "Bicester Village",
-        src: "/logos/bicestervillage.png",
-    },
-    {
         name: "Cartier",
         src: "/logos/cartier.png",
-    },
-    {
-        name: "Cheetos",
-        src: "/logos/cheetos.png",
     },
     {
         name: "Childs Farm",
@@ -154,10 +146,6 @@ export const companyLogosData = [
     {
         name: "The North Face",
         src: "/logos/thenorthface.png",
-    },
-    {
-        name: "Tilt",
-        src: "/logos/tilt.png",
     },
     {
         name: "Tommee Tippee",
