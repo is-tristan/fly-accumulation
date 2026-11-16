@@ -8,12 +8,24 @@ export const companyLogosData = [
         src: "/logos/arsenal.png",
     },
     {
+        name: "ASDA",
+        src: "/logos/asda.webp",
+    },
+    {
+        name: "Audible",
+        src: "/logos/audible.webp",
+    },
+    {
         name: "B&M",
         src: "/logos/b&m.png",
     },
     {
         name: "BBC",
         src: "/logos/bbc.png",
+    },
+    {
+        name: "Cadbury",
+        src: "/logos/cadbury.webp",
     },
     {
         name: "Cartier",
@@ -26,6 +38,10 @@ export const companyLogosData = [
     {
         name: "Coca-Cola",
         src: "/logos/cocacola.png",
+    },
+    {
+        name: "Complex",
+        src: "/logos/complex.webp",
     },
     {
         name: "CoppaFeel!",
@@ -80,12 +96,32 @@ export const companyLogosData = [
         src: "/logos/gov.uk.png",
     },
     {
+        name: "H&M",
+        src: "/logos/hm.webp",
+    },
+    {
+        name: "Hellmann's",
+        src: "/logos/hellmanns.webp",
+    },
+    {
         name: "Holland & Barrett",
         src: "/logos/hollandandbarrett.png",
     },
     {
         name: "HP",
         src: "/logos/hp.png",
+    },
+    {
+        name: "IKEA",
+        src: "/logos/ikea.webp",
+    },
+    {
+        name: "Indeed",
+        src: "/logos/indeed.webp",
+    },
+    {
+        name: "Instagram",
+        src: "/logos/instagram.webp",
     },
     {
         name: "Irn-Bru",
@@ -100,8 +136,24 @@ export const companyLogosData = [
         src: "/logos/loreal.png",
     },
     {
+        name: "Lululemon",
+        src: "/logos/lululemon.webp",
+    },
+    {
+        name: "Meta",
+        src: "/logos/meta.webp",
+    },
+    {
+        name: "Nature Valley",
+        src: "/logos/nature-valley.webp",
+    },
+    {
         name: "Nike",
         src: "/logos/nike.png",
+    },
+    {
+        name: "Nivea",
+        src: "/logos/nivea.webp",
     },
     {
         name: "NYX",
@@ -112,8 +164,20 @@ export const companyLogosData = [
         src: "/logos/odeon.png",
     },
     {
+        name: "Old El Paso",
+        src: "/logos/old-el-paso.webp",
+    },
+    {
+        name: "On",
+        src: "/logos/on.webp",
+    },
+    {
         name: "Primark",
         src: "/logos/primark.png",
+    },
+    {
+        name: "Rabanne",
+        src: "/logos/rabanne.webp",
     },
     {
         name: "Rightmove",
@@ -152,6 +216,10 @@ export const companyLogosData = [
         src: "/logos/tommeetippee.png",
     },
     {
+        name: "Uber",
+        src: "/logos/uber.webp",
+    },
+    {
         name: "UEFA",
         src: "/logos/uefa.png",
     },
@@ -166,6 +234,14 @@ export const companyLogosData = [
     {
         name: "Vinted",
         src: "/logos/vinted.png",
+    },
+    {
+        name: "Vistaprint",
+        src: "/logos/vistaprint.webp",
+    },
+    {
+        name: "VO5",
+        src: "/logos/vo5.webp",
     },
     {
         name: "Which?",
@@ -209,7 +285,7 @@ export const companyLogosData = [
     },
     {
         name: "Ring",
-        src: "/logos/logo-ring.svg",
+        src: "/logos/ring.webp",
     },
     {
         name: "Sole",
