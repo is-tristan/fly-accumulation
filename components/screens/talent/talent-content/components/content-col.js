@@ -9,7 +9,7 @@ import Button from "@/components/handlers/button";
 
 import styles from "../../styles/talent-singular.module.scss";
 
-import { audienceSizeIcon, locationGlobeIcon, tikTokIcon, instagramIcon } from "@/utils/icons";
+import { audienceSizeIcon, locationGlobeIcon, tikTokIcon, instagramIcon, youtubeIcon } from "@/utils/icons";
 
 export default function ContentCol({
     title,
@@ -21,6 +21,8 @@ export default function ContentCol({
     tiktokFollowerCount,
     instagramUrl,
     instagramFollowerCount,
+    youtubeUrl,
+    youtubeFollowerCount,
 }) {
 
     const ref = useRef(null);
@@ -111,6 +113,18 @@ export default function ContentCol({
                             text={`${instagramFollowerCount}`}
                             icon={instagramIcon}
                             href={instagramUrl}
+                            target="_blank"
+                            className="transparent iconReversed"
+                        />
+
+                    )}
+
+                    {youtubeUrl && (
+
+                        <Button
+                            text={`${youtubeFollowerCount}`}
+                            icon={youtubeIcon}
+                            href={youtubeUrl}
                             target="_blank"
                             className="transparent iconReversed"
                         />

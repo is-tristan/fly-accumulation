@@ -59,6 +59,8 @@ export default async function TalentPage({ params }) {
         tiktokFollowerCount,
         instagramUrl,
         instagramFollowerCount,
+        youtubeUrl,
+        youtubeFollowerCount,
     } = talent
 
     return (
@@ -76,6 +78,8 @@ export default async function TalentPage({ params }) {
                 tiktokFollowerCount={tiktokFollowerCount}
                 instagramUrl={instagramUrl}
                 instagramFollowerCount={instagramFollowerCount}
+                youtubeUrl={youtubeUrl}
+                youtubeFollowerCount={youtubeFollowerCount}
             />
 
             <TalentCarousel

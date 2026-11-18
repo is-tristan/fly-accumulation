@@ -203,7 +203,9 @@ export const talentBySlugQuery = defineQuery(`
     tiktokUrl,
     tiktokFollowerCount,
     instagramUrl,
-    instagramFollowerCount
+    instagramFollowerCount,
+    youtubeUrl,
+    youtubeFollowerCount
   }
 `)
 

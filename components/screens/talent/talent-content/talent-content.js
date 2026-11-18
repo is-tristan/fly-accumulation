@@ -19,6 +19,8 @@ export default function TalentContent({
     tiktokFollowerCount,
     instagramUrl,
     instagramFollowerCount,
+    youtubeUrl,
+    youtubeFollowerCount,
 }) {
 
     return (
@@ -48,6 +50,8 @@ export default function TalentContent({
                     tiktokFollowerCount={tiktokFollowerCount}
                     instagramUrl={instagramUrl}
                     instagramFollowerCount={instagramFollowerCount}
+                    youtubeUrl={youtubeUrl}
+                    youtubeFollowerCount={youtubeFollowerCount}
                 />
 
             </div>

@@ -129,6 +129,20 @@ export const talent = (context) => defineType({
       title: "Instagram Follower Count",
       type: "string",
     }),
+    defineField({
+      name: "youtubeUrl",
+      title: "YouTube Link",
+      type: "url",
+      validation: (rule) =>
+        rule.uri({
+          scheme: ["http", "https"],
+        }),
+    }),
+    defineField({
+      name: "youtubeFollowerCount",
+      title: "YouTube Follower Count",
+      type: "string",
+    }),
   ],
   preview: {
     select: {
